@@ -54,7 +54,8 @@ final class CompilerStageTests {
     }
 
     var tests = getTests("parse-tree");
-    return tests.stream().map(test -> dynamicTest(test.in, () -> {
+    return tests.stream()
+            .map(test -> dynamicTest(test.in, () -> {
       ExecutorService executor = Executors.newSingleThreadExecutor();
       Future<StringPair> future = executor.submit(new Callable<StringPair>() {
         public StringPair call() throws IOException {
@@ -86,7 +87,7 @@ final class CompilerStageTests {
         Assertions.fail(String.format("Timeout for parse tree for program %s.", test.in));
       } else {
         Assertions.assertEquals(sanitize(sp.a).trim(), sanitize(sp.b).trim(),
-            String.format("Parse tree for program %s differs from expected output.", test.in));
+                String.format("Parse tree for program %s differs from expected output. Expected: %s. \nActual: %s", test.in, sp.a, sp.b));
       }
     }));
   }
