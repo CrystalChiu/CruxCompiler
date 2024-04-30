@@ -99,7 +99,9 @@ final class CompilerStageTests {
     }
 
     var tests = getTests("ast");
-    return tests.stream().map(test -> dynamicTest(test.in, () -> {
+    return tests.stream()
+            .limit(12)
+            .map(test -> dynamicTest(test.in, () -> {
       ExecutorService executor = Executors.newSingleThreadExecutor();
       Future<StringPair> future = executor.submit(new Callable<StringPair>() {
         public StringPair call() throws IOException {

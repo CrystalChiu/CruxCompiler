@@ -138,6 +138,16 @@ public interface CruxListener extends ParseTreeListener {
 	 */
 	void exitAssignStmt(CruxParser.AssignStmtContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link CruxParser#assignStmtNoSemi}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignStmtNoSemi(CruxParser.AssignStmtNoSemiContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link CruxParser#assignStmtNoSemi}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignStmtNoSemi(CruxParser.AssignStmtNoSemiContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link CruxParser#ifStmt}.
 	 * @param ctx the parse tree
 	 */

@@ -172,6 +172,18 @@ public class CruxBaseListener implements CruxListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAssignStmtNoSemi(CruxParser.AssignStmtNoSemiContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAssignStmtNoSemi(CruxParser.AssignStmtNoSemiContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterIfStmt(CruxParser.IfStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}

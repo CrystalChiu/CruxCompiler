@@ -3,8 +3,8 @@ package crux.ast;
 import crux.ast.Position;
 import crux.ast.types.*;
 
-
 import java.io.PrintStream;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -82,9 +82,22 @@ public final class SymbolTable {
 
   private boolean encounteredError = false;
 
+  //CONSTRUCTOR
   SymbolTable(PrintStream err) {
     this.err = err;
     //TODO
+    enter();
+
+    //init predef functions
+    Type intType = new IntType();
+    Type boolType = new BoolType();
+    Type voidType = new VoidType();
+    add(new Position(0), "readInt", intType);
+    add(new Position(0), "readChar", intType);
+    add(new Position(0), "printBool", voidType);
+    add(new Position(0), "printInt", voidType);
+    add(new Position(0), "printChar", voidType);
+    add(new Position(0), "println", voidType);
   }
 
   boolean hasEncounteredError() {
@@ -94,9 +107,10 @@ public final class SymbolTable {
   /**
    * Called to tell symbol table we entered a new scope.
    */
-
   void enter() {
     //TODO
+    //Enter a new scope -> new entry in symbol table
+    symbolScopes.add(new HashMap<>());
   }
 
   /**
@@ -105,6 +119,10 @@ public final class SymbolTable {
 
   void exit() {
     //TODO
+    //Called upon exiting scope -> remove scope from symbol table
+    if (!symbolScopes.isEmpty()) {
+      symbolScopes.remove(symbolScopes.size() - 1);
+    }
   }
 
   /**
@@ -113,7 +131,20 @@ public final class SymbolTable {
    */
   Symbol add(Position pos, String name, Type type) {
     //TODO
-    return null;
+    var curScope = symbolScopes.get(symbolScopes.size() - 1);
+
+    //verify does not exist already in current scope
+    if(curScope.containsKey(name)) {
+      err.printf("DeclarationError%s[Symbol '%s' already exists in the current scope.]%n", pos, name);
+      encounteredError = true;
+      return new Symbol(name, "DeclarationError");
+    }
+
+    //insert symbol
+    Symbol newSymb = new Symbol(name, type);
+    curScope.put(name, newSymb);
+
+    return newSymb;
   }
 
   /**
@@ -136,6 +167,14 @@ public final class SymbolTable {
    */
   private Symbol find(String name) {
     //TODO
+    for(int i = symbolScopes.size() - 1; i >= 0; i--) {
+      var curScope = symbolScopes.get(i);
+
+      if(curScope.containsKey(name)) {
+        return curScope.get(name);
+      }
+    }
+
     return null;
   }
 }

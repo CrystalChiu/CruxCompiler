@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="crux.CompilerStageTests" time="0.709" tests="50" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="crux.CompilerStageTests" time="0.361" tests="12" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -11,16 +11,16 @@
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
-    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/21/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/chiubacca/Desktop/Programs/142a/target/surefire/surefirebooter17151203205697257469.jar /Users/chiubacca/Desktop/Programs/142a/target/surefire 2024-04-10T02-36-09_235-jvmRun1 surefire8380519317705348065tmp surefire_013166343017540227617tmp"/>
+    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/chiubacca/Desktop/Programs/142a/target/surefire/surefirebooter6116508594850432348.jar /Users/chiubacca/Desktop/Programs/142a/target/surefire 2024-04-30T16-44-11_082-jvmRun1 surefire7015519007043686166tmp surefire_014332713106099043516tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/chiubacca/Desktop/Programs/142a/target/test-classes:/Users/chiubacca/Desktop/Programs/142a/target/classes:/Users/chiubacca/.m2/repository/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2.jar:/Users/chiubacca/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.5.2/junit-jupiter-api-5.5.2.jar:/Users/chiubacca/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/chiubacca/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/chiubacca/.m2/repository/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.jar:/Users/chiubacca/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.5.2/junit-jupiter-engine-5.5.2.jar:/Users/chiubacca/.m2/repository/org/junit/platform/junit-platform-engine/1.5.2/junit-platform-engine-1.5.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/chiubacca"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2023-09-19"/>
-    <property name="java.home" value="/usr/local/Cellar/openjdk/21/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="java.version.date" value="2024-01-16"/>
+    <property name="java.home" value="/usr/local/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home"/>
     <property name="file.separator" value="/"/>
     <property name="basedir" value="/Users/chiubacca/Desktop/Programs/142a"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
@@ -28,9 +28,9 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/chiubacca/Desktop/Programs/142a/target/surefire/surefirebooter17151203205697257469.jar"/>
+    <property name="surefire.real.class.path" value="/Users/chiubacca/Desktop/Programs/142a/target/surefire/surefirebooter6116508594850432348.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="21"/>
+    <property name="java.runtime.version" value="21.0.2"/>
     <property name="user.name" value="chiubacca"/>
     <property name="stdout.encoding" value="UTF-8"/>
     <property name="path.separator" value=":"/>
@@ -42,7 +42,7 @@
     <property name="localRepository" value="/Users/chiubacca/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
     <property name="java.io.tmpdir" value="/var/folders/c2/1_lwdw0d2l54rhr2jzq9b1s00000gn/T/"/>
-    <property name="java.version" value="21"/>
+    <property name="java.version" value="21.0.2"/>
     <property name="user.dir" value="/Users/chiubacca/Desktop/Programs/142a"/>
     <property name="os.arch" value="x86_64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
@@ -51,58 +51,46 @@
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="UTF-8"/>
     <property name="java.vendor" value="Homebrew"/>
-    <property name="java.vm.version" value="21"/>
+    <property name="java.vm.version" value="21.0.2"/>
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.116"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.01"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.006"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.007"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.007"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.007"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.006"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.005"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.006"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.006"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.006"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.006"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.006"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.004"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.005"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.004"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.008"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.005"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.004"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.004"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.008"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.004"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.005"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.004"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.004"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.005"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.006"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.004"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.006"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.006"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.008"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.006"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.006"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.01"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.007"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.005"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.007"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.014"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.011"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.006"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.007"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.008"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.005"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.005"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.009"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.01"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.007"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.008"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.012"/>
-  <testcase name="parseTree" classname="crux.CompilerStageTests" time="0.012"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.133"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.014"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.007"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.008">
+    <failure type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
+AST for program crux/stages/ast/test04.crx differs from expected output. ==> expected: <main() {
+  printInt((1 + 1));
+}> but was: <main() {
+  printInt((+1));
+}>
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:134)
+]]></failure>
+  </testcase>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.005"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.007"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.005"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.005"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.006"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.004"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.004"/>
+  <testcase name="ast" classname="crux.CompilerStageTests" time="0.008">
+    <failure type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
+AST for program crux/stages/ast/test12.crx differs from expected output. ==> expected: <main() {
+  if (true) {
+    printInt(1);
+  } else {
+  }
+  printInt((0 - 1));
+}> but was: <main() {
+  if (true) {
+    printInt(1);
+  } else {
+  }
+  printInt((-1));
+}>
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:134)
+]]></failure>
+  </testcase>
 </testsuite>

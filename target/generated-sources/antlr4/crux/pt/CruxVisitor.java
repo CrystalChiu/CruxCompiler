@@ -89,6 +89,12 @@ public interface CruxVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAssignStmt(CruxParser.AssignStmtContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link CruxParser#assignStmtNoSemi}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssignStmtNoSemi(CruxParser.AssignStmtNoSemiContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link CruxParser#ifStmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

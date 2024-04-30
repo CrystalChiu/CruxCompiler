@@ -96,6 +96,8 @@ callStmt: callExpr SEMICOLON;
 
 assignStmt: designator ASSIGN expr0 SEMICOLON;
 
+assignStmtNoSemi: designator ASSIGN expr0;
+
 ifStmt: IF expr0 stmtBlock (ELSE stmtBlock)?;
 
 loopStmt: LOOP stmtBlock;

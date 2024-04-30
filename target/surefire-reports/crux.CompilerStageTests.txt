@@ -1,4 +1,30 @@
 -------------------------------------------------------------------------------
 Test set: crux.CompilerStageTests
 -------------------------------------------------------------------------------
-Tests run: 50, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.709 s - in crux.CompilerStageTests
+Tests run: 12, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.361 s <<< FAILURE! - in crux.CompilerStageTests
+crux.CompilerStageTests.ast  Time elapsed: 0.008 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+AST for program crux/stages/ast/test04.crx differs from expected output. ==> expected: <main() {
+  printInt((1 + 1));
+}> but was: <main() {
+  printInt((+1));
+}>
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:134)
+
+crux.CompilerStageTests.ast  Time elapsed: 0.008 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+AST for program crux/stages/ast/test12.crx differs from expected output. ==> expected: <main() {
+  if (true) {
+    printInt(1);
+  } else {
+  }
+  printInt((0 - 1));
+}> but was: <main() {
+  if (true) {
+    printInt(1);
+  } else {
+  }
+  printInt((-1));
+}>
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:134)
+
