@@ -61,9 +61,8 @@ public final class ParseTreeLower {
     }
 
     Position position = new Position(program.start.getLine());
-    DeclarationList declList = new DeclarationList(position, declarations);
 
-    return declList;
+    return new DeclarationList(position, declarations);
   }
 
   /**
@@ -82,9 +81,8 @@ public final class ParseTreeLower {
 
     int lineNum = stmtList.start.getLine();
     Position position = new Position(lineNum);
-    StatementList astStmtList = new StatementList(position, statements);
 
-    return astStmtList;
+    return new StatementList(position, statements);
   }
 
   /**
@@ -107,11 +105,10 @@ public final class ParseTreeLower {
 
     int lineNumber = stmtBlock.start.getLine();
     Position position = new Position(lineNumber);
-    StatementList astStmtList = new StatementList(position, statements);
 
     symTab.exit();
 
-    return astStmtList;
+    return new StatementList(position, statements);
   }
 
   /**
@@ -152,10 +149,7 @@ public final class ParseTreeLower {
        // add to symbol table
        Symbol symbol = symTab.add(position, varName, varType);
 
-       // create the AST node
-       VariableDeclaration varDecl = new VariableDeclaration(position, symbol);
-
-       return varDecl;
+       return new VariableDeclaration(position, symbol);
      }
 
     /**
@@ -175,10 +169,7 @@ public final class ParseTreeLower {
         Type arrSymbolType = new ArrayType(arrSize, arrType);
         Symbol symbol = symTab.add(position, arrName, arrSymbolType);
 
-        //create ast node
-        Declaration arrDecl = new ArrayDeclaration(position, symbol);
-
-        return arrDecl;
+        return new ArrayDeclaration(position, symbol);
       }
 
     /**
@@ -213,10 +204,7 @@ public final class ParseTreeLower {
 
        symTab.exit();
 
-       // create ast node
-       FunctionDefinition funcDef = new FunctionDefinition(position, funcSymbol, parameterSymbols, functionBody);
-
-       return funcDef;
+       return new FunctionDefinition(position, funcSymbol, parameterSymbols, functionBody);
      }
   }
 
@@ -245,10 +233,7 @@ public final class ParseTreeLower {
        // add to symbol table
        Symbol symbol = symTab.add(position, varName, varType);
 
-       // create ast node
-       VariableDeclaration varDecl = new VariableDeclaration(position, symbol);
-
-       return varDecl;
+       return new VariableDeclaration(position, symbol);
      }
 
     /**
@@ -266,10 +251,7 @@ public final class ParseTreeLower {
        // visit rhs
        Expression value = exprVisitor.visit(ctx.expr0());
 
-       // create ast node
-       Assignment assignment = new Assignment(position, location, value);
-
-       return assignment;
+       return new Assignment(position, location, value);
      }
 
     /**
@@ -279,14 +261,11 @@ public final class ParseTreeLower {
      */
      @Override
      public Statement visitAssignStmtNoSemi(CruxParser.AssignStmtNoSemiContext ctx) {
-       Position position = new Position(ctx.start.getLine());
        Expression location = exprVisitor.visit(ctx.designator());
        Expression value = exprVisitor.visit(ctx.expr0());
+       Position position = makePosition(ctx);
 
-       // create ast node
-       Assignment assignment = new Assignment(position, location, value);
-
-       return assignment;
+       return new Assignment(position, location, value);
      }
 
     /**
@@ -314,10 +293,7 @@ public final class ParseTreeLower {
          }
        }
 
-       //create ast node
-       Call callStmt = new Call(position, functionSymbol, args);
-
-       return callStmt;
+       return new Call(position, functionSymbol, args);
      }
 
     /**
@@ -331,18 +307,15 @@ public final class ParseTreeLower {
       @Override
       public Statement visitIfStmt(CruxParser.IfStmtContext ctx) {
         Expression cond = exprVisitor.visit(ctx.expr0());
-
-        Position position = new Position(ctx.start.getLine());
         StatementList thenBlock = lower(ctx.stmtBlock(0));
+        Position position = makePosition(ctx);
 
         StatementList elseBlock = new StatementList(position, new ArrayList<>());
         if (ctx.stmtBlock().size() > 1) {
           elseBlock = lower(ctx.stmtBlock(1));
         }
 
-        IfElseBranch ifElseBranch = new IfElseBranch(position, cond, thenBlock, elseBlock);
-
-        return ifElseBranch;
+        return new IfElseBranch(position, cond, thenBlock, elseBlock);
       }
 
     /**
@@ -353,11 +326,10 @@ public final class ParseTreeLower {
      */
      @Override
      public Statement visitLoopStmt(CruxParser.LoopStmtContext ctx) {
-       Position position = new Position(ctx.start.getLine());
        StatementList loopBody = lower(ctx.stmtBlock());
+       Position position = makePosition(ctx);
 
-       Loop loopNode = new Loop(position, loopBody);
-       return loopNode;
+       return new Loop(position, loopBody);
      }
 
     /**
@@ -368,16 +340,15 @@ public final class ParseTreeLower {
      */
     @Override
     public Statement visitReturnStmt(CruxParser.ReturnStmtContext ctx) {
-      Position position = new Position(ctx.start.getLine());
 
       Expression returnVal = null;
       if (ctx.expr0() != null) {
         returnVal = exprVisitor.visit(ctx.expr0());
       }
 
-      Return returnStmt = new Return(position, returnVal);
+      Position position = makePosition(ctx);
 
-      return returnStmt;
+      return new Return(position, returnVal);
     }
 
     /**
@@ -385,8 +356,7 @@ public final class ParseTreeLower {
      */
     @Override
     public Statement visitBreakStmt(CruxParser.BreakStmtContext ctx) {
-      Position position = new Position(ctx.start.getLine());
-      return new Break(position);
+      return new Break(makePosition(ctx));
     }
 
     /**
@@ -394,8 +364,7 @@ public final class ParseTreeLower {
      */
     @Override
     public Statement visitContinueStmt(CruxParser.ContinueStmtContext ctx) {
-      Position position = new Position(ctx.start.getLine());
-      return new Continue(position);
+      return new Continue(makePosition(ctx));
     }
   }
 
@@ -483,9 +452,8 @@ public final class ParseTreeLower {
       Expression rhs = ctx.expr1(1).accept(exprVisitor);
 
       Position position = makePosition(ctx);
-      OpExpr opExpr = new OpExpr(position, op, lhs, rhs);
 
-      return opExpr;
+      return new OpExpr(position, op, lhs, rhs);
     }
 
     /**
@@ -504,9 +472,8 @@ public final class ParseTreeLower {
       Expression rhs = visit(ctx.expr2());
 
       Position position = makePosition(ctx);
-      OpExpr opExpr = new OpExpr(position, op, lhs, rhs);
 
-      return opExpr;
+      return new OpExpr(position, op, lhs, rhs);
     }
 
     /**
@@ -525,9 +492,8 @@ public final class ParseTreeLower {
       Expression rhs = visit(ctx.expr3());
 
       Position position = makePosition(ctx);
-      OpExpr opExpr = new OpExpr(position, op, lhs, rhs);
 
-      return opExpr;
+      return new OpExpr(position, op, lhs, rhs);
     }
 
     /**
@@ -567,7 +533,7 @@ public final class ParseTreeLower {
     @Override
     public Call visitCallExpr(CruxParser.CallExprContext ctx) {
       String functionName = ctx.IDENTIFIER().getText();
-      Position position = new Position(ctx.start.getLine());
+      Position position = makePosition(ctx);
       Symbol functionSymbol = symTab.lookup(position, functionName);
 
       List<Expression> arguments = new ArrayList<>();
@@ -578,9 +544,7 @@ public final class ParseTreeLower {
         }
       }
 
-      Call callNode = new Call(position, functionSymbol, arguments);
-
-      return callNode;
+      return  new Call(position, functionSymbol, arguments);
     }
 
     /**
