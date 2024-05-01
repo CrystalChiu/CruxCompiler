@@ -95,31 +95,22 @@ public final class ParseTreeLower {
   private StatementList lower(CruxParser.StmtBlockContext stmtBlock) {
     symTab.enter();
 
-    // Create a list to store the AST statements converted from stmtBlock
     List<Statement> statements = new ArrayList<>();
-
-    // Loop through each parse tree statement in the block
     if (stmtBlock.stmtList() != null) {
       CruxParser.StmtListContext stmtListContext = stmtBlock.stmtList();
 
-      // Loop through each parse tree statement in the stmtList
       for (CruxParser.StmtContext stmtContext : stmtListContext.stmt()) {
         Statement astStmt = stmtVisitor.visit(stmtContext);
         statements.add(astStmt);
       }
     }
 
-    // Get the starting line number to create the position object
     int lineNumber = stmtBlock.start.getLine();
     Position position = new Position(lineNumber);
-
-    // Create a StatementList with the collected statements and the position
     StatementList astStmtList = new StatementList(position, statements);
 
-    // Exit the current scope after processing the block
     symTab.exit();
 
-    // Return the constructed StatementList
     return astStmtList;
   }
 
@@ -340,9 +331,6 @@ public final class ParseTreeLower {
       @Override
       public Statement visitIfStmt(CruxParser.IfStmtContext ctx) {
         Expression cond = exprVisitor.visit(ctx.expr0());
-        if (!(cond instanceof LiteralBool || cond instanceof VarAccess)) {
-          throw new IllegalArgumentException("Condition is not boolean expression");
-        }
 
         Position position = new Position(ctx.start.getLine());
         StatementList thenBlock = lower(ctx.stmtBlock(0));
@@ -365,17 +353,11 @@ public final class ParseTreeLower {
      */
      @Override
      public Statement visitLoopStmt(CruxParser.LoopStmtContext ctx) {
-       Statement body = visit(ctx.stmtBlock());
        Position position = new Position(ctx.start.getLine());
+       StatementList loopBody = lower(ctx.stmtBlock());
 
-       List<Statement> list = new ArrayList<>();
-       list.add(body);
-       StatementList statementList = new StatementList(position, list);
-
-       //node creation
-       Loop loop = new Loop(position, statementList);
-
-       return loop;
+       Loop loopNode = new Loop(position, loopBody);
+       return loopNode;
      }
 
     /**
@@ -457,6 +439,8 @@ public final class ParseTreeLower {
           return OpExpr.Operation.ADD;
         case "-":
           return OpExpr.Operation.SUB;
+        case "||":
+          return Operation.LOGIC_OR;
         default:
           throw new IllegalArgumentException("Invalid operator: " + operatorSymbol);
       }
@@ -471,6 +455,8 @@ public final class ParseTreeLower {
           return OpExpr.Operation.MULT;
         case "/":
           return OpExpr.Operation.DIV;
+        case "&&":
+          return Operation.LOGIC_AND;
         default:
           throw new IllegalArgumentException("Invalid operator: " + operatorSymbol);
       }
@@ -485,13 +471,18 @@ public final class ParseTreeLower {
         return visit(ctx.expr1(0));
       }
 
+      Expression lhs = ctx.expr1(0).accept(exprVisitor);
+
+      if(ctx.op0() == null) {
+        return lhs;
+      }
+
       String opSymbol = ctx.op0().getText();
       OpExpr.Operation op = toOp0(opSymbol);
-      Position position = new Position(ctx.start.getLine());
 
-      Expression lhs = visit(ctx.expr1(0));
-      Expression rhs = visit(ctx.expr1(1));
+      Expression rhs = ctx.expr1(1).accept(exprVisitor);
 
+      Position position = makePosition(ctx);
       OpExpr opExpr = new OpExpr(position, op, lhs, rhs);
 
       return opExpr;
@@ -508,11 +499,11 @@ public final class ParseTreeLower {
 
       String opSymbol = ctx.op1().getText();
       OpExpr.Operation op = toOp1(opSymbol);
-      Position position = new Position(ctx.start.getLine());
 
-      Expression lhs = visit(ctx.expr2(0));
-      Expression rhs = visit(ctx.expr2(1));
+      Expression lhs = visit(ctx.expr1());
+      Expression rhs = visit(ctx.expr2());
 
+      Position position = makePosition(ctx);
       OpExpr opExpr = new OpExpr(position, op, lhs, rhs);
 
       return opExpr;
@@ -529,12 +520,12 @@ public final class ParseTreeLower {
 
       String operatorSymbol = ctx.op2().getText();
       OpExpr.Operation op = toOp2(operatorSymbol);
-      Position position = new Position(ctx.start.getLine());
 
-      Expression lhs = visit(ctx.expr3());
+      Expression lhs = visit(ctx.expr2());
       Expression rhs = visit(ctx.expr3());
 
-      OpExpr opExpr = new OpExpr(position, op, rhs, lhs);
+      Position position = makePosition(ctx);
+      OpExpr opExpr = new OpExpr(position, op, lhs, rhs);
 
       return opExpr;
     }
