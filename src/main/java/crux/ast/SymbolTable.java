@@ -92,12 +92,13 @@ public final class SymbolTable {
     Type intType = new IntType();
     Type boolType = new BoolType();
     Type voidType = new VoidType();
-    add(new Position(0), "readInt", intType);
-    add(new Position(0), "readChar", intType);
-    add(new Position(0), "printBool", voidType);
-    add(new Position(0), "printInt", voidType);
-    add(new Position(0), "printChar", voidType);
-    add(new Position(0), "println", voidType);
+
+    add(new Position(0), "readInt", new FuncType(TypeList.of(), intType));
+    add(new Position(0), "readChar", new FuncType(TypeList.of(), intType));
+    add(new Position(0), "printBool", new FuncType(TypeList.of(boolType), voidType));
+    add(new Position(0), "printInt", new FuncType(TypeList.of(intType), voidType));
+    add(new Position(0), "printChar", new FuncType(TypeList.of(intType), voidType));
+    add(new Position(0), "println", new FuncType(TypeList.of(), voidType));
   }
 
   boolean hasEncounteredError() {

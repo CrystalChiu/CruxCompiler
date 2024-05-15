@@ -110,6 +110,7 @@ crux/pt/CruxParser$Expr0Context.class
 crux/ast/ArrayAccess.class
 crux/ast/Call.class
 crux/pt/CruxParser$AssignStmtContext.class
+crux/ast/types/TypeChecker$1.class
 crux/Author.class
 crux/backend/CodeGen.class
 crux/ast/Assignment.class

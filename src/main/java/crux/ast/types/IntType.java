@@ -11,4 +11,59 @@ public final class IntType extends Type implements java.io.Serializable {
   public String toString() {
     return "int";
   }
+
+  //------Added------
+
+  @Override
+  public Type add(Type that) {
+    if (that instanceof IntType) {
+      return new IntType();
+    }
+    return super.add(that);  // If not IntType, it should return an error
+  }
+
+  @Override
+  public Type sub(Type that) {
+    if (that instanceof IntType) {
+      return new IntType();
+    }
+    return super.sub(that);
+  }
+
+  @Override
+  public Type mul(Type that) {
+    if (that instanceof IntType) {
+      return new IntType();
+    }
+    return super.mul(that);
+  }
+
+  @Override
+  public Type div(Type that) {
+    if (that instanceof IntType) {
+      return new IntType();
+    }
+    return super.div(that);
+  }
+
+  @Override
+  public Type compare(Type that) {
+    if (that instanceof IntType) {
+      return new BoolType();  // Comparison returns a boolean
+    }
+    return super.compare(that);
+  }
+
+  @Override
+  public Type assign(Type source) {
+    if (source instanceof IntType) {
+      return new IntType();
+    }
+    return super.assign(source);  // Assignment requires matching types
+  }
+
+  @Override
+  public boolean equivalent(Type that) {
+    return that instanceof IntType;
+  }
 }

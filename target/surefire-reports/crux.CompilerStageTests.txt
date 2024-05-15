@@ -1,4 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: crux.CompilerStageTests
 -------------------------------------------------------------------------------
-Tests run: 50, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.491 s - in crux.CompilerStageTests
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.215 s <<< FAILURE! - in crux.CompilerStageTests
+crux.CompilerStageTests.typeCheck  Time elapsed: 0.105 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+Type check for program crux/stages/type-check/test01.crx differs from expected output. ==> expected: <Crux Program has no type errors.
+
+main() {
+}> but was: <Error type-checking file.
+TypeError(4)[Main function must return void.]
+TypeError(4)[Function does not have return.]
+TypeError(4)[Function does not have return.]>
+	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:183)
+

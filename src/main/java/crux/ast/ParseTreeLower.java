@@ -177,6 +177,7 @@ public final class ParseTreeLower {
      *
      * @return an AST {@link FunctionDefinition}
      */
+    /*
      @Override
      public Declaration visitFunctionDefn(CruxParser.FunctionDefnContext ctx) {
        String funcName = ctx.IDENTIFIER().getText();
@@ -206,10 +207,40 @@ public final class ParseTreeLower {
 
        return new FunctionDefinition(position, funcSymbol, parameterSymbols, functionBody);
      }
+     */
+    @Override
+    public Declaration visitFunctionDefn(CruxParser.FunctionDefnContext ctx) {
+      String funcName = ctx.IDENTIFIER().getText();
+      int lineNumber = ctx.start.getLine();
+      Position position = new Position(lineNumber);
+      Type returnType = toType(ctx.type());
+
+      // Add function symbol to the symbol table
+      Symbol funcSymbol = symTab.add(position, funcName, new FuncType(TypeList.of(), returnType));
+
+      symTab.enter();
+
+      List<Symbol> parameterSymbols = new ArrayList<>();
+      if (ctx.paramList() != null) {
+        for (CruxParser.ParamContext paramCtx : ctx.paramList().param()) {
+          // Add each parameter to the symbol table
+          String paramName = paramCtx.IDENTIFIER().getText();
+          Type paramType = toType(paramCtx.type());
+          Symbol paramSymbol = symTab.add(position, paramName, paramType);
+          parameterSymbols.add(paramSymbol);
+        }
+      }
+
+      StatementList functionBody = lower(ctx.stmtBlock());
+
+      symTab.exit();
+
+      return new FunctionDefinition(position, funcSymbol, parameterSymbols, functionBody);
+    }
   }
 
 
-  /**
+    /**
    * A parse tree visitor to create AST nodes derived from {@link Stmt}
    */
 
