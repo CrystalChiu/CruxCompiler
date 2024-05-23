@@ -37,4 +37,13 @@ public final class ArrayType extends Type implements java.io.Serializable {
     return false;
   }
 
+  @Override
+  public Type index(Type type) {
+    if (type instanceof IntType) {
+      return this.base;
+    }
+
+    return new ErrorType("cannot index " + this.toString() + " with " + type.toString());
+  }
+
 }

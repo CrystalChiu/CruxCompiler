@@ -144,7 +144,7 @@ final class CompilerStageTests {
 
     var tests = getTests("type-check");
     return tests.stream()
-            .limit(1)
+            .limit(31)
             .map(test -> dynamicTest(test.in, () -> {
       ExecutorService executor = Executors.newSingleThreadExecutor();
       Future<StringPair> future = executor.submit(new Callable<StringPair>() {

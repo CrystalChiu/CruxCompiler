@@ -1,15 +1,62 @@
 -------------------------------------------------------------------------------
 Test set: crux.CompilerStageTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.215 s <<< FAILURE! - in crux.CompilerStageTests
-crux.CompilerStageTests.typeCheck  Time elapsed: 0.105 s  <<< FAILURE!
+Tests run: 50, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.771 s <<< FAILURE! - in crux.CompilerStageTests
+crux.CompilerStageTests.ast  Time elapsed: 0.02 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
-Type check for program crux/stages/type-check/test01.crx differs from expected output. ==> expected: <Crux Program has no type errors.
-
+AST for program crux/stages/ast/test31.crx differs from expected output. ==> expected: <a;
+shadowWithParam(a) {
+  a = 7;
+  printInt(a);
+  println();
+}
+shadowWithLocal() {
+  a;
+  a = 9;
+  printInt(a);
+  println();
+}
 main() {
-}> but was: <Error type-checking file.
-TypeError(4)[Main function must return void.]
-TypeError(4)[Function does not have return.]
-TypeError(4)[Function does not have return.]>
-	at crux.CompilerStageTests.lambda$typeCheck$5(CompilerStageTests.java:183)
+  a = 5;
+  printInt(a);
+  println();
+  shadowWithParam(8);
+  printInt(a);
+  println();
+  shadowWithLocal();
+  printInt(a);
+  println();
+}> but was: <DeclarationError(5)[Symbol 'a' already exists in the current scope.]>
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:133)
+
+crux.CompilerStageTests.ast  Time elapsed: 0.019 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+AST for program crux/stages/ast/test35.crx differs from expected output. ==> expected: <myPrintZero() {
+  printInt(0);
+}
+myPrintOne(a) {
+  printInt(a);
+}
+myPrintTwo(a, b) {
+  printInt(a);
+  printInt(b);
+}
+myPrintThree(a, b, c) {
+  printInt(a);
+  printInt(b);
+  printInt(c);
+}
+main() {
+  myPrintZero();
+  println();
+  myPrintOne(1);
+  println();
+  myPrintTwo(1, 2);
+  println();
+  myPrintThree(1, 2, 3);
+  println();
+}> but was: <DeclarationError(11)[Symbol 'a' already exists in the current scope.]
+DeclarationError(16)[Symbol 'a' already exists in the current scope.]
+DeclarationError(16)[Symbol 'b' already exists in the current scope.]>
+	at crux.CompilerStageTests.lambda$ast$3(CompilerStageTests.java:133)
 

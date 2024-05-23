@@ -31,20 +31,21 @@ public final class FuncType extends Type implements java.io.Serializable {
 
   @Override
   public Type call(Type args) {
-    System.out.println("IN CALL!!!!");
-    // Ensure the given args are a TypeList
     if (!(args instanceof TypeList)) {
       return new ErrorType("Expected a list of types for function arguments, but got " + args);
     }
 
     TypeList argList = (TypeList) args;
+    System.out.print("ARG LIST:");
+    System.out.println(argList.toString());
+    System.out.print("ARGS:");
+    System.out.println(this.args.toString());
 
-    // Check if the provided argument list is equivalent to the expected argument list
+    // check if the provided argument list is equivalent to the expected argument list
     if (!this.args.equivalent(argList)) {
       return new ErrorType("Function argument types do not match expected signature.");
     }
 
-    // If the argument types match, return the function's return type
     return this.ret;
   }
 

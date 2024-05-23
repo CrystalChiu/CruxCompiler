@@ -121,7 +121,7 @@ public final class TypeChecker {
 
     @Override
     public Void visit(Assignment assignment) {
-      System.out.print("Visited Assignment");
+      System.out.println("Visited Assignment");
 
       Type locationType = visitAndSetType(assignment.getLocation());
       Type valueType = visitAndSetType(assignment.getValue());
@@ -138,7 +138,9 @@ public final class TypeChecker {
 
     @Override
     public Void visit(Break brk) {
-      System.out.print("Visited Break");
+      System.out.println("Visited Break");
+      hasBreak = true;
+      System.out.println("Exit Break");
 
       return null;
     }
@@ -191,8 +193,10 @@ public final class TypeChecker {
       System.out.println("Visited FuncDef");
 
       currentFunctionSymbol = functionDefinition.getSymbol();
-      Type currentFunctionReturnType = currentFunctionSymbol.getType();  //PROBLEMATIC?
-      System.out.println("Func type: " + currentFunctionReturnType);
+
+      FuncType functionType = (FuncType)currentFunctionSymbol.getType();
+      Type currentFunctionReturnType = functionType.getRet();
+      System.out.println("Func type: " + functionType);
 
       //if func is main, verify return type is void and no args.
       if ("main".equals(currentFunctionSymbol.getName())) {
@@ -234,12 +238,43 @@ public final class TypeChecker {
     public Void visit(IfElseBranch ifElseBranch) {
       System.out.println("Visited IfElseBranch");
 
+      // Visit the condition and check its type
+      Type conditionType = visitAndSetType(ifElseBranch.getCondition());
+      if (!(conditionType instanceof BoolType)) {
+        setNodeType(ifElseBranch, new ErrorType("Condition in if-else branch must be of type bool."));
+      }
+
+      // Visit the thenBlock and elseBlock if not null
+      if (ifElseBranch.getThenBlock() != null) {
+        visitAndSetType(ifElseBranch.getThenBlock());
+      }
+      if (ifElseBranch.getElseBlock() != null) {
+        visitAndSetType(ifElseBranch.getElseBlock());
+      }
+
+      System.out.println("Exit IfElseBranch");
       return null;
     }
 
     @Override
     public Void visit(ArrayAccess access) {
       System.out.println("Visited ArrayAccess");
+
+      Expression indexExpr = access.getIndex();
+      Type indexType = visitAndSetType(indexExpr);
+
+      Symbol baseSymbol = access.getBase();
+      Type baseType = baseSymbol.getType();
+
+      if (!(baseType instanceof ArrayType)) {
+        setNodeType(access, new ErrorType("Base type must be an array type."));
+        return null;
+      }
+
+      ArrayType arrayType = (ArrayType)baseType;
+      Type elementType = arrayType.index(indexType);
+
+      setNodeType(access, elementType);
 
       return null;
     }
@@ -263,7 +298,23 @@ public final class TypeChecker {
 
     @Override
     public Void visit(Loop loop) {
-      System.out.println("Visited Loop");
+      boolean prevHasBreak = hasBreak;
+      hasBreak = false;
+
+      boolean prevLastStatementReturns = lastStatementReturns;
+      lastStatementReturns = false;
+      for (Node stmt : loop.getBody().getChildren()) {
+        visitAndSetType(stmt);
+      }
+
+      if (!hasBreak && !lastStatementReturns) {
+        setNodeType(loop, new ErrorType("Infinite loop without break statement."));
+      }
+
+      hasBreak = prevHasBreak;
+      lastStatementReturns = prevLastStatementReturns;
+
+      System.out.println("Exit Loop");
 
       return null;
     }
@@ -286,6 +337,31 @@ public final class TypeChecker {
         case DIV:
           resultType = leftType.add(rightType);
           break;
+        case LT:
+        case GT:
+        case LE:
+        case GE:
+          if (leftType instanceof IntType && rightType instanceof IntType) {
+            resultType = new BoolType();
+          } else {
+            resultType = new ErrorType("Unsupported operand types for " + op.getOp() + ": " + leftType + " and " + rightType);
+          }
+          break;
+        case EQ:
+        case NE:
+          if (leftType.equivalent(rightType)) {
+            resultType = new BoolType();
+          } else {
+            resultType = new ErrorType("Unsupported operand types for " + op.getOp() + ": " + leftType + " and " + rightType);
+          }
+          break;
+        case LOGIC_NOT:
+          if (rightType instanceof BoolType) {
+            resultType = rightType;
+          } else {
+            resultType = new ErrorType("Unsupported operand type for " + op.getOp() + ": " + rightType);
+          }
+          break;
         case LOGIC_AND:
         case LOGIC_OR:
           resultType = leftType.and(rightType);
@@ -302,6 +378,20 @@ public final class TypeChecker {
     @Override
     public Void visit(Return ret) {
       System.out.println("Visited Return");
+
+      Expression returnValue = ret.getValue();
+      Type returnType = visitAndSetType(returnValue);
+
+      FuncType functionType = (FuncType)currentFunctionSymbol.getType();
+      Type currentFunctionReturnType = functionType.getRet();
+
+      if (!returnType.equivalent(currentFunctionReturnType)) {
+        setNodeType(ret, new ErrorType("Return type does not match function return type."));
+      } else {
+        setNodeType(ret, returnType);
+      }
+
+      lastStatementReturns = true;
 
       return null;
     }
