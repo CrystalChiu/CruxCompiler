@@ -238,13 +238,10 @@ public final class TypeChecker {
     public Void visit(IfElseBranch ifElseBranch) {
       System.out.println("Visited IfElseBranch");
 
-      // Visit the condition and check its type
       Type conditionType = visitAndSetType(ifElseBranch.getCondition());
       if (!(conditionType instanceof BoolType)) {
         setNodeType(ifElseBranch, new ErrorType("Condition in if-else branch must be of type bool."));
       }
-
-      // Visit the thenBlock and elseBlock if not null
       if (ifElseBranch.getThenBlock() != null) {
         visitAndSetType(ifElseBranch.getThenBlock());
       }

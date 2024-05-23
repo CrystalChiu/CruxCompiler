@@ -184,6 +184,8 @@ public final class ParseTreeLower {
       Position position = new Position(lineNumber);
       Type returnType = toType(ctx.type());
 
+      symTab.enter();
+
       List<Type> parameterTypes = new ArrayList<>();
       List<Symbol> parameterSymbols = new ArrayList<>();
 
@@ -211,11 +213,9 @@ public final class ParseTreeLower {
     }
   }
 
-
     /**
    * A parse tree visitor to create AST nodes derived from {@link Stmt}
    */
-
   private final class StmtVisitor extends CruxBaseVisitor<Statement> {
     /**
      * Visit a parse tree var decl and create an AST {@link VariableDeclaration}. Since
