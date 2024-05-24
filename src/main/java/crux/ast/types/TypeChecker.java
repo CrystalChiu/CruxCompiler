@@ -79,7 +79,7 @@ public final class TypeChecker {
      */
     private Type visitAndSetType(Node node) {
       node.accept(this);
-      Type type = ((BaseNode) node).getType();
+      Type type = ((BaseNode)node).getType();
 
       if(type != null) {
         setNodeType(node, type);
@@ -322,17 +322,28 @@ public final class TypeChecker {
 
       Expression left = op.getLeft();
       Expression right = op.getRight();
+      Type leftType = null;
+      Type rightType = null;
 
-      Type leftType = visitAndSetType(left);
-      Type rightType = visitAndSetType(right);
+      if (left != null) {
+        leftType = visitAndSetType(left);
+      }
+      if (right != null) {
+        rightType = visitAndSetType(right);
+      }
       Type resultType;
 
+      System.out.println("CURRENT OP: " + op.getOp());
       switch (op.getOp()) {
         case ADD:
         case SUB:
         case MULT:
         case DIV:
-          resultType = leftType.add(rightType);
+          if (leftType instanceof IntType && rightType instanceof IntType) {
+            resultType = leftType; // Assuming operations on integers result in an integer
+          } else {
+            resultType = new ErrorType("Unsupported operand types for " + op.getOp() + ": " + leftType + " and " + rightType);
+          }
           break;
         case LT:
         case GT:
@@ -346,22 +357,27 @@ public final class TypeChecker {
           break;
         case EQ:
         case NE:
-          if (leftType.equivalent(rightType)) {
+          if (leftType != null && leftType.equivalent(rightType)) {
             resultType = new BoolType();
           } else {
             resultType = new ErrorType("Unsupported operand types for " + op.getOp() + ": " + leftType + " and " + rightType);
           }
           break;
         case LOGIC_NOT:
-          if (rightType instanceof BoolType) {
-            resultType = rightType;
+          System.out.println("HERE IN NOT");
+          if (leftType instanceof BoolType) {
+            resultType = leftType;
           } else {
-            resultType = new ErrorType("Unsupported operand type for " + op.getOp() + ": " + rightType);
+            resultType = new ErrorType("Unsupported operand type for " + op.getOp() + ": " + leftType);
           }
           break;
         case LOGIC_AND:
         case LOGIC_OR:
-          resultType = leftType.and(rightType);
+          if (leftType instanceof BoolType && rightType instanceof BoolType) {
+            resultType = leftType; // Assuming logical operations on booleans result in a boolean
+          } else {
+            resultType = new ErrorType("Unsupported operand types for " + op.getOp() + ": " + leftType + " and " + rightType);
+          }
           break;
         default:
           resultType = new ErrorType("Unsupported operator: " + op.getOp());
@@ -371,6 +387,7 @@ public final class TypeChecker {
 
       return null;
     }
+
 
     @Override
     public Void visit(Return ret) {
