@@ -196,7 +196,6 @@ public final class ParseTreeLower {
           Symbol paramSymbol = symTab.add(position, paramName, paramType);
           parameterSymbols.add(paramSymbol);
           parameterTypes.add(paramType);
-          System.out.println("ADDED PARAM FOR " + funcName + " CALLED " + paramName);
         }
       }
 

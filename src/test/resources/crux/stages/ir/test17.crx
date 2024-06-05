@@ -6,8 +6,8 @@ void main() {
   loop {
     if (a > 10) {
       if (a < 5) {
-      break;
-    }
+        break;
+      }
       a = a / (0 - 2);
       continue;
     }

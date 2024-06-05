@@ -1,8 +1,12 @@
 // test loop
+//not in assignment, call
+//must be in ifElse
+//VarAccess is called by OpExpr
 
 void main() {
   int a;
   a = 0;
+
   loop {
     if (a >= 3) {
       break;

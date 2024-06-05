@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="crux.CompilerStageTests" time="0.873" tests="49" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="crux.CompilerStageTests" time="1.322" tests="50" errors="3" skipped="0" failures="3">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -11,16 +11,16 @@
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
-    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/chiubacca/Desktop/Programs/142a/target/surefire/surefirebooter10961389015322567593.jar /Users/chiubacca/Desktop/Programs/142a/target/surefire 2024-05-23T23-13-40_818-jvmRun1 surefire3134730429906140930tmp surefire_05232299026497662946tmp"/>
+    <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/21.0.3/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/chiubacca/Desktop/Programs/142a/target/surefire/surefirebooter6489951223728670205.jar /Users/chiubacca/Desktop/Programs/142a/target/surefire 2024-06-05T03-40-03_390-jvmRun1 surefire2806285599397917197tmp surefire_014664117143137317573tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/chiubacca/Desktop/Programs/142a/target/test-classes:/Users/chiubacca/Desktop/Programs/142a/target/classes:/Users/chiubacca/.m2/repository/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2.jar:/Users/chiubacca/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.5.2/junit-jupiter-api-5.5.2.jar:/Users/chiubacca/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/chiubacca/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/chiubacca/.m2/repository/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.jar:/Users/chiubacca/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.5.2/junit-jupiter-engine-5.5.2.jar:/Users/chiubacca/.m2/repository/org/junit/platform/junit-platform-engine/1.5.2/junit-platform-engine-1.5.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/Users/chiubacca"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2024-01-16"/>
-    <property name="java.home" value="/usr/local/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="java.version.date" value="2024-04-16"/>
+    <property name="java.home" value="/usr/local/Cellar/openjdk/21.0.3/libexec/openjdk.jdk/Contents/Home"/>
     <property name="file.separator" value="/"/>
     <property name="basedir" value="/Users/chiubacca/Desktop/Programs/142a"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
@@ -28,9 +28,9 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/chiubacca/Desktop/Programs/142a/target/surefire/surefirebooter10961389015322567593.jar"/>
+    <property name="surefire.real.class.path" value="/Users/chiubacca/Desktop/Programs/142a/target/surefire/surefirebooter6489951223728670205.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="21.0.2"/>
+    <property name="java.runtime.version" value="21.0.3"/>
     <property name="user.name" value="chiubacca"/>
     <property name="stdout.encoding" value="UTF-8"/>
     <property name="path.separator" value=":"/>
@@ -42,7 +42,7 @@
     <property name="localRepository" value="/Users/chiubacca/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
     <property name="java.io.tmpdir" value="/var/folders/c2/1_lwdw0d2l54rhr2jzq9b1s00000gn/T/"/>
-    <property name="java.version" value="21.0.2"/>
+    <property name="java.version" value="21.0.3"/>
     <property name="user.dir" value="/Users/chiubacca/Desktop/Programs/142a"/>
     <property name="os.arch" value="x86_64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
@@ -51,57 +51,2688 @@
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="UTF-8"/>
     <property name="java.vendor" value="Homebrew"/>
-    <property name="java.vm.version" value="21.0.2"/>
+    <property name="java.vm.version" value="21.0.3"/>
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.118"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.018"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.007"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.013"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.029"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.017"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.011"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.01"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.011"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.018"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.01"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.018"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.01"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.009"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.01"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.01"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.02"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.011"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.008"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.008"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.007"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.009"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.005"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.007"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.007"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.011"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.012"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.01"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.01"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.021"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.008"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.012"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.008"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.01"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.009"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.007"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.008"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.015"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.011"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.017"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.019"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.01"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.008"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.009"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.02"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.016"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.012"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.008"/>
-  <testcase name="typeCheck" classname="crux.CompilerStageTests" time="0.016"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.163"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.036"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.027"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.033"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.016"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.031"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.017"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.009"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.015"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.014"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.012"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.015"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.011"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.01"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.011"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.009"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.035"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.012"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.012"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.011"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.012"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.019"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.007"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.01"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.007"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.014"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.012"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.008"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.011"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.014"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.021">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "java.lang.Long.longValue()" because the return value of "java.util.HashMap.get(Object)" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:229)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Long.longValue()" because the return value of "java.util.HashMap.get(Object)" is null
+]]></error>
+    <system-out><![CDATA[Visited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccess
+---------------------
+Visited Declaration List
+Visited variableDeclaration
+	Global var created: crux.ir.GlobalDecl@4ab01b41
+Exit variableDeclaration
+Visited FuncDef List
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@b8d117a
+Cur Statement: crux.ast.Assignment@706c8fb1
+Visited Assignment
+Visited LiteralInt
+New temp var: $t1
+	Literal int value: 7
+Exit LiteralInt
+	RHS Returned pair: crux.ir.insts.CopyInst@3accf8ee, crux.ir.insts.CopyInst@3accf8ee
+	Created copy for assignment: crux.ir.insts.CopyInst@8c73896 for value: $t1
+Called LinkInstructions(crux.ir.insts.CopyInst@3accf8ee, crux.ir.insts.CopyInst@8c73896)
+	Linked crux.ir.insts.CopyInst@3accf8ee to crux.ir.insts.CopyInst@8c73896
+Assignment Returned (Local Var): crux.ir.insts.CopyInst@3accf8ee, crux.ir.insts.CopyInst@8c73896
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@3accf8ee, crux.ir.insts.CopyInst@8c73896
+Current stmtlist start + end: crux.ir.insts.CopyInst@3accf8ee, crux.ir.insts.CopyInst@8c73896
+Cur Statement: crux.ast.Call@6ba2ee35
+Visited Call
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@7fa7e5f7
+Called LinkInstructions(crux.ir.insts.NopInst@7fa7e5f7, crux.ir.insts.CallInst@22717965)
+	Linked crux.ir.insts.NopInst@7fa7e5f7 to crux.ir.insts.CallInst@22717965
+Call Returned: crux.ir.insts.NopInst@7fa7e5f7, crux.ir.insts.CallInst@22717965
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@7fa7e5f7, crux.ir.insts.CallInst@22717965
+Called LinkInstructions(crux.ir.insts.CopyInst@8c73896, crux.ir.insts.NopInst@7fa7e5f7)
+	Linked crux.ir.insts.CopyInst@8c73896 to crux.ir.insts.NopInst@7fa7e5f7
+Current stmtlist start + end: crux.ir.insts.CopyInst@3accf8ee, crux.ir.insts.CallInst@22717965
+Cur Statement: crux.ast.Call@13c3f635
+Visited Call
+Call Returned: crux.ir.insts.CallInst@6fec713e, crux.ir.insts.CallInst@6fec713e
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@6fec713e, crux.ir.insts.CallInst@6fec713e
+Called LinkInstructions(crux.ir.insts.CallInst@22717965, crux.ir.insts.CallInst@6fec713e)
+	Linked crux.ir.insts.CallInst@22717965 to crux.ir.insts.CallInst@6fec713e
+Current stmtlist start + end: crux.ir.insts.CopyInst@3accf8ee, crux.ir.insts.CallInst@6fec713e
+Statement List Returned: crux.ir.insts.CopyInst@3accf8ee, crux.ir.insts.CallInst@6fec713e
+Exit FunctionDef
+Visited FuncDef List
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@2fa4a969
+Cur Statement: crux.ast.VariableDeclaration@6b757a9
+Visited variableDeclaration
+	Local var created: $t0
+Exit variableDeclaration
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@6208ee2, crux.ir.insts.NopInst@6208ee2
+Current stmtlist start + end: crux.ir.insts.NopInst@6208ee2, crux.ir.insts.NopInst@6208ee2
+Cur Statement: crux.ast.Assignment@c4590ae
+Visited Assignment
+Visited LiteralInt
+New temp var: $t1
+	Literal int value: 9
+Exit LiteralInt
+	RHS Returned pair: crux.ir.insts.CopyInst@30f38490, crux.ir.insts.CopyInst@30f38490
+	Created copy for assignment: crux.ir.insts.CopyInst@71a3d841 for value: $t1
+Called LinkInstructions(crux.ir.insts.CopyInst@30f38490, crux.ir.insts.CopyInst@71a3d841)
+	Linked crux.ir.insts.CopyInst@30f38490 to crux.ir.insts.CopyInst@71a3d841
+Assignment Returned (Local Var): crux.ir.insts.CopyInst@30f38490, crux.ir.insts.CopyInst@71a3d841
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@30f38490, crux.ir.insts.CopyInst@71a3d841
+Called LinkInstructions(crux.ir.insts.NopInst@6208ee2, crux.ir.insts.CopyInst@30f38490)
+	Linked crux.ir.insts.NopInst@6208ee2 to crux.ir.insts.CopyInst@30f38490
+Current stmtlist start + end: crux.ir.insts.NopInst@6208ee2, crux.ir.insts.CopyInst@71a3d841
+Cur Statement: crux.ast.Call@73761f09
+Visited Call
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@53962129
+Called LinkInstructions(crux.ir.insts.NopInst@53962129, crux.ir.insts.CallInst@7f6de8cf)
+	Linked crux.ir.insts.NopInst@53962129 to crux.ir.insts.CallInst@7f6de8cf
+Call Returned: crux.ir.insts.NopInst@53962129, crux.ir.insts.CallInst@7f6de8cf
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@53962129, crux.ir.insts.CallInst@7f6de8cf
+Called LinkInstructions(crux.ir.insts.CopyInst@71a3d841, crux.ir.insts.NopInst@53962129)
+	Linked crux.ir.insts.CopyInst@71a3d841 to crux.ir.insts.NopInst@53962129
+Current stmtlist start + end: crux.ir.insts.NopInst@6208ee2, crux.ir.insts.CallInst@7f6de8cf
+Cur Statement: crux.ast.Call@106346b3
+Visited Call
+Call Returned: crux.ir.insts.CallInst@53ae8de1, crux.ir.insts.CallInst@53ae8de1
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@53ae8de1, crux.ir.insts.CallInst@53ae8de1
+Called LinkInstructions(crux.ir.insts.CallInst@7f6de8cf, crux.ir.insts.CallInst@53ae8de1)
+	Linked crux.ir.insts.CallInst@7f6de8cf to crux.ir.insts.CallInst@53ae8de1
+Current stmtlist start + end: crux.ir.insts.NopInst@6208ee2, crux.ir.insts.CallInst@53ae8de1
+Statement List Returned: crux.ir.insts.NopInst@6208ee2, crux.ir.insts.CallInst@53ae8de1
+Exit FunctionDef
+Visited FuncDef List
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@315361d4
+Cur Statement: crux.ast.Assignment@21e8cca1
+Visited Assignment
+Visited LiteralInt
+New temp var: $t0
+	Literal int value: 5
+Exit LiteralInt
+	RHS Returned pair: crux.ir.insts.CopyInst@2b3440f1, crux.ir.insts.CopyInst@2b3440f1
+Called LinkInstructions(crux.ir.insts.AddressAt@c5211f3, crux.ir.insts.CopyInst@2b3440f1)
+	Linked crux.ir.insts.AddressAt@c5211f3 to crux.ir.insts.CopyInst@2b3440f1
+Called LinkInstructions(crux.ir.insts.CopyInst@2b3440f1, crux.ir.insts.StoreInst@26258c6c)
+	Linked crux.ir.insts.CopyInst@2b3440f1 to crux.ir.insts.StoreInst@26258c6c
+Assignment Returned (Global Var): crux.ir.insts.CopyInst@2b3440f1, crux.ir.insts.StoreInst@26258c6c
+STMT LIST CUR PAIR: crux.ir.insts.AddressAt@c5211f3, crux.ir.insts.StoreInst@26258c6c
+Current stmtlist start + end: crux.ir.insts.AddressAt@c5211f3, crux.ir.insts.StoreInst@26258c6c
+Cur Statement: crux.ast.Call@41cfc1cd
+Visited Call
+Visited VarAccess
+Called LinkInstructions(crux.ir.insts.AddressAt@48f532cd, crux.ir.insts.LoadInst@54b46fa9)
+	Linked crux.ir.insts.AddressAt@48f532cd to crux.ir.insts.LoadInst@54b46fa9
+VarAccess Returned: crux.ir.insts.AddressAt@48f532cd, crux.ir.insts.LoadInst@54b46fa9
+Called LinkInstructions(crux.ir.insts.LoadInst@54b46fa9, crux.ir.insts.CallInst@5ef8dfbf)
+	Linked crux.ir.insts.LoadInst@54b46fa9 to crux.ir.insts.CallInst@5ef8dfbf
+Call Returned: crux.ir.insts.AddressAt@48f532cd, crux.ir.insts.CallInst@5ef8dfbf
+STMT LIST CUR PAIR: crux.ir.insts.AddressAt@48f532cd, crux.ir.insts.CallInst@5ef8dfbf
+Called LinkInstructions(crux.ir.insts.StoreInst@26258c6c, crux.ir.insts.AddressAt@48f532cd)
+	Linked crux.ir.insts.StoreInst@26258c6c to crux.ir.insts.AddressAt@48f532cd
+Current stmtlist start + end: crux.ir.insts.AddressAt@c5211f3, crux.ir.insts.CallInst@5ef8dfbf
+Cur Statement: crux.ast.Call@6106ac04
+Visited Call
+Call Returned: crux.ir.insts.CallInst@8489b3, crux.ir.insts.CallInst@8489b3
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@8489b3, crux.ir.insts.CallInst@8489b3
+Called LinkInstructions(crux.ir.insts.CallInst@5ef8dfbf, crux.ir.insts.CallInst@8489b3)
+	Linked crux.ir.insts.CallInst@5ef8dfbf to crux.ir.insts.CallInst@8489b3
+Current stmtlist start + end: crux.ir.insts.AddressAt@c5211f3, crux.ir.insts.CallInst@8489b3
+Cur Statement: crux.ast.Call@773a672d
+Visited Call
+Visited LiteralInt
+New temp var: $t2
+	Literal int value: 8
+Exit LiteralInt
+Called LinkInstructions(crux.ir.insts.CopyInst@6f274b52, crux.ir.insts.CallInst@3b95ac3e)
+	Linked crux.ir.insts.CopyInst@6f274b52 to crux.ir.insts.CallInst@3b95ac3e
+Call Returned: crux.ir.insts.CopyInst@6f274b52, crux.ir.insts.CallInst@3b95ac3e
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@6f274b52, crux.ir.insts.CallInst@3b95ac3e
+Called LinkInstructions(crux.ir.insts.CallInst@8489b3, crux.ir.insts.CopyInst@6f274b52)
+	Linked crux.ir.insts.CallInst@8489b3 to crux.ir.insts.CopyInst@6f274b52
+Current stmtlist start + end: crux.ir.insts.AddressAt@c5211f3, crux.ir.insts.CallInst@3b95ac3e
+Cur Statement: crux.ast.Call@1f7863ee
+Visited Call
+Visited VarAccess
+Called LinkInstructions(crux.ir.insts.AddressAt@3bdf7c23, crux.ir.insts.LoadInst@6ef7ddd1)
+	Linked crux.ir.insts.AddressAt@3bdf7c23 to crux.ir.insts.LoadInst@6ef7ddd1
+VarAccess Returned: crux.ir.insts.AddressAt@3bdf7c23, crux.ir.insts.LoadInst@6ef7ddd1
+Called LinkInstructions(crux.ir.insts.LoadInst@6ef7ddd1, crux.ir.insts.CallInst@7815786d)
+	Linked crux.ir.insts.LoadInst@6ef7ddd1 to crux.ir.insts.CallInst@7815786d
+Call Returned: crux.ir.insts.AddressAt@3bdf7c23, crux.ir.insts.CallInst@7815786d
+STMT LIST CUR PAIR: crux.ir.insts.AddressAt@3bdf7c23, crux.ir.insts.CallInst@7815786d
+Called LinkInstructions(crux.ir.insts.CallInst@3b95ac3e, crux.ir.insts.AddressAt@3bdf7c23)
+	Linked crux.ir.insts.CallInst@3b95ac3e to crux.ir.insts.AddressAt@3bdf7c23
+Current stmtlist start + end: crux.ir.insts.AddressAt@c5211f3, crux.ir.insts.CallInst@7815786d
+Cur Statement: crux.ast.Call@242e0392
+Visited Call
+Call Returned: crux.ir.insts.CallInst@64d05d50, crux.ir.insts.CallInst@64d05d50
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@64d05d50, crux.ir.insts.CallInst@64d05d50
+Called LinkInstructions(crux.ir.insts.CallInst@7815786d, crux.ir.insts.CallInst@64d05d50)
+	Linked crux.ir.insts.CallInst@7815786d to crux.ir.insts.CallInst@64d05d50
+Current stmtlist start + end: crux.ir.insts.AddressAt@c5211f3, crux.ir.insts.CallInst@64d05d50
+Cur Statement: crux.ast.Call@34190d4e
+Visited Call
+Call Returned: crux.ir.insts.CallInst@671ccdb0, crux.ir.insts.CallInst@671ccdb0
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@671ccdb0, crux.ir.insts.CallInst@671ccdb0
+Called LinkInstructions(crux.ir.insts.CallInst@64d05d50, crux.ir.insts.CallInst@671ccdb0)
+	Linked crux.ir.insts.CallInst@64d05d50 to crux.ir.insts.CallInst@671ccdb0
+Current stmtlist start + end: crux.ir.insts.AddressAt@c5211f3, crux.ir.insts.CallInst@671ccdb0
+Cur Statement: crux.ast.Call@337a7052
+Visited Call
+Visited VarAccess
+Called LinkInstructions(crux.ir.insts.AddressAt@552681b0, crux.ir.insts.LoadInst@29a99527)
+	Linked crux.ir.insts.AddressAt@552681b0 to crux.ir.insts.LoadInst@29a99527
+VarAccess Returned: crux.ir.insts.AddressAt@552681b0, crux.ir.insts.LoadInst@29a99527
+Called LinkInstructions(crux.ir.insts.LoadInst@29a99527, crux.ir.insts.CallInst@28d9acef)
+	Linked crux.ir.insts.LoadInst@29a99527 to crux.ir.insts.CallInst@28d9acef
+Call Returned: crux.ir.insts.AddressAt@552681b0, crux.ir.insts.CallInst@28d9acef
+STMT LIST CUR PAIR: crux.ir.insts.AddressAt@552681b0, crux.ir.insts.CallInst@28d9acef
+Called LinkInstructions(crux.ir.insts.CallInst@671ccdb0, crux.ir.insts.AddressAt@552681b0)
+	Linked crux.ir.insts.CallInst@671ccdb0 to crux.ir.insts.AddressAt@552681b0
+Current stmtlist start + end: crux.ir.insts.AddressAt@c5211f3, crux.ir.insts.CallInst@28d9acef
+Cur Statement: crux.ast.Call@4841b146
+Visited Call
+Call Returned: crux.ir.insts.CallInst@298b92ff, crux.ir.insts.CallInst@298b92ff
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@298b92ff, crux.ir.insts.CallInst@298b92ff
+Called LinkInstructions(crux.ir.insts.CallInst@28d9acef, crux.ir.insts.CallInst@298b92ff)
+	Linked crux.ir.insts.CallInst@28d9acef to crux.ir.insts.CallInst@298b92ff
+Current stmtlist start + end: crux.ir.insts.AddressAt@c5211f3, crux.ir.insts.CallInst@298b92ff
+Statement List Returned: crux.ir.insts.AddressAt@c5211f3, crux.ir.insts.CallInst@298b92ff
+Exit FunctionDef
+Exited decl list
+]]></system-out>
+  </testcase>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.015">
+    <failure type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
+IR for program crux/stages/ir/test32.crx differs from expected output. ==> expected: <1
+true
+0
+1
+true
+1
+true
+0
+0
+false> but was: <1>
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:236)
+]]></failure>
+    <system-out><![CDATA[
+---------------------
+Visited Declaration List
+Visited FuncDef List
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@48c2c6a9
+Cur Statement: crux.ast.Call@460521c1
+Visited Call
+Visited LiteralInt
+New temp var: $t0
+	Literal int value: 1
+Exit LiteralInt
+Called LinkInstructions(crux.ir.insts.CopyInst@7382bfa, crux.ir.insts.CallInst@5911523a)
+	Linked crux.ir.insts.CopyInst@7382bfa to crux.ir.insts.CallInst@5911523a
+Call Returned: crux.ir.insts.CopyInst@7382bfa, crux.ir.insts.CallInst@5911523a
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@7382bfa, crux.ir.insts.CallInst@5911523a
+Current stmtlist start + end: crux.ir.insts.CopyInst@7382bfa, crux.ir.insts.CallInst@5911523a
+Cur Statement: crux.ast.Call@36756bf0
+Visited Call
+Call Returned: crux.ir.insts.CallInst@21b64c82, crux.ir.insts.CallInst@21b64c82
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@21b64c82, crux.ir.insts.CallInst@21b64c82
+Called LinkInstructions(crux.ir.insts.CallInst@5911523a, crux.ir.insts.CallInst@21b64c82)
+	Linked crux.ir.insts.CallInst@5911523a to crux.ir.insts.CallInst@21b64c82
+Current stmtlist start + end: crux.ir.insts.CopyInst@7382bfa, crux.ir.insts.CallInst@21b64c82
+Cur Statement: crux.ast.Return@6717d4b5
+Visited Return
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@34c4caef with value: true
+Exit LiteralBool
+Called LinkInstructions(crux.ir.insts.CopyInst@34c4caef, crux.ir.insts.ReturnInst@29f31d6c)
+	Linked crux.ir.insts.CopyInst@34c4caef to crux.ir.insts.ReturnInst@29f31d6c
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@34c4caef, crux.ir.insts.ReturnInst@29f31d6c
+Called LinkInstructions(crux.ir.insts.CallInst@21b64c82, crux.ir.insts.CopyInst@34c4caef)
+	Linked crux.ir.insts.CallInst@21b64c82 to crux.ir.insts.CopyInst@34c4caef
+Current stmtlist start + end: crux.ir.insts.CopyInst@7382bfa, crux.ir.insts.ReturnInst@29f31d6c
+Statement List Returned: crux.ir.insts.CopyInst@7382bfa, crux.ir.insts.ReturnInst@29f31d6c
+Exit FunctionDef
+Visited FuncDef List
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@3ab2868c
+Cur Statement: crux.ast.Call@63594f13
+Visited Call
+Visited LiteralInt
+New temp var: $t0
+	Literal int value: 0
+Exit LiteralInt
+Called LinkInstructions(crux.ir.insts.CopyInst@71586225, crux.ir.insts.CallInst@4071191f)
+	Linked crux.ir.insts.CopyInst@71586225 to crux.ir.insts.CallInst@4071191f
+Call Returned: crux.ir.insts.CopyInst@71586225, crux.ir.insts.CallInst@4071191f
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@71586225, crux.ir.insts.CallInst@4071191f
+Current stmtlist start + end: crux.ir.insts.CopyInst@71586225, crux.ir.insts.CallInst@4071191f
+Cur Statement: crux.ast.Call@6e59617b
+Visited Call
+Call Returned: crux.ir.insts.CallInst@47d19a74, crux.ir.insts.CallInst@47d19a74
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@47d19a74, crux.ir.insts.CallInst@47d19a74
+Called LinkInstructions(crux.ir.insts.CallInst@4071191f, crux.ir.insts.CallInst@47d19a74)
+	Linked crux.ir.insts.CallInst@4071191f to crux.ir.insts.CallInst@47d19a74
+Current stmtlist start + end: crux.ir.insts.CopyInst@71586225, crux.ir.insts.CallInst@47d19a74
+Cur Statement: crux.ast.Return@75aa81e1
+Visited Return
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@3d5bc7aa with value: false
+Exit LiteralBool
+Called LinkInstructions(crux.ir.insts.CopyInst@3d5bc7aa, crux.ir.insts.ReturnInst@18ac3bc3)
+	Linked crux.ir.insts.CopyInst@3d5bc7aa to crux.ir.insts.ReturnInst@18ac3bc3
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@3d5bc7aa, crux.ir.insts.ReturnInst@18ac3bc3
+Called LinkInstructions(crux.ir.insts.CallInst@47d19a74, crux.ir.insts.CopyInst@3d5bc7aa)
+	Linked crux.ir.insts.CallInst@47d19a74 to crux.ir.insts.CopyInst@3d5bc7aa
+Current stmtlist start + end: crux.ir.insts.CopyInst@71586225, crux.ir.insts.ReturnInst@18ac3bc3
+Statement List Returned: crux.ir.insts.CopyInst@71586225, crux.ir.insts.ReturnInst@18ac3bc3
+Exit FunctionDef
+Visited FuncDef List
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@53e50098
+Cur Statement: crux.ast.Call@72e1268c
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.Call@11e4c9ed
+Visited Call
+Call Returned: crux.ir.insts.CallInst@68ef8a31, crux.ir.insts.CallInst@68ef8a31
+		LEFT PAIR: crux.ir.insts.CallInst@68ef8a31, crux.ir.insts.CallInst@68ef8a31, $t0
+	VISITING RIGHT!: crux.ast.Call@1375b674
+Visited Call
+Call Returned: crux.ir.insts.CallInst@685b37d0, crux.ir.insts.CallInst@685b37d0
+		RIGHT PAIR: crux.ir.insts.CallInst@685b37d0, crux.ir.insts.CallInst@685b37d0, $t1
+Right Var: $t1
+	OP: ||
+OpExpr Returned: crux.ir.insts.CallInst@68ef8a31, crux.ir.insts.CallInst@685b37d0
+Called LinkInstructions(crux.ir.insts.CallInst@685b37d0, crux.ir.insts.CallInst@5f473097)
+	Linked crux.ir.insts.CallInst@685b37d0 to crux.ir.insts.CallInst@5f473097
+Call Returned: crux.ir.insts.CallInst@68ef8a31, crux.ir.insts.CallInst@5f473097
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@68ef8a31, crux.ir.insts.CallInst@5f473097
+Current stmtlist start + end: crux.ir.insts.CallInst@68ef8a31, crux.ir.insts.CallInst@5f473097
+Cur Statement: crux.ast.Call@4b6d974c
+Visited Call
+Call Returned: crux.ir.insts.CallInst@75954e43, crux.ir.insts.CallInst@75954e43
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@75954e43, crux.ir.insts.CallInst@75954e43
+Called LinkInstructions(crux.ir.insts.CallInst@5f473097, crux.ir.insts.CallInst@75954e43)
+	Linked crux.ir.insts.CallInst@5f473097 to crux.ir.insts.CallInst@75954e43
+Current stmtlist start + end: crux.ir.insts.CallInst@68ef8a31, crux.ir.insts.CallInst@75954e43
+Cur Statement: crux.ast.Call@44c11296
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.Call@22e44111
+Visited Call
+Call Returned: crux.ir.insts.CallInst@51465f6, crux.ir.insts.CallInst@51465f6
+		LEFT PAIR: crux.ir.insts.CallInst@51465f6, crux.ir.insts.CallInst@51465f6, $t3
+	VISITING RIGHT!: crux.ast.Call@5a2cd441
+Visited Call
+Call Returned: crux.ir.insts.CallInst@16b53830, crux.ir.insts.CallInst@16b53830
+		RIGHT PAIR: crux.ir.insts.CallInst@16b53830, crux.ir.insts.CallInst@16b53830, $t4
+Right Var: $t4
+	OP: ||
+OpExpr Returned: crux.ir.insts.CallInst@51465f6, crux.ir.insts.CallInst@16b53830
+Called LinkInstructions(crux.ir.insts.CallInst@16b53830, crux.ir.insts.CallInst@16591f3e)
+	Linked crux.ir.insts.CallInst@16b53830 to crux.ir.insts.CallInst@16591f3e
+Call Returned: crux.ir.insts.CallInst@51465f6, crux.ir.insts.CallInst@16591f3e
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@51465f6, crux.ir.insts.CallInst@16591f3e
+Called LinkInstructions(crux.ir.insts.CallInst@75954e43, crux.ir.insts.CallInst@51465f6)
+	Linked crux.ir.insts.CallInst@75954e43 to crux.ir.insts.CallInst@51465f6
+Current stmtlist start + end: crux.ir.insts.CallInst@68ef8a31, crux.ir.insts.CallInst@16591f3e
+Cur Statement: crux.ast.Call@30c4f3d6
+Visited Call
+Call Returned: crux.ir.insts.CallInst@cf6b753, crux.ir.insts.CallInst@cf6b753
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@cf6b753, crux.ir.insts.CallInst@cf6b753
+Called LinkInstructions(crux.ir.insts.CallInst@16591f3e, crux.ir.insts.CallInst@cf6b753)
+	Linked crux.ir.insts.CallInst@16591f3e to crux.ir.insts.CallInst@cf6b753
+Current stmtlist start + end: crux.ir.insts.CallInst@68ef8a31, crux.ir.insts.CallInst@cf6b753
+Cur Statement: crux.ast.Call@333d7a45
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.Call@6d4323f3
+Visited Call
+Call Returned: crux.ir.insts.CallInst@7a8e37ce, crux.ir.insts.CallInst@7a8e37ce
+		LEFT PAIR: crux.ir.insts.CallInst@7a8e37ce, crux.ir.insts.CallInst@7a8e37ce, $t6
+	VISITING RIGHT!: crux.ast.Call@437b4be3
+Visited Call
+Call Returned: crux.ir.insts.CallInst@1bccfe9b, crux.ir.insts.CallInst@1bccfe9b
+		RIGHT PAIR: crux.ir.insts.CallInst@1bccfe9b, crux.ir.insts.CallInst@1bccfe9b, $t7
+Right Var: $t7
+	OP: ||
+OpExpr Returned: crux.ir.insts.CallInst@7a8e37ce, crux.ir.insts.CallInst@1bccfe9b
+Called LinkInstructions(crux.ir.insts.CallInst@1bccfe9b, crux.ir.insts.CallInst@6fe41aaa)
+	Linked crux.ir.insts.CallInst@1bccfe9b to crux.ir.insts.CallInst@6fe41aaa
+Call Returned: crux.ir.insts.CallInst@7a8e37ce, crux.ir.insts.CallInst@6fe41aaa
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@7a8e37ce, crux.ir.insts.CallInst@6fe41aaa
+Called LinkInstructions(crux.ir.insts.CallInst@cf6b753, crux.ir.insts.CallInst@7a8e37ce)
+	Linked crux.ir.insts.CallInst@cf6b753 to crux.ir.insts.CallInst@7a8e37ce
+Current stmtlist start + end: crux.ir.insts.CallInst@68ef8a31, crux.ir.insts.CallInst@6fe41aaa
+Cur Statement: crux.ast.Call@645f60df
+Visited Call
+Call Returned: crux.ir.insts.CallInst@7de20be4, crux.ir.insts.CallInst@7de20be4
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@7de20be4, crux.ir.insts.CallInst@7de20be4
+Called LinkInstructions(crux.ir.insts.CallInst@6fe41aaa, crux.ir.insts.CallInst@7de20be4)
+	Linked crux.ir.insts.CallInst@6fe41aaa to crux.ir.insts.CallInst@7de20be4
+Current stmtlist start + end: crux.ir.insts.CallInst@68ef8a31, crux.ir.insts.CallInst@7de20be4
+Cur Statement: crux.ast.Call@1a61ae5
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.Call@4ed86131
+Visited Call
+Call Returned: crux.ir.insts.CallInst@519ea9ad, crux.ir.insts.CallInst@519ea9ad
+		LEFT PAIR: crux.ir.insts.CallInst@519ea9ad, crux.ir.insts.CallInst@519ea9ad, $t9
+	VISITING RIGHT!: crux.ast.Call@3c4e3551
+Visited Call
+Call Returned: crux.ir.insts.CallInst@d0e710f, crux.ir.insts.CallInst@d0e710f
+		RIGHT PAIR: crux.ir.insts.CallInst@d0e710f, crux.ir.insts.CallInst@d0e710f, $t10
+Right Var: $t10
+	OP: ||
+OpExpr Returned: crux.ir.insts.CallInst@519ea9ad, crux.ir.insts.CallInst@d0e710f
+Called LinkInstructions(crux.ir.insts.CallInst@d0e710f, crux.ir.insts.CallInst@524876)
+	Linked crux.ir.insts.CallInst@d0e710f to crux.ir.insts.CallInst@524876
+Call Returned: crux.ir.insts.CallInst@519ea9ad, crux.ir.insts.CallInst@524876
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@519ea9ad, crux.ir.insts.CallInst@524876
+Called LinkInstructions(crux.ir.insts.CallInst@7de20be4, crux.ir.insts.CallInst@519ea9ad)
+	Linked crux.ir.insts.CallInst@7de20be4 to crux.ir.insts.CallInst@519ea9ad
+Current stmtlist start + end: crux.ir.insts.CallInst@68ef8a31, crux.ir.insts.CallInst@524876
+Cur Statement: crux.ast.Call@24254a10
+Visited Call
+Call Returned: crux.ir.insts.CallInst@698c1778, crux.ir.insts.CallInst@698c1778
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@698c1778, crux.ir.insts.CallInst@698c1778
+Called LinkInstructions(crux.ir.insts.CallInst@524876, crux.ir.insts.CallInst@698c1778)
+	Linked crux.ir.insts.CallInst@524876 to crux.ir.insts.CallInst@698c1778
+Current stmtlist start + end: crux.ir.insts.CallInst@68ef8a31, crux.ir.insts.CallInst@698c1778
+Statement List Returned: crux.ir.insts.CallInst@68ef8a31, crux.ir.insts.CallInst@698c1778
+Exit FunctionDef
+Exited decl list
+]]></system-out>
+  </testcase>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.012">
+    <failure type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
+IR for program crux/stages/ir/test33.crx differs from expected output. ==> expected: <1
+1
+true
+0
+false
+1
+0
+false
+0
+false> but was: <1>
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:236)
+]]></failure>
+    <system-out><![CDATA[
+---------------------
+Visited Declaration List
+Visited FuncDef List
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@2c858b4
+Cur Statement: crux.ast.Call@c0fa69d
+Visited Call
+Visited LiteralInt
+New temp var: $t0
+	Literal int value: 1
+Exit LiteralInt
+Called LinkInstructions(crux.ir.insts.CopyInst@4d32aca6, crux.ir.insts.CallInst@d7f404c)
+	Linked crux.ir.insts.CopyInst@4d32aca6 to crux.ir.insts.CallInst@d7f404c
+Call Returned: crux.ir.insts.CopyInst@4d32aca6, crux.ir.insts.CallInst@d7f404c
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@4d32aca6, crux.ir.insts.CallInst@d7f404c
+Current stmtlist start + end: crux.ir.insts.CopyInst@4d32aca6, crux.ir.insts.CallInst@d7f404c
+Cur Statement: crux.ast.Call@7cb52430
+Visited Call
+Call Returned: crux.ir.insts.CallInst@75129671, crux.ir.insts.CallInst@75129671
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@75129671, crux.ir.insts.CallInst@75129671
+Called LinkInstructions(crux.ir.insts.CallInst@d7f404c, crux.ir.insts.CallInst@75129671)
+	Linked crux.ir.insts.CallInst@d7f404c to crux.ir.insts.CallInst@75129671
+Current stmtlist start + end: crux.ir.insts.CopyInst@4d32aca6, crux.ir.insts.CallInst@75129671
+Cur Statement: crux.ast.Return@2d1d53e9
+Visited Return
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@5a170b26 with value: true
+Exit LiteralBool
+Called LinkInstructions(crux.ir.insts.CopyInst@5a170b26, crux.ir.insts.ReturnInst@f5630f0)
+	Linked crux.ir.insts.CopyInst@5a170b26 to crux.ir.insts.ReturnInst@f5630f0
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@5a170b26, crux.ir.insts.ReturnInst@f5630f0
+Called LinkInstructions(crux.ir.insts.CallInst@75129671, crux.ir.insts.CopyInst@5a170b26)
+	Linked crux.ir.insts.CallInst@75129671 to crux.ir.insts.CopyInst@5a170b26
+Current stmtlist start + end: crux.ir.insts.CopyInst@4d32aca6, crux.ir.insts.ReturnInst@f5630f0
+Statement List Returned: crux.ir.insts.CopyInst@4d32aca6, crux.ir.insts.ReturnInst@f5630f0
+Exit FunctionDef
+Visited FuncDef List
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@6e169e75
+Cur Statement: crux.ast.Call@29530a45
+Visited Call
+Visited LiteralInt
+New temp var: $t0
+	Literal int value: 0
+Exit LiteralInt
+Called LinkInstructions(crux.ir.insts.CopyInst@4bff6a72, crux.ir.insts.CallInst@7510024d)
+	Linked crux.ir.insts.CopyInst@4bff6a72 to crux.ir.insts.CallInst@7510024d
+Call Returned: crux.ir.insts.CopyInst@4bff6a72, crux.ir.insts.CallInst@7510024d
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@4bff6a72, crux.ir.insts.CallInst@7510024d
+Current stmtlist start + end: crux.ir.insts.CopyInst@4bff6a72, crux.ir.insts.CallInst@7510024d
+Cur Statement: crux.ast.Call@2f2fdfac
+Visited Call
+Call Returned: crux.ir.insts.CallInst@1e1fe92e, crux.ir.insts.CallInst@1e1fe92e
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@1e1fe92e, crux.ir.insts.CallInst@1e1fe92e
+Called LinkInstructions(crux.ir.insts.CallInst@7510024d, crux.ir.insts.CallInst@1e1fe92e)
+	Linked crux.ir.insts.CallInst@7510024d to crux.ir.insts.CallInst@1e1fe92e
+Current stmtlist start + end: crux.ir.insts.CopyInst@4bff6a72, crux.ir.insts.CallInst@1e1fe92e
+Cur Statement: crux.ast.Return@2e03ac65
+Visited Return
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@5bf4c182 with value: false
+Exit LiteralBool
+Called LinkInstructions(crux.ir.insts.CopyInst@5bf4c182, crux.ir.insts.ReturnInst@af7b7ef)
+	Linked crux.ir.insts.CopyInst@5bf4c182 to crux.ir.insts.ReturnInst@af7b7ef
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@5bf4c182, crux.ir.insts.ReturnInst@af7b7ef
+Called LinkInstructions(crux.ir.insts.CallInst@1e1fe92e, crux.ir.insts.CopyInst@5bf4c182)
+	Linked crux.ir.insts.CallInst@1e1fe92e to crux.ir.insts.CopyInst@5bf4c182
+Current stmtlist start + end: crux.ir.insts.CopyInst@4bff6a72, crux.ir.insts.ReturnInst@af7b7ef
+Statement List Returned: crux.ir.insts.CopyInst@4bff6a72, crux.ir.insts.ReturnInst@af7b7ef
+Exit FunctionDef
+Visited FuncDef List
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@6bc07906
+Cur Statement: crux.ast.Call@5893909f
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.Call@2516b2de
+Visited Call
+Call Returned: crux.ir.insts.CallInst@12e9315c, crux.ir.insts.CallInst@12e9315c
+		LEFT PAIR: crux.ir.insts.CallInst@12e9315c, crux.ir.insts.CallInst@12e9315c, $t0
+	VISITING RIGHT!: crux.ast.Call@7a89624e
+Visited Call
+Call Returned: crux.ir.insts.CallInst@3e5a02e8, crux.ir.insts.CallInst@3e5a02e8
+		RIGHT PAIR: crux.ir.insts.CallInst@3e5a02e8, crux.ir.insts.CallInst@3e5a02e8, $t1
+Right Var: $t1
+	OP: &&
+OpExpr Returned: crux.ir.insts.CallInst@12e9315c, crux.ir.insts.CallInst@3e5a02e8
+Called LinkInstructions(crux.ir.insts.CallInst@3e5a02e8, crux.ir.insts.CallInst@2e4ac7bf)
+	Linked crux.ir.insts.CallInst@3e5a02e8 to crux.ir.insts.CallInst@2e4ac7bf
+Call Returned: crux.ir.insts.CallInst@12e9315c, crux.ir.insts.CallInst@2e4ac7bf
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@12e9315c, crux.ir.insts.CallInst@2e4ac7bf
+Current stmtlist start + end: crux.ir.insts.CallInst@12e9315c, crux.ir.insts.CallInst@2e4ac7bf
+Cur Statement: crux.ast.Call@75f260fb
+Visited Call
+Call Returned: crux.ir.insts.CallInst@44d8e719, crux.ir.insts.CallInst@44d8e719
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@44d8e719, crux.ir.insts.CallInst@44d8e719
+Called LinkInstructions(crux.ir.insts.CallInst@2e4ac7bf, crux.ir.insts.CallInst@44d8e719)
+	Linked crux.ir.insts.CallInst@2e4ac7bf to crux.ir.insts.CallInst@44d8e719
+Current stmtlist start + end: crux.ir.insts.CallInst@12e9315c, crux.ir.insts.CallInst@44d8e719
+Cur Statement: crux.ast.Call@2a7bf028
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.Call@52f4bde7
+Visited Call
+Call Returned: crux.ir.insts.CallInst@34e7eafa, crux.ir.insts.CallInst@34e7eafa
+		LEFT PAIR: crux.ir.insts.CallInst@34e7eafa, crux.ir.insts.CallInst@34e7eafa, $t3
+	VISITING RIGHT!: crux.ast.Call@37042350
+Visited Call
+Call Returned: crux.ir.insts.CallInst@420b6f28, crux.ir.insts.CallInst@420b6f28
+		RIGHT PAIR: crux.ir.insts.CallInst@420b6f28, crux.ir.insts.CallInst@420b6f28, $t4
+Right Var: $t4
+	OP: &&
+OpExpr Returned: crux.ir.insts.CallInst@34e7eafa, crux.ir.insts.CallInst@420b6f28
+Called LinkInstructions(crux.ir.insts.CallInst@420b6f28, crux.ir.insts.CallInst@3567e90b)
+	Linked crux.ir.insts.CallInst@420b6f28 to crux.ir.insts.CallInst@3567e90b
+Call Returned: crux.ir.insts.CallInst@34e7eafa, crux.ir.insts.CallInst@3567e90b
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@34e7eafa, crux.ir.insts.CallInst@3567e90b
+Called LinkInstructions(crux.ir.insts.CallInst@44d8e719, crux.ir.insts.CallInst@34e7eafa)
+	Linked crux.ir.insts.CallInst@44d8e719 to crux.ir.insts.CallInst@34e7eafa
+Current stmtlist start + end: crux.ir.insts.CallInst@12e9315c, crux.ir.insts.CallInst@3567e90b
+Cur Statement: crux.ast.Call@3edc7567
+Visited Call
+Call Returned: crux.ir.insts.CallInst@28d4df4f, crux.ir.insts.CallInst@28d4df4f
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@28d4df4f, crux.ir.insts.CallInst@28d4df4f
+Called LinkInstructions(crux.ir.insts.CallInst@3567e90b, crux.ir.insts.CallInst@28d4df4f)
+	Linked crux.ir.insts.CallInst@3567e90b to crux.ir.insts.CallInst@28d4df4f
+Current stmtlist start + end: crux.ir.insts.CallInst@12e9315c, crux.ir.insts.CallInst@28d4df4f
+Cur Statement: crux.ast.Call@313f9752
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.Call@3b9a0fcf
+Visited Call
+Call Returned: crux.ir.insts.CallInst@66b02296, crux.ir.insts.CallInst@66b02296
+		LEFT PAIR: crux.ir.insts.CallInst@66b02296, crux.ir.insts.CallInst@66b02296, $t6
+	VISITING RIGHT!: crux.ast.Call@6890b7a8
+Visited Call
+Call Returned: crux.ir.insts.CallInst@25d828ef, crux.ir.insts.CallInst@25d828ef
+		RIGHT PAIR: crux.ir.insts.CallInst@25d828ef, crux.ir.insts.CallInst@25d828ef, $t7
+Right Var: $t7
+	OP: &&
+OpExpr Returned: crux.ir.insts.CallInst@66b02296, crux.ir.insts.CallInst@25d828ef
+Called LinkInstructions(crux.ir.insts.CallInst@25d828ef, crux.ir.insts.CallInst@4e57bfec)
+	Linked crux.ir.insts.CallInst@25d828ef to crux.ir.insts.CallInst@4e57bfec
+Call Returned: crux.ir.insts.CallInst@66b02296, crux.ir.insts.CallInst@4e57bfec
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@66b02296, crux.ir.insts.CallInst@4e57bfec
+Called LinkInstructions(crux.ir.insts.CallInst@28d4df4f, crux.ir.insts.CallInst@66b02296)
+	Linked crux.ir.insts.CallInst@28d4df4f to crux.ir.insts.CallInst@66b02296
+Current stmtlist start + end: crux.ir.insts.CallInst@12e9315c, crux.ir.insts.CallInst@4e57bfec
+Cur Statement: crux.ast.Call@29948022
+Visited Call
+Call Returned: crux.ir.insts.CallInst@44d45f4f, crux.ir.insts.CallInst@44d45f4f
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@44d45f4f, crux.ir.insts.CallInst@44d45f4f
+Called LinkInstructions(crux.ir.insts.CallInst@4e57bfec, crux.ir.insts.CallInst@44d45f4f)
+	Linked crux.ir.insts.CallInst@4e57bfec to crux.ir.insts.CallInst@44d45f4f
+Current stmtlist start + end: crux.ir.insts.CallInst@12e9315c, crux.ir.insts.CallInst@44d45f4f
+Cur Statement: crux.ast.Call@20af986a
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.Call@53f4fb4c
+Visited Call
+Call Returned: crux.ir.insts.CallInst@5eecf480, crux.ir.insts.CallInst@5eecf480
+		LEFT PAIR: crux.ir.insts.CallInst@5eecf480, crux.ir.insts.CallInst@5eecf480, $t9
+	VISITING RIGHT!: crux.ast.Call@3824e635
+Visited Call
+Call Returned: crux.ir.insts.CallInst@64944593, crux.ir.insts.CallInst@64944593
+		RIGHT PAIR: crux.ir.insts.CallInst@64944593, crux.ir.insts.CallInst@64944593, $t10
+Right Var: $t10
+	OP: &&
+OpExpr Returned: crux.ir.insts.CallInst@5eecf480, crux.ir.insts.CallInst@64944593
+Called LinkInstructions(crux.ir.insts.CallInst@64944593, crux.ir.insts.CallInst@104eecd6)
+	Linked crux.ir.insts.CallInst@64944593 to crux.ir.insts.CallInst@104eecd6
+Call Returned: crux.ir.insts.CallInst@5eecf480, crux.ir.insts.CallInst@104eecd6
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@5eecf480, crux.ir.insts.CallInst@104eecd6
+Called LinkInstructions(crux.ir.insts.CallInst@44d45f4f, crux.ir.insts.CallInst@5eecf480)
+	Linked crux.ir.insts.CallInst@44d45f4f to crux.ir.insts.CallInst@5eecf480
+Current stmtlist start + end: crux.ir.insts.CallInst@12e9315c, crux.ir.insts.CallInst@104eecd6
+Cur Statement: crux.ast.Call@29bf52ab
+Visited Call
+Call Returned: crux.ir.insts.CallInst@36b51ce7, crux.ir.insts.CallInst@36b51ce7
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@36b51ce7, crux.ir.insts.CallInst@36b51ce7
+Called LinkInstructions(crux.ir.insts.CallInst@104eecd6, crux.ir.insts.CallInst@36b51ce7)
+	Linked crux.ir.insts.CallInst@104eecd6 to crux.ir.insts.CallInst@36b51ce7
+Current stmtlist start + end: crux.ir.insts.CallInst@12e9315c, crux.ir.insts.CallInst@36b51ce7
+Statement List Returned: crux.ir.insts.CallInst@12e9315c, crux.ir.insts.CallInst@36b51ce7
+Exit FunctionDef
+Exited decl list
+]]></system-out>
+  </testcase>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.027"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.013"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.012"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.017"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.045">
+    <failure type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
+IR for program crux/stages/ir/test38.crx differs from expected output. ==> expected: <true
+true
+true
+false
+true
+false
+true
+false
+true
+true
+true
+false
+false
+false
+true
+true
+true
+true
+true> but was: <>
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:236)
+]]></failure>
+    <system-out><![CDATA[
+---------------------
+Visited Declaration List
+Visited FuncDef List
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@e55b62d
+Cur Statement: crux.ast.Call@924997
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@4addd5d
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralInt@41af43ac
+Visited LiteralInt
+New temp var: $t0
+	Literal int value: 3
+Exit LiteralInt
+		LEFT PAIR: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CopyInst@70244251, $t0
+	VISITING RIGHT!: crux.ast.LiteralInt@1a893e3d
+Visited LiteralInt
+New temp var: $t1
+	Literal int value: 5
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@2180bce3, crux.ir.insts.CopyInst@2180bce3, $t1
+Right Var: $t1
+	OP: <
+Making compareInst --> $t0, $t1
+Called LinkInstructions(crux.ir.insts.CopyInst@70244251, crux.ir.insts.CopyInst@2180bce3)
+	Linked crux.ir.insts.CopyInst@70244251 to crux.ir.insts.CopyInst@2180bce3
+Called LinkInstructions(crux.ir.insts.CopyInst@2180bce3, crux.ir.insts.CompareInst@426a88)
+	Linked crux.ir.insts.CopyInst@2180bce3 to crux.ir.insts.CompareInst@426a88
+OpExpr Returned: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CompareInst@426a88
+		LEFT PAIR: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CompareInst@426a88, $t2
+	VISITING RIGHT!: crux.ast.OpExpr@5226961b
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralInt@18d32b4
+Visited LiteralInt
+New temp var: $t3
+	Literal int value: 4
+Exit LiteralInt
+		LEFT PAIR: crux.ir.insts.CopyInst@25cee1c2, crux.ir.insts.CopyInst@25cee1c2, $t3
+	VISITING RIGHT!: crux.ast.LiteralInt@36cbc9d9
+Visited LiteralInt
+New temp var: $t4
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@503b0755, crux.ir.insts.CopyInst@503b0755, $t4
+Right Var: $t4
+	OP: >
+Making compareInst --> $t3, $t4
+Called LinkInstructions(crux.ir.insts.CopyInst@25cee1c2, crux.ir.insts.CopyInst@503b0755)
+	Linked crux.ir.insts.CopyInst@25cee1c2 to crux.ir.insts.CopyInst@503b0755
+Called LinkInstructions(crux.ir.insts.CopyInst@503b0755, crux.ir.insts.CompareInst@38cb9774)
+	Linked crux.ir.insts.CopyInst@503b0755 to crux.ir.insts.CompareInst@38cb9774
+OpExpr Returned: crux.ir.insts.CopyInst@25cee1c2, crux.ir.insts.CompareInst@38cb9774
+		RIGHT PAIR: crux.ir.insts.CopyInst@25cee1c2, crux.ir.insts.CompareInst@38cb9774, $t5
+Right Var: $t5
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CompareInst@38cb9774
+Called LinkInstructions(crux.ir.insts.CompareInst@38cb9774, crux.ir.insts.CallInst@6ad9a15e)
+	Linked crux.ir.insts.CompareInst@38cb9774 to crux.ir.insts.CallInst@6ad9a15e
+Call Returned: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@6ad9a15e
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@6ad9a15e
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@6ad9a15e
+Cur Statement: crux.ast.Call@2b438dd
+Visited Call
+Call Returned: crux.ir.insts.CallInst@abd9671, crux.ir.insts.CallInst@abd9671
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@abd9671, crux.ir.insts.CallInst@abd9671
+Called LinkInstructions(crux.ir.insts.CallInst@6ad9a15e, crux.ir.insts.CallInst@abd9671)
+	Linked crux.ir.insts.CallInst@6ad9a15e to crux.ir.insts.CallInst@abd9671
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@abd9671
+Cur Statement: crux.ast.Call@6ea9d065
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@495d5fbf
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@6a8cf499
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralInt@c64f9a7
+Visited LiteralInt
+New temp var: $t7
+	Literal int value: 3
+Exit LiteralInt
+		LEFT PAIR: crux.ir.insts.CopyInst@2c6e2ab6, crux.ir.insts.CopyInst@2c6e2ab6, $t7
+	VISITING RIGHT!: crux.ast.LiteralInt@f6d2823
+Visited LiteralInt
+New temp var: $t8
+	Literal int value: 5
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@2c82d6b, crux.ir.insts.CopyInst@2c82d6b, $t8
+Right Var: $t8
+	OP: <
+Making compareInst --> $t7, $t8
+Called LinkInstructions(crux.ir.insts.CopyInst@2c6e2ab6, crux.ir.insts.CopyInst@2c82d6b)
+	Linked crux.ir.insts.CopyInst@2c6e2ab6 to crux.ir.insts.CopyInst@2c82d6b
+Called LinkInstructions(crux.ir.insts.CopyInst@2c82d6b, crux.ir.insts.CompareInst@294a4554)
+	Linked crux.ir.insts.CopyInst@2c82d6b to crux.ir.insts.CompareInst@294a4554
+OpExpr Returned: crux.ir.insts.CopyInst@2c6e2ab6, crux.ir.insts.CompareInst@294a4554
+		LEFT PAIR: crux.ir.insts.CopyInst@2c6e2ab6, crux.ir.insts.CompareInst@294a4554, $t9
+	VISITING RIGHT!: crux.ast.OpExpr@742ce151
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralInt@12e6f3c7
+Visited LiteralInt
+New temp var: $t10
+	Literal int value: 2
+Exit LiteralInt
+		LEFT PAIR: crux.ir.insts.CopyInst@51063785, crux.ir.insts.CopyInst@51063785, $t10
+	VISITING RIGHT!: crux.ast.LiteralInt@2a1da814
+Visited LiteralInt
+New temp var: $t11
+	Literal int value: 1
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@3928f26f, crux.ir.insts.CopyInst@3928f26f, $t11
+Right Var: $t11
+	OP: <
+Making compareInst --> $t10, $t11
+Called LinkInstructions(crux.ir.insts.CopyInst@51063785, crux.ir.insts.CopyInst@3928f26f)
+	Linked crux.ir.insts.CopyInst@51063785 to crux.ir.insts.CopyInst@3928f26f
+Called LinkInstructions(crux.ir.insts.CopyInst@3928f26f, crux.ir.insts.CompareInst@1cf55646)
+	Linked crux.ir.insts.CopyInst@3928f26f to crux.ir.insts.CompareInst@1cf55646
+OpExpr Returned: crux.ir.insts.CopyInst@51063785, crux.ir.insts.CompareInst@1cf55646
+		RIGHT PAIR: crux.ir.insts.CopyInst@51063785, crux.ir.insts.CompareInst@1cf55646, $t12
+Right Var: $t12
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@2c6e2ab6, crux.ir.insts.CompareInst@1cf55646
+		LEFT PAIR: crux.ir.insts.CopyInst@2c6e2ab6, crux.ir.insts.CompareInst@1cf55646, $t13
+	VISITING RIGHT!: crux.ast.OpExpr@7caff042
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralInt@3bb5bacb
+Visited LiteralInt
+New temp var: $t14
+	Literal int value: 1
+Exit LiteralInt
+		LEFT PAIR: crux.ir.insts.CopyInst@45f09c58, crux.ir.insts.CopyInst@45f09c58, $t14
+	VISITING RIGHT!: crux.ast.LiteralInt@7301b5c6
+Visited LiteralInt
+New temp var: $t15
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@70af6604, crux.ir.insts.CopyInst@70af6604, $t15
+Right Var: $t15
+	OP: <
+Making compareInst --> $t14, $t15
+Called LinkInstructions(crux.ir.insts.CopyInst@45f09c58, crux.ir.insts.CopyInst@70af6604)
+	Linked crux.ir.insts.CopyInst@45f09c58 to crux.ir.insts.CopyInst@70af6604
+Called LinkInstructions(crux.ir.insts.CopyInst@70af6604, crux.ir.insts.CompareInst@66dae938)
+	Linked crux.ir.insts.CopyInst@70af6604 to crux.ir.insts.CompareInst@66dae938
+OpExpr Returned: crux.ir.insts.CopyInst@45f09c58, crux.ir.insts.CompareInst@66dae938
+		RIGHT PAIR: crux.ir.insts.CopyInst@45f09c58, crux.ir.insts.CompareInst@66dae938, $t16
+Right Var: $t16
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@2c6e2ab6, crux.ir.insts.CompareInst@66dae938
+Called LinkInstructions(crux.ir.insts.CompareInst@66dae938, crux.ir.insts.CallInst@2709abe7)
+	Linked crux.ir.insts.CompareInst@66dae938 to crux.ir.insts.CallInst@2709abe7
+Call Returned: crux.ir.insts.CopyInst@2c6e2ab6, crux.ir.insts.CallInst@2709abe7
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@2c6e2ab6, crux.ir.insts.CallInst@2709abe7
+Called LinkInstructions(crux.ir.insts.CallInst@abd9671, crux.ir.insts.CopyInst@2c6e2ab6)
+	Linked crux.ir.insts.CallInst@abd9671 to crux.ir.insts.CopyInst@2c6e2ab6
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@2709abe7
+Cur Statement: crux.ast.Call@59589545
+Visited Call
+Call Returned: crux.ir.insts.CallInst@52cc472c, crux.ir.insts.CallInst@52cc472c
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@52cc472c, crux.ir.insts.CallInst@52cc472c
+Called LinkInstructions(crux.ir.insts.CallInst@2709abe7, crux.ir.insts.CallInst@52cc472c)
+	Linked crux.ir.insts.CallInst@2709abe7 to crux.ir.insts.CallInst@52cc472c
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@52cc472c
+Cur Statement: crux.ast.Call@63eef764
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@9522e6d
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@143d60bf
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralInt@24f8a033
+Visited LiteralInt
+New temp var: $t18
+	Literal int value: 1
+Exit LiteralInt
+		LEFT PAIR: crux.ir.insts.CopyInst@3039361f, crux.ir.insts.CopyInst@3039361f, $t18
+	VISITING RIGHT!: crux.ast.LiteralInt@28805733
+Visited LiteralInt
+New temp var: $t19
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@57c7e204, crux.ir.insts.CopyInst@57c7e204, $t19
+Right Var: $t19
+	OP: +
+Called LinkInstructions(crux.ir.insts.CopyInst@3039361f, crux.ir.insts.CopyInst@57c7e204)
+	Linked crux.ir.insts.CopyInst@3039361f to crux.ir.insts.CopyInst@57c7e204
+Called LinkInstructions(crux.ir.insts.CopyInst@57c7e204, crux.ir.insts.BinaryOperator@365f39f7)
+	Linked crux.ir.insts.CopyInst@57c7e204 to crux.ir.insts.BinaryOperator@365f39f7
+OpExpr Returned: crux.ir.insts.CopyInst@3039361f, crux.ir.insts.BinaryOperator@365f39f7
+		LEFT PAIR: crux.ir.insts.CopyInst@3039361f, crux.ir.insts.BinaryOperator@365f39f7, $t20
+	VISITING RIGHT!: crux.ast.LiteralInt@4f2f68ed
+Visited LiteralInt
+New temp var: $t21
+	Literal int value: 4
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@65bc97f4, crux.ir.insts.CopyInst@65bc97f4, $t21
+Right Var: $t21
+	OP: <
+Making compareInst --> $t20, $t21
+Called LinkInstructions(crux.ir.insts.BinaryOperator@365f39f7, crux.ir.insts.CopyInst@65bc97f4)
+	Linked crux.ir.insts.BinaryOperator@365f39f7 to crux.ir.insts.CopyInst@65bc97f4
+Called LinkInstructions(crux.ir.insts.CopyInst@65bc97f4, crux.ir.insts.CompareInst@d839e85)
+	Linked crux.ir.insts.CopyInst@65bc97f4 to crux.ir.insts.CompareInst@d839e85
+OpExpr Returned: crux.ir.insts.CopyInst@3039361f, crux.ir.insts.CompareInst@d839e85
+		LEFT PAIR: crux.ir.insts.CopyInst@3039361f, crux.ir.insts.CompareInst@d839e85, $t22
+	VISITING RIGHT!: crux.ast.OpExpr@425c8e43
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralInt@7600eee5
+Visited LiteralInt
+New temp var: $t23
+	Literal int value: 2
+Exit LiteralInt
+		LEFT PAIR: crux.ir.insts.CopyInst@7702d4e6, crux.ir.insts.CopyInst@7702d4e6, $t23
+	VISITING RIGHT!: crux.ast.LiteralInt@66641b35
+Visited LiteralInt
+New temp var: $t24
+	Literal int value: 1
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@40ecaf2c, crux.ir.insts.CopyInst@40ecaf2c, $t24
+Right Var: $t24
+	OP: >
+Making compareInst --> $t23, $t24
+Called LinkInstructions(crux.ir.insts.CopyInst@7702d4e6, crux.ir.insts.CopyInst@40ecaf2c)
+	Linked crux.ir.insts.CopyInst@7702d4e6 to crux.ir.insts.CopyInst@40ecaf2c
+Called LinkInstructions(crux.ir.insts.CopyInst@40ecaf2c, crux.ir.insts.CompareInst@31ea0612)
+	Linked crux.ir.insts.CopyInst@40ecaf2c to crux.ir.insts.CompareInst@31ea0612
+OpExpr Returned: crux.ir.insts.CopyInst@7702d4e6, crux.ir.insts.CompareInst@31ea0612
+		RIGHT PAIR: crux.ir.insts.CopyInst@7702d4e6, crux.ir.insts.CompareInst@31ea0612, $t25
+Right Var: $t25
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@3039361f, crux.ir.insts.CompareInst@31ea0612
+Called LinkInstructions(crux.ir.insts.CompareInst@31ea0612, crux.ir.insts.CallInst@502e512d)
+	Linked crux.ir.insts.CompareInst@31ea0612 to crux.ir.insts.CallInst@502e512d
+Call Returned: crux.ir.insts.CopyInst@3039361f, crux.ir.insts.CallInst@502e512d
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@3039361f, crux.ir.insts.CallInst@502e512d
+Called LinkInstructions(crux.ir.insts.CallInst@52cc472c, crux.ir.insts.CopyInst@3039361f)
+	Linked crux.ir.insts.CallInst@52cc472c to crux.ir.insts.CopyInst@3039361f
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@502e512d
+Cur Statement: crux.ast.Call@16d545ae
+Visited Call
+Call Returned: crux.ir.insts.CallInst@33e50d97, crux.ir.insts.CallInst@33e50d97
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@33e50d97, crux.ir.insts.CallInst@33e50d97
+Called LinkInstructions(crux.ir.insts.CallInst@502e512d, crux.ir.insts.CallInst@33e50d97)
+	Linked crux.ir.insts.CallInst@502e512d to crux.ir.insts.CallInst@33e50d97
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@33e50d97
+Cur Statement: crux.ast.Call@52de476f
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@70dbc320
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@4c1f00a0
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@578d3501 with value: false
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@578d3501, crux.ir.insts.CopyInst@578d3501, $t27
+	VISITING RIGHT!: crux.ast.LiteralBool@7748e5a0
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@5924eaaa with value: false
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@5924eaaa, crux.ir.insts.CopyInst@5924eaaa, $t28
+Right Var: $t28
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@578d3501, crux.ir.insts.CopyInst@5924eaaa
+		LEFT PAIR: crux.ir.insts.CopyInst@578d3501, crux.ir.insts.CopyInst@5924eaaa, $t29
+	VISITING RIGHT!: crux.ast.LiteralBool@6d8aeb2e
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@5391fea3 with value: false
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@5391fea3, crux.ir.insts.CopyInst@5391fea3, $t30
+Right Var: $t30
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@578d3501, crux.ir.insts.CopyInst@5391fea3
+Called LinkInstructions(crux.ir.insts.CopyInst@5391fea3, crux.ir.insts.CallInst@63c47494)
+	Linked crux.ir.insts.CopyInst@5391fea3 to crux.ir.insts.CallInst@63c47494
+Call Returned: crux.ir.insts.CopyInst@578d3501, crux.ir.insts.CallInst@63c47494
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@578d3501, crux.ir.insts.CallInst@63c47494
+Called LinkInstructions(crux.ir.insts.CallInst@33e50d97, crux.ir.insts.CopyInst@578d3501)
+	Linked crux.ir.insts.CallInst@33e50d97 to crux.ir.insts.CopyInst@578d3501
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@63c47494
+Cur Statement: crux.ast.Call@1d4bb3fc
+Visited Call
+Call Returned: crux.ir.insts.CallInst@27a2e8e0, crux.ir.insts.CallInst@27a2e8e0
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@27a2e8e0, crux.ir.insts.CallInst@27a2e8e0
+Called LinkInstructions(crux.ir.insts.CallInst@63c47494, crux.ir.insts.CallInst@27a2e8e0)
+	Linked crux.ir.insts.CallInst@63c47494 to crux.ir.insts.CallInst@27a2e8e0
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@27a2e8e0
+Cur Statement: crux.ast.Call@7b1a7e51
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@3b3ac572
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@7b2e45ba
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@4b7b57d7 with value: false
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@4b7b57d7, crux.ir.insts.CopyInst@4b7b57d7, $t32
+	VISITING RIGHT!: crux.ast.LiteralBool@633b401f
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@ec7185f with value: false
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@ec7185f, crux.ir.insts.CopyInst@ec7185f, $t33
+Right Var: $t33
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@4b7b57d7, crux.ir.insts.CopyInst@ec7185f
+		LEFT PAIR: crux.ir.insts.CopyInst@4b7b57d7, crux.ir.insts.CopyInst@ec7185f, $t34
+	VISITING RIGHT!: crux.ast.LiteralBool@74d8fa8
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@1619b579 with value: true
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@1619b579, crux.ir.insts.CopyInst@1619b579, $t35
+Right Var: $t35
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@4b7b57d7, crux.ir.insts.CopyInst@1619b579
+Called LinkInstructions(crux.ir.insts.CopyInst@1619b579, crux.ir.insts.CallInst@2f1b341d)
+	Linked crux.ir.insts.CopyInst@1619b579 to crux.ir.insts.CallInst@2f1b341d
+Call Returned: crux.ir.insts.CopyInst@4b7b57d7, crux.ir.insts.CallInst@2f1b341d
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@4b7b57d7, crux.ir.insts.CallInst@2f1b341d
+Called LinkInstructions(crux.ir.insts.CallInst@27a2e8e0, crux.ir.insts.CopyInst@4b7b57d7)
+	Linked crux.ir.insts.CallInst@27a2e8e0 to crux.ir.insts.CopyInst@4b7b57d7
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@2f1b341d
+Cur Statement: crux.ast.Call@1928d441
+Visited Call
+Call Returned: crux.ir.insts.CallInst@72f32803, crux.ir.insts.CallInst@72f32803
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@72f32803, crux.ir.insts.CallInst@72f32803
+Called LinkInstructions(crux.ir.insts.CallInst@2f1b341d, crux.ir.insts.CallInst@72f32803)
+	Linked crux.ir.insts.CallInst@2f1b341d to crux.ir.insts.CallInst@72f32803
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@72f32803
+Cur Statement: crux.ast.Call@299af959
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@5fd79bab
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@2d6cc
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@6bda45ff with value: false
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@6bda45ff, crux.ir.insts.CopyInst@6bda45ff, $t37
+	VISITING RIGHT!: crux.ast.LiteralBool@157439ec
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@761df22a with value: true
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@761df22a, crux.ir.insts.CopyInst@761df22a, $t38
+Right Var: $t38
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@6bda45ff, crux.ir.insts.CopyInst@761df22a
+		LEFT PAIR: crux.ir.insts.CopyInst@6bda45ff, crux.ir.insts.CopyInst@761df22a, $t39
+	VISITING RIGHT!: crux.ast.LiteralBool@603ffe93
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@59f3aad6 with value: false
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@59f3aad6, crux.ir.insts.CopyInst@59f3aad6, $t40
+Right Var: $t40
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@6bda45ff, crux.ir.insts.CopyInst@59f3aad6
+Called LinkInstructions(crux.ir.insts.CopyInst@59f3aad6, crux.ir.insts.CallInst@6dfc535d)
+	Linked crux.ir.insts.CopyInst@59f3aad6 to crux.ir.insts.CallInst@6dfc535d
+Call Returned: crux.ir.insts.CopyInst@6bda45ff, crux.ir.insts.CallInst@6dfc535d
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@6bda45ff, crux.ir.insts.CallInst@6dfc535d
+Called LinkInstructions(crux.ir.insts.CallInst@72f32803, crux.ir.insts.CopyInst@6bda45ff)
+	Linked crux.ir.insts.CallInst@72f32803 to crux.ir.insts.CopyInst@6bda45ff
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@6dfc535d
+Cur Statement: crux.ast.Call@74e9706a
+Visited Call
+Call Returned: crux.ir.insts.CallInst@6b3dc302, crux.ir.insts.CallInst@6b3dc302
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@6b3dc302, crux.ir.insts.CallInst@6b3dc302
+Called LinkInstructions(crux.ir.insts.CallInst@6dfc535d, crux.ir.insts.CallInst@6b3dc302)
+	Linked crux.ir.insts.CallInst@6dfc535d to crux.ir.insts.CallInst@6b3dc302
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@6b3dc302
+Cur Statement: crux.ast.Call@2fdc61a9
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@2035a9b4
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@1fe0e7f8
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@1ac002d5 with value: false
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@1ac002d5, crux.ir.insts.CopyInst@1ac002d5, $t42
+	VISITING RIGHT!: crux.ast.LiteralBool@565de90d
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@5ba8827b with value: true
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@5ba8827b, crux.ir.insts.CopyInst@5ba8827b, $t43
+Right Var: $t43
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@1ac002d5, crux.ir.insts.CopyInst@5ba8827b
+		LEFT PAIR: crux.ir.insts.CopyInst@1ac002d5, crux.ir.insts.CopyInst@5ba8827b, $t44
+	VISITING RIGHT!: crux.ast.LiteralBool@43ef71d1
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@59a315d3 with value: true
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@59a315d3, crux.ir.insts.CopyInst@59a315d3, $t45
+Right Var: $t45
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@1ac002d5, crux.ir.insts.CopyInst@59a315d3
+Called LinkInstructions(crux.ir.insts.CopyInst@59a315d3, crux.ir.insts.CallInst@608f8a6b)
+	Linked crux.ir.insts.CopyInst@59a315d3 to crux.ir.insts.CallInst@608f8a6b
+Call Returned: crux.ir.insts.CopyInst@1ac002d5, crux.ir.insts.CallInst@608f8a6b
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@1ac002d5, crux.ir.insts.CallInst@608f8a6b
+Called LinkInstructions(crux.ir.insts.CallInst@6b3dc302, crux.ir.insts.CopyInst@1ac002d5)
+	Linked crux.ir.insts.CallInst@6b3dc302 to crux.ir.insts.CopyInst@1ac002d5
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@608f8a6b
+Cur Statement: crux.ast.Call@7f2b675b
+Visited Call
+Call Returned: crux.ir.insts.CallInst@47f2f096, crux.ir.insts.CallInst@47f2f096
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@47f2f096, crux.ir.insts.CallInst@47f2f096
+Called LinkInstructions(crux.ir.insts.CallInst@608f8a6b, crux.ir.insts.CallInst@47f2f096)
+	Linked crux.ir.insts.CallInst@608f8a6b to crux.ir.insts.CallInst@47f2f096
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@47f2f096
+Cur Statement: crux.ast.Call@6be6836
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@1a7e7658
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@3e4bcbf3
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@6e6deaec with value: true
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@6e6deaec, crux.ir.insts.CopyInst@6e6deaec, $t47
+	VISITING RIGHT!: crux.ast.LiteralBool@1be7d0cf
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@7242b95d with value: false
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@7242b95d, crux.ir.insts.CopyInst@7242b95d, $t48
+Right Var: $t48
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@6e6deaec, crux.ir.insts.CopyInst@7242b95d
+		LEFT PAIR: crux.ir.insts.CopyInst@6e6deaec, crux.ir.insts.CopyInst@7242b95d, $t49
+	VISITING RIGHT!: crux.ast.LiteralBool@12b6e0b5
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@130d5285 with value: false
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@130d5285, crux.ir.insts.CopyInst@130d5285, $t50
+Right Var: $t50
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@6e6deaec, crux.ir.insts.CopyInst@130d5285
+Called LinkInstructions(crux.ir.insts.CopyInst@130d5285, crux.ir.insts.CallInst@36c98983)
+	Linked crux.ir.insts.CopyInst@130d5285 to crux.ir.insts.CallInst@36c98983
+Call Returned: crux.ir.insts.CopyInst@6e6deaec, crux.ir.insts.CallInst@36c98983
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@6e6deaec, crux.ir.insts.CallInst@36c98983
+Called LinkInstructions(crux.ir.insts.CallInst@47f2f096, crux.ir.insts.CopyInst@6e6deaec)
+	Linked crux.ir.insts.CallInst@47f2f096 to crux.ir.insts.CopyInst@6e6deaec
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@36c98983
+Cur Statement: crux.ast.Call@51a65656
+Visited Call
+Call Returned: crux.ir.insts.CallInst@74b0b79f, crux.ir.insts.CallInst@74b0b79f
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@74b0b79f, crux.ir.insts.CallInst@74b0b79f
+Called LinkInstructions(crux.ir.insts.CallInst@36c98983, crux.ir.insts.CallInst@74b0b79f)
+	Linked crux.ir.insts.CallInst@36c98983 to crux.ir.insts.CallInst@74b0b79f
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@74b0b79f
+Cur Statement: crux.ast.Call@dd05af6
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@772f5f5e
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@14d8b30b
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@6525f240 with value: true
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@6525f240, crux.ir.insts.CopyInst@6525f240, $t52
+	VISITING RIGHT!: crux.ast.LiteralBool@6a2d03f8
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@6775644c with value: false
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@6775644c, crux.ir.insts.CopyInst@6775644c, $t53
+Right Var: $t53
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@6525f240, crux.ir.insts.CopyInst@6775644c
+		LEFT PAIR: crux.ir.insts.CopyInst@6525f240, crux.ir.insts.CopyInst@6775644c, $t54
+	VISITING RIGHT!: crux.ast.LiteralBool@36e4c342
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@7c99902c with value: true
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@7c99902c, crux.ir.insts.CopyInst@7c99902c, $t55
+Right Var: $t55
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@6525f240, crux.ir.insts.CopyInst@7c99902c
+Called LinkInstructions(crux.ir.insts.CopyInst@7c99902c, crux.ir.insts.CallInst@7e296e84)
+	Linked crux.ir.insts.CopyInst@7c99902c to crux.ir.insts.CallInst@7e296e84
+Call Returned: crux.ir.insts.CopyInst@6525f240, crux.ir.insts.CallInst@7e296e84
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@6525f240, crux.ir.insts.CallInst@7e296e84
+Called LinkInstructions(crux.ir.insts.CallInst@74b0b79f, crux.ir.insts.CopyInst@6525f240)
+	Linked crux.ir.insts.CallInst@74b0b79f to crux.ir.insts.CopyInst@6525f240
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@7e296e84
+Cur Statement: crux.ast.Call@32b22209
+Visited Call
+Call Returned: crux.ir.insts.CallInst@22dc09ce, crux.ir.insts.CallInst@22dc09ce
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@22dc09ce, crux.ir.insts.CallInst@22dc09ce
+Called LinkInstructions(crux.ir.insts.CallInst@7e296e84, crux.ir.insts.CallInst@22dc09ce)
+	Linked crux.ir.insts.CallInst@7e296e84 to crux.ir.insts.CallInst@22dc09ce
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@22dc09ce
+Cur Statement: crux.ast.Call@1274f549
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@279ce4cd
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@49d385d
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@464dd379 with value: true
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@464dd379, crux.ir.insts.CopyInst@464dd379, $t57
+	VISITING RIGHT!: crux.ast.LiteralBool@7326b844
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@33dc9061 with value: true
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@33dc9061, crux.ir.insts.CopyInst@33dc9061, $t58
+Right Var: $t58
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@464dd379, crux.ir.insts.CopyInst@33dc9061
+		LEFT PAIR: crux.ir.insts.CopyInst@464dd379, crux.ir.insts.CopyInst@33dc9061, $t59
+	VISITING RIGHT!: crux.ast.LiteralBool@5e6e0997
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@7690cf38 with value: false
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@7690cf38, crux.ir.insts.CopyInst@7690cf38, $t60
+Right Var: $t60
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@464dd379, crux.ir.insts.CopyInst@7690cf38
+Called LinkInstructions(crux.ir.insts.CopyInst@7690cf38, crux.ir.insts.CallInst@30b2bd36)
+	Linked crux.ir.insts.CopyInst@7690cf38 to crux.ir.insts.CallInst@30b2bd36
+Call Returned: crux.ir.insts.CopyInst@464dd379, crux.ir.insts.CallInst@30b2bd36
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@464dd379, crux.ir.insts.CallInst@30b2bd36
+Called LinkInstructions(crux.ir.insts.CallInst@22dc09ce, crux.ir.insts.CopyInst@464dd379)
+	Linked crux.ir.insts.CallInst@22dc09ce to crux.ir.insts.CopyInst@464dd379
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@30b2bd36
+Cur Statement: crux.ast.Call@67ba6cd9
+Visited Call
+Call Returned: crux.ir.insts.CallInst@49b6e308, crux.ir.insts.CallInst@49b6e308
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@49b6e308, crux.ir.insts.CallInst@49b6e308
+Called LinkInstructions(crux.ir.insts.CallInst@30b2bd36, crux.ir.insts.CallInst@49b6e308)
+	Linked crux.ir.insts.CallInst@30b2bd36 to crux.ir.insts.CallInst@49b6e308
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@49b6e308
+Cur Statement: crux.ast.Call@39af1c09
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@1cd14d07
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@283936e0
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@56e93e4c with value: true
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@56e93e4c, crux.ir.insts.CopyInst@56e93e4c, $t62
+	VISITING RIGHT!: crux.ast.LiteralBool@17e72fcc
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@1c8e142 with value: true
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@1c8e142, crux.ir.insts.CopyInst@1c8e142, $t63
+Right Var: $t63
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@56e93e4c, crux.ir.insts.CopyInst@1c8e142
+		LEFT PAIR: crux.ir.insts.CopyInst@56e93e4c, crux.ir.insts.CopyInst@1c8e142, $t64
+	VISITING RIGHT!: crux.ast.LiteralBool@60a749ad
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@7fa300ab with value: true
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@7fa300ab, crux.ir.insts.CopyInst@7fa300ab, $t65
+Right Var: $t65
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@56e93e4c, crux.ir.insts.CopyInst@7fa300ab
+Called LinkInstructions(crux.ir.insts.CopyInst@7fa300ab, crux.ir.insts.CallInst@5114d9dc)
+	Linked crux.ir.insts.CopyInst@7fa300ab to crux.ir.insts.CallInst@5114d9dc
+Call Returned: crux.ir.insts.CopyInst@56e93e4c, crux.ir.insts.CallInst@5114d9dc
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@56e93e4c, crux.ir.insts.CallInst@5114d9dc
+Called LinkInstructions(crux.ir.insts.CallInst@49b6e308, crux.ir.insts.CopyInst@56e93e4c)
+	Linked crux.ir.insts.CallInst@49b6e308 to crux.ir.insts.CopyInst@56e93e4c
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@5114d9dc
+Cur Statement: crux.ast.Call@1710e04d
+Visited Call
+Call Returned: crux.ir.insts.CallInst@4da03923, crux.ir.insts.CallInst@4da03923
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@4da03923, crux.ir.insts.CallInst@4da03923
+Called LinkInstructions(crux.ir.insts.CallInst@5114d9dc, crux.ir.insts.CallInst@4da03923)
+	Linked crux.ir.insts.CallInst@5114d9dc to crux.ir.insts.CallInst@4da03923
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@4da03923
+Cur Statement: crux.ast.Call@2a61de64
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@5d4c28cd
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@4d4eb9a1 with value: false
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@4d4eb9a1, crux.ir.insts.CopyInst@4d4eb9a1, $t67
+	VISITING RIGHT!: crux.ast.OpExpr@1ebf80a
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@25dd84ad
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@19ebca9b with value: false
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@19ebca9b, crux.ir.insts.CopyInst@19ebca9b, $t68
+	VISITING RIGHT!: crux.ast.LiteralBool@2150fbb6
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@7fa57c3e with value: false
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@7fa57c3e, crux.ir.insts.CopyInst@7fa57c3e, $t69
+Right Var: $t69
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@19ebca9b, crux.ir.insts.CopyInst@7fa57c3e
+		RIGHT PAIR: crux.ir.insts.CopyInst@19ebca9b, crux.ir.insts.CopyInst@7fa57c3e, $t70
+Right Var: $t70
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@4d4eb9a1, crux.ir.insts.CopyInst@7fa57c3e
+Called LinkInstructions(crux.ir.insts.CopyInst@7fa57c3e, crux.ir.insts.CallInst@3694778b)
+	Linked crux.ir.insts.CopyInst@7fa57c3e to crux.ir.insts.CallInst@3694778b
+Call Returned: crux.ir.insts.CopyInst@4d4eb9a1, crux.ir.insts.CallInst@3694778b
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@4d4eb9a1, crux.ir.insts.CallInst@3694778b
+Called LinkInstructions(crux.ir.insts.CallInst@4da03923, crux.ir.insts.CopyInst@4d4eb9a1)
+	Linked crux.ir.insts.CallInst@4da03923 to crux.ir.insts.CopyInst@4d4eb9a1
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@3694778b
+Cur Statement: crux.ast.Call@716cdcd0
+Visited Call
+Call Returned: crux.ir.insts.CallInst@57471400, crux.ir.insts.CallInst@57471400
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@57471400, crux.ir.insts.CallInst@57471400
+Called LinkInstructions(crux.ir.insts.CallInst@3694778b, crux.ir.insts.CallInst@57471400)
+	Linked crux.ir.insts.CallInst@3694778b to crux.ir.insts.CallInst@57471400
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@57471400
+Cur Statement: crux.ast.Call@3d7c65a
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@166ac184
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@1f705c5 with value: false
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@1f705c5, crux.ir.insts.CopyInst@1f705c5, $t72
+	VISITING RIGHT!: crux.ast.OpExpr@6effe6ef
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@53a7187c
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@1301856d with value: false
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@1301856d, crux.ir.insts.CopyInst@1301856d, $t73
+	VISITING RIGHT!: crux.ast.LiteralBool@2ae173e5
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@3bb820c8 with value: true
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@3bb820c8, crux.ir.insts.CopyInst@3bb820c8, $t74
+Right Var: $t74
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@1301856d, crux.ir.insts.CopyInst@3bb820c8
+		RIGHT PAIR: crux.ir.insts.CopyInst@1301856d, crux.ir.insts.CopyInst@3bb820c8, $t75
+Right Var: $t75
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@1f705c5, crux.ir.insts.CopyInst@3bb820c8
+Called LinkInstructions(crux.ir.insts.CopyInst@3bb820c8, crux.ir.insts.CallInst@5037ab3b)
+	Linked crux.ir.insts.CopyInst@3bb820c8 to crux.ir.insts.CallInst@5037ab3b
+Call Returned: crux.ir.insts.CopyInst@1f705c5, crux.ir.insts.CallInst@5037ab3b
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@1f705c5, crux.ir.insts.CallInst@5037ab3b
+Called LinkInstructions(crux.ir.insts.CallInst@57471400, crux.ir.insts.CopyInst@1f705c5)
+	Linked crux.ir.insts.CallInst@57471400 to crux.ir.insts.CopyInst@1f705c5
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@5037ab3b
+Cur Statement: crux.ast.Call@4f0266bd
+Visited Call
+Call Returned: crux.ir.insts.CallInst@6e5d4ae3, crux.ir.insts.CallInst@6e5d4ae3
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@6e5d4ae3, crux.ir.insts.CallInst@6e5d4ae3
+Called LinkInstructions(crux.ir.insts.CallInst@5037ab3b, crux.ir.insts.CallInst@6e5d4ae3)
+	Linked crux.ir.insts.CallInst@5037ab3b to crux.ir.insts.CallInst@6e5d4ae3
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@6e5d4ae3
+Cur Statement: crux.ast.Call@14999980
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@791a865b
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@2571204b with value: false
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@2571204b, crux.ir.insts.CopyInst@2571204b, $t77
+	VISITING RIGHT!: crux.ast.OpExpr@21ff6c54
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@7972a472
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@5477cd59 with value: true
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@5477cd59, crux.ir.insts.CopyInst@5477cd59, $t78
+	VISITING RIGHT!: crux.ast.LiteralBool@7828dce4
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@226f9279 with value: false
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@226f9279, crux.ir.insts.CopyInst@226f9279, $t79
+Right Var: $t79
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@5477cd59, crux.ir.insts.CopyInst@226f9279
+		RIGHT PAIR: crux.ir.insts.CopyInst@5477cd59, crux.ir.insts.CopyInst@226f9279, $t80
+Right Var: $t80
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@2571204b, crux.ir.insts.CopyInst@226f9279
+Called LinkInstructions(crux.ir.insts.CopyInst@226f9279, crux.ir.insts.CallInst@4e52f372)
+	Linked crux.ir.insts.CopyInst@226f9279 to crux.ir.insts.CallInst@4e52f372
+Call Returned: crux.ir.insts.CopyInst@2571204b, crux.ir.insts.CallInst@4e52f372
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@2571204b, crux.ir.insts.CallInst@4e52f372
+Called LinkInstructions(crux.ir.insts.CallInst@6e5d4ae3, crux.ir.insts.CopyInst@2571204b)
+	Linked crux.ir.insts.CallInst@6e5d4ae3 to crux.ir.insts.CopyInst@2571204b
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@4e52f372
+Cur Statement: crux.ast.Call@2425e2e4
+Visited Call
+Call Returned: crux.ir.insts.CallInst@1a54d578, crux.ir.insts.CallInst@1a54d578
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@1a54d578, crux.ir.insts.CallInst@1a54d578
+Called LinkInstructions(crux.ir.insts.CallInst@4e52f372, crux.ir.insts.CallInst@1a54d578)
+	Linked crux.ir.insts.CallInst@4e52f372 to crux.ir.insts.CallInst@1a54d578
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@1a54d578
+Cur Statement: crux.ast.Call@44f66011
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@1de6d29e
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@16df2104 with value: false
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@16df2104, crux.ir.insts.CopyInst@16df2104, $t82
+	VISITING RIGHT!: crux.ast.OpExpr@2a1cc9b2
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@5d9dd208
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@76c48907 with value: true
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@76c48907, crux.ir.insts.CopyInst@76c48907, $t83
+	VISITING RIGHT!: crux.ast.LiteralBool@19fc51da
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@55614a0e with value: true
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@55614a0e, crux.ir.insts.CopyInst@55614a0e, $t84
+Right Var: $t84
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@76c48907, crux.ir.insts.CopyInst@55614a0e
+		RIGHT PAIR: crux.ir.insts.CopyInst@76c48907, crux.ir.insts.CopyInst@55614a0e, $t85
+Right Var: $t85
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@16df2104, crux.ir.insts.CopyInst@55614a0e
+Called LinkInstructions(crux.ir.insts.CopyInst@55614a0e, crux.ir.insts.CallInst@66dfdf38)
+	Linked crux.ir.insts.CopyInst@55614a0e to crux.ir.insts.CallInst@66dfdf38
+Call Returned: crux.ir.insts.CopyInst@16df2104, crux.ir.insts.CallInst@66dfdf38
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@16df2104, crux.ir.insts.CallInst@66dfdf38
+Called LinkInstructions(crux.ir.insts.CallInst@1a54d578, crux.ir.insts.CopyInst@16df2104)
+	Linked crux.ir.insts.CallInst@1a54d578 to crux.ir.insts.CopyInst@16df2104
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@66dfdf38
+Cur Statement: crux.ast.Call@3401fe55
+Visited Call
+Call Returned: crux.ir.insts.CallInst@4f081b8e, crux.ir.insts.CallInst@4f081b8e
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@4f081b8e, crux.ir.insts.CallInst@4f081b8e
+Called LinkInstructions(crux.ir.insts.CallInst@66dfdf38, crux.ir.insts.CallInst@4f081b8e)
+	Linked crux.ir.insts.CallInst@66dfdf38 to crux.ir.insts.CallInst@4f081b8e
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@4f081b8e
+Cur Statement: crux.ast.Call@1066095b
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@8582270
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@33109678 with value: true
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@33109678, crux.ir.insts.CopyInst@33109678, $t87
+	VISITING RIGHT!: crux.ast.OpExpr@3c4b2fff
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@1cc7c5fc
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@55c52fb6 with value: false
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@55c52fb6, crux.ir.insts.CopyInst@55c52fb6, $t88
+	VISITING RIGHT!: crux.ast.LiteralBool@62d1d020
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@7002f52 with value: false
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@7002f52, crux.ir.insts.CopyInst@7002f52, $t89
+Right Var: $t89
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@55c52fb6, crux.ir.insts.CopyInst@7002f52
+		RIGHT PAIR: crux.ir.insts.CopyInst@55c52fb6, crux.ir.insts.CopyInst@7002f52, $t90
+Right Var: $t90
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@33109678, crux.ir.insts.CopyInst@7002f52
+Called LinkInstructions(crux.ir.insts.CopyInst@7002f52, crux.ir.insts.CallInst@25cae26b)
+	Linked crux.ir.insts.CopyInst@7002f52 to crux.ir.insts.CallInst@25cae26b
+Call Returned: crux.ir.insts.CopyInst@33109678, crux.ir.insts.CallInst@25cae26b
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@33109678, crux.ir.insts.CallInst@25cae26b
+Called LinkInstructions(crux.ir.insts.CallInst@4f081b8e, crux.ir.insts.CopyInst@33109678)
+	Linked crux.ir.insts.CallInst@4f081b8e to crux.ir.insts.CopyInst@33109678
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@25cae26b
+Cur Statement: crux.ast.Call@590ec1fb
+Visited Call
+Call Returned: crux.ir.insts.CallInst@35324a2a, crux.ir.insts.CallInst@35324a2a
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@35324a2a, crux.ir.insts.CallInst@35324a2a
+Called LinkInstructions(crux.ir.insts.CallInst@25cae26b, crux.ir.insts.CallInst@35324a2a)
+	Linked crux.ir.insts.CallInst@25cae26b to crux.ir.insts.CallInst@35324a2a
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@35324a2a
+Cur Statement: crux.ast.Call@334e8961
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@41e5ecd9
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@6ecbfc07 with value: true
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@6ecbfc07, crux.ir.insts.CopyInst@6ecbfc07, $t92
+	VISITING RIGHT!: crux.ast.OpExpr@490f88ee
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@e4d152f
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@60a0a31b with value: false
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@60a0a31b, crux.ir.insts.CopyInst@60a0a31b, $t93
+	VISITING RIGHT!: crux.ast.LiteralBool@51ba50cc
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@6447faed with value: true
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@6447faed, crux.ir.insts.CopyInst@6447faed, $t94
+Right Var: $t94
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@60a0a31b, crux.ir.insts.CopyInst@6447faed
+		RIGHT PAIR: crux.ir.insts.CopyInst@60a0a31b, crux.ir.insts.CopyInst@6447faed, $t95
+Right Var: $t95
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@6ecbfc07, crux.ir.insts.CopyInst@6447faed
+Called LinkInstructions(crux.ir.insts.CopyInst@6447faed, crux.ir.insts.CallInst@2457f27)
+	Linked crux.ir.insts.CopyInst@6447faed to crux.ir.insts.CallInst@2457f27
+Call Returned: crux.ir.insts.CopyInst@6ecbfc07, crux.ir.insts.CallInst@2457f27
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@6ecbfc07, crux.ir.insts.CallInst@2457f27
+Called LinkInstructions(crux.ir.insts.CallInst@35324a2a, crux.ir.insts.CopyInst@6ecbfc07)
+	Linked crux.ir.insts.CallInst@35324a2a to crux.ir.insts.CopyInst@6ecbfc07
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@2457f27
+Cur Statement: crux.ast.Call@6718ac0f
+Visited Call
+Call Returned: crux.ir.insts.CallInst@6427ac10, crux.ir.insts.CallInst@6427ac10
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@6427ac10, crux.ir.insts.CallInst@6427ac10
+Called LinkInstructions(crux.ir.insts.CallInst@2457f27, crux.ir.insts.CallInst@6427ac10)
+	Linked crux.ir.insts.CallInst@2457f27 to crux.ir.insts.CallInst@6427ac10
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@6427ac10
+Cur Statement: crux.ast.Call@3feca2eb
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@16f95e76
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@3423e072 with value: true
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@3423e072, crux.ir.insts.CopyInst@3423e072, $t97
+	VISITING RIGHT!: crux.ast.OpExpr@6d3d8dca
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@379c817c
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@6bca6317 with value: true
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@6bca6317, crux.ir.insts.CopyInst@6bca6317, $t98
+	VISITING RIGHT!: crux.ast.LiteralBool@40c13e6c
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@4113b863 with value: false
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@4113b863, crux.ir.insts.CopyInst@4113b863, $t99
+Right Var: $t99
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@6bca6317, crux.ir.insts.CopyInst@4113b863
+		RIGHT PAIR: crux.ir.insts.CopyInst@6bca6317, crux.ir.insts.CopyInst@4113b863, $t100
+Right Var: $t100
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@3423e072, crux.ir.insts.CopyInst@4113b863
+Called LinkInstructions(crux.ir.insts.CopyInst@4113b863, crux.ir.insts.CallInst@1257565c)
+	Linked crux.ir.insts.CopyInst@4113b863 to crux.ir.insts.CallInst@1257565c
+Call Returned: crux.ir.insts.CopyInst@3423e072, crux.ir.insts.CallInst@1257565c
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@3423e072, crux.ir.insts.CallInst@1257565c
+Called LinkInstructions(crux.ir.insts.CallInst@6427ac10, crux.ir.insts.CopyInst@3423e072)
+	Linked crux.ir.insts.CallInst@6427ac10 to crux.ir.insts.CopyInst@3423e072
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@1257565c
+Cur Statement: crux.ast.Call@2abd5dda
+Visited Call
+Call Returned: crux.ir.insts.CallInst@63c634bf, crux.ir.insts.CallInst@63c634bf
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@63c634bf, crux.ir.insts.CallInst@63c634bf
+Called LinkInstructions(crux.ir.insts.CallInst@1257565c, crux.ir.insts.CallInst@63c634bf)
+	Linked crux.ir.insts.CallInst@1257565c to crux.ir.insts.CallInst@63c634bf
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@63c634bf
+Cur Statement: crux.ast.Call@3f4a4804
+Visited Call
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@17071c07
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@5794d0b0 with value: true
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@5794d0b0, crux.ir.insts.CopyInst@5794d0b0, $t102
+	VISITING RIGHT!: crux.ast.OpExpr@5a57531
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralBool@68c217e9
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@478ad9d2 with value: true
+Exit LiteralBool
+		LEFT PAIR: crux.ir.insts.CopyInst@478ad9d2, crux.ir.insts.CopyInst@478ad9d2, $t103
+	VISITING RIGHT!: crux.ast.LiteralBool@366a80c3
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@184877c2 with value: true
+Exit LiteralBool
+		RIGHT PAIR: crux.ir.insts.CopyInst@184877c2, crux.ir.insts.CopyInst@184877c2, $t104
+Right Var: $t104
+	OP: &&
+OpExpr Returned: crux.ir.insts.CopyInst@478ad9d2, crux.ir.insts.CopyInst@184877c2
+		RIGHT PAIR: crux.ir.insts.CopyInst@478ad9d2, crux.ir.insts.CopyInst@184877c2, $t105
+Right Var: $t105
+	OP: ||
+OpExpr Returned: crux.ir.insts.CopyInst@5794d0b0, crux.ir.insts.CopyInst@184877c2
+Called LinkInstructions(crux.ir.insts.CopyInst@184877c2, crux.ir.insts.CallInst@604d567d)
+	Linked crux.ir.insts.CopyInst@184877c2 to crux.ir.insts.CallInst@604d567d
+Call Returned: crux.ir.insts.CopyInst@5794d0b0, crux.ir.insts.CallInst@604d567d
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@5794d0b0, crux.ir.insts.CallInst@604d567d
+Called LinkInstructions(crux.ir.insts.CallInst@63c634bf, crux.ir.insts.CopyInst@5794d0b0)
+	Linked crux.ir.insts.CallInst@63c634bf to crux.ir.insts.CopyInst@5794d0b0
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@604d567d
+Cur Statement: crux.ast.Call@719857ef
+Visited Call
+Call Returned: crux.ir.insts.CallInst@1396bd87, crux.ir.insts.CallInst@1396bd87
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@1396bd87, crux.ir.insts.CallInst@1396bd87
+Called LinkInstructions(crux.ir.insts.CallInst@604d567d, crux.ir.insts.CallInst@1396bd87)
+	Linked crux.ir.insts.CallInst@604d567d to crux.ir.insts.CallInst@1396bd87
+Current stmtlist start + end: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@1396bd87
+Statement List Returned: crux.ir.insts.CopyInst@70244251, crux.ir.insts.CallInst@1396bd87
+Exit FunctionDef
+Exited decl list
+]]></system-out>
+  </testcase>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.076"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.032"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.014"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.013"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.011"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.018"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.015"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.044"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.034"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.012"/>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.006">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getRight()" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:229)
+Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getRight()" is null
+]]></error>
+    <system-out><![CDATA[Visited ArrayDeclarationExited ArrayDeclarationVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccess
+---------------------
+Visited Declaration List
+Visited arrayDeclaration
+Exit arrayDeclaration
+Visited FuncDef List
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@7ab28624
+Cur Statement: crux.ast.VariableDeclaration@7e8d1daa
+Visited variableDeclaration
+	Local var created: $t0
+Exit variableDeclaration
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@6493fe12, crux.ir.insts.NopInst@6493fe12
+Current stmtlist start + end: crux.ir.insts.NopInst@6493fe12, crux.ir.insts.NopInst@6493fe12
+Cur Statement: crux.ast.Assignment@a7ed702
+Visited Assignment
+Visited LiteralBool
+CREATED LITERAL BOOL crux.ir.insts.CopyInst@1c88fbaa with value: true
+Exit LiteralBool
+	RHS Returned pair: crux.ir.insts.CopyInst@1c88fbaa, crux.ir.insts.CopyInst@1c88fbaa
+	Created copy for assignment: crux.ir.insts.CopyInst@5ba07350 for value: $t1
+Called LinkInstructions(crux.ir.insts.CopyInst@1c88fbaa, crux.ir.insts.CopyInst@5ba07350)
+	Linked crux.ir.insts.CopyInst@1c88fbaa to crux.ir.insts.CopyInst@5ba07350
+Assignment Returned (Local Var): crux.ir.insts.CopyInst@1c88fbaa, crux.ir.insts.CopyInst@5ba07350
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@1c88fbaa, crux.ir.insts.CopyInst@5ba07350
+Called LinkInstructions(crux.ir.insts.NopInst@6493fe12, crux.ir.insts.CopyInst@1c88fbaa)
+	Linked crux.ir.insts.NopInst@6493fe12 to crux.ir.insts.CopyInst@1c88fbaa
+Current stmtlist start + end: crux.ir.insts.NopInst@6493fe12, crux.ir.insts.CopyInst@5ba07350
+Cur Statement: crux.ast.Loop@20387558
+Visited Loop
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@5c02609a
+Cur Statement: crux.ast.IfElseBranch@78c951b
+Visited IfElseBranch
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@5fee4c49
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@3c1f7059
+		LEFT PAIR: crux.ir.insts.NopInst@3c1f7059, crux.ir.insts.NopInst@3c1f7059, $t0
+	VISITING RIGHT!: null
+]]></system-out>
+  </testcase>
+  <testcase name="emulateIR" classname="crux.CompilerStageTests" time="0.029">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "java.lang.Long.longValue()" because "args[0]" is null
+	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:229)
+Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Long.longValue()" because "args[0]" is null
+]]></error>
+    <system-out><![CDATA[Visited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccessVisited VarAccess
+---------------------
+Visited Declaration List
+Visited FuncDef List
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@3792ed4f
+Cur Statement: crux.ast.VariableDeclaration@729075d9
+Visited variableDeclaration
+	Local var created: $t2
+Exit variableDeclaration
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@43286033, crux.ir.insts.NopInst@43286033
+Current stmtlist start + end: crux.ir.insts.NopInst@43286033, crux.ir.insts.NopInst@43286033
+Cur Statement: crux.ast.Assignment@63f0058c
+Visited Assignment
+Visited LiteralInt
+New temp var: $t3
+	Literal int value: 0
+Exit LiteralInt
+	RHS Returned pair: crux.ir.insts.CopyInst@1be24215, crux.ir.insts.CopyInst@1be24215
+	Created copy for assignment: crux.ir.insts.CopyInst@1bcb80a2 for value: $t3
+Called LinkInstructions(crux.ir.insts.CopyInst@1be24215, crux.ir.insts.CopyInst@1bcb80a2)
+	Linked crux.ir.insts.CopyInst@1be24215 to crux.ir.insts.CopyInst@1bcb80a2
+Assignment Returned (Local Var): crux.ir.insts.CopyInst@1be24215, crux.ir.insts.CopyInst@1bcb80a2
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@1be24215, crux.ir.insts.CopyInst@1bcb80a2
+Called LinkInstructions(crux.ir.insts.NopInst@43286033, crux.ir.insts.CopyInst@1be24215)
+	Linked crux.ir.insts.NopInst@43286033 to crux.ir.insts.CopyInst@1be24215
+Current stmtlist start + end: crux.ir.insts.NopInst@43286033, crux.ir.insts.CopyInst@1bcb80a2
+Cur Statement: crux.ast.VariableDeclaration@78f42a32
+Visited variableDeclaration
+	Local var created: $t4
+Exit variableDeclaration
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@1f8afea1, crux.ir.insts.NopInst@1f8afea1
+Called LinkInstructions(crux.ir.insts.CopyInst@1bcb80a2, crux.ir.insts.NopInst@1f8afea1)
+	Linked crux.ir.insts.CopyInst@1bcb80a2 to crux.ir.insts.NopInst@1f8afea1
+Current stmtlist start + end: crux.ir.insts.NopInst@43286033, crux.ir.insts.NopInst@1f8afea1
+Cur Statement: crux.ast.Assignment@5883a362
+Visited Assignment
+Visited LiteralInt
+New temp var: $t5
+	Literal int value: 0
+Exit LiteralInt
+	RHS Returned pair: crux.ir.insts.CopyInst@1ffa7fa, crux.ir.insts.CopyInst@1ffa7fa
+	Created copy for assignment: crux.ir.insts.CopyInst@18b306b1 for value: $t5
+Called LinkInstructions(crux.ir.insts.CopyInst@1ffa7fa, crux.ir.insts.CopyInst@18b306b1)
+	Linked crux.ir.insts.CopyInst@1ffa7fa to crux.ir.insts.CopyInst@18b306b1
+Assignment Returned (Local Var): crux.ir.insts.CopyInst@1ffa7fa, crux.ir.insts.CopyInst@18b306b1
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@1ffa7fa, crux.ir.insts.CopyInst@18b306b1
+Called LinkInstructions(crux.ir.insts.NopInst@1f8afea1, crux.ir.insts.CopyInst@1ffa7fa)
+	Linked crux.ir.insts.NopInst@1f8afea1 to crux.ir.insts.CopyInst@1ffa7fa
+Current stmtlist start + end: crux.ir.insts.NopInst@43286033, crux.ir.insts.CopyInst@18b306b1
+Cur Statement: crux.ast.Loop@50848cf0
+Visited Loop
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@15d9ad31
+Cur Statement: crux.ast.IfElseBranch@69e50807
+Visited IfElseBranch
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@69e30d04
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@1d74ffc4
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@459c797e
+		LEFT PAIR: crux.ir.insts.NopInst@459c797e, crux.ir.insts.NopInst@459c797e, $t0
+	VISITING RIGHT!: crux.ast.LiteralInt@478f4fa
+Visited LiteralInt
+New temp var: $t6
+	Literal int value: 0
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@7502425c, crux.ir.insts.CopyInst@7502425c, $t6
+Right Var: $t6
+	OP: ==
+Making compareInst --> $t0, $t6
+Called LinkInstructions(crux.ir.insts.NopInst@459c797e, crux.ir.insts.CopyInst@7502425c)
+	Linked crux.ir.insts.NopInst@459c797e to crux.ir.insts.CopyInst@7502425c
+Called LinkInstructions(crux.ir.insts.CopyInst@7502425c, crux.ir.insts.CompareInst@4fb219e7)
+	Linked crux.ir.insts.CopyInst@7502425c to crux.ir.insts.CompareInst@4fb219e7
+OpExpr Returned: crux.ir.insts.NopInst@459c797e, crux.ir.insts.CompareInst@4fb219e7
+		LEFT PAIR: crux.ir.insts.NopInst@459c797e, crux.ir.insts.CompareInst@4fb219e7, $t7
+	VISITING RIGHT!: crux.ast.OpExpr@69c3cee6
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@2a5f3800
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@4d288fb5
+		LEFT PAIR: crux.ir.insts.NopInst@4d288fb5, crux.ir.insts.NopInst@4d288fb5, $t1
+	VISITING RIGHT!: crux.ast.LiteralInt@128adad6
+Visited LiteralInt
+New temp var: $t8
+	Literal int value: 0
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@6549829f, crux.ir.insts.CopyInst@6549829f, $t8
+Right Var: $t8
+	OP: ==
+Making compareInst --> $t1, $t8
+Called LinkInstructions(crux.ir.insts.NopInst@4d288fb5, crux.ir.insts.CopyInst@6549829f)
+	Linked crux.ir.insts.NopInst@4d288fb5 to crux.ir.insts.CopyInst@6549829f
+Called LinkInstructions(crux.ir.insts.CopyInst@6549829f, crux.ir.insts.CompareInst@3605390e)
+	Linked crux.ir.insts.CopyInst@6549829f to crux.ir.insts.CompareInst@3605390e
+OpExpr Returned: crux.ir.insts.NopInst@4d288fb5, crux.ir.insts.CompareInst@3605390e
+		RIGHT PAIR: crux.ir.insts.NopInst@4d288fb5, crux.ir.insts.CompareInst@3605390e, $t9
+Right Var: $t9
+	OP: &&
+OpExpr Returned: crux.ir.insts.NopInst@459c797e, crux.ir.insts.CompareInst@3605390e
+	CONDPAIR: crux.ir.insts.NopInst@459c797e, crux.ir.insts.CompareInst@3605390e, $t10
+
+!!!!JUMP INSTR CREATED!!!!: crux.ir.insts.JumpInst@3f594d5c
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@7bc17c0b
+Cur Statement: crux.ast.Break@52354496
+Visited Break
+
+!!!BREAK NOP NODE CREATED: crux.ir.insts.NopInst@4de7ca97
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@38215dda, crux.ir.insts.NopInst@4de7ca97
+Current stmtlist start + end: crux.ir.insts.NopInst@38215dda, crux.ir.insts.NopInst@4de7ca97
+Statement List Returned: crux.ir.insts.NopInst@38215dda, crux.ir.insts.NopInst@4de7ca97
+	THEN PAIR: crux.ir.insts.NopInst@38215dda, crux.ir.insts.NopInst@4de7ca97, null
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@48f04ff1
+Statement List Returned: crux.ir.insts.NopInst@48f04ff1, null
+	ELSE PAIR: crux.ir.insts.NopInst@48f04ff1, null, null
+Called LinkInstructions(crux.ir.insts.CompareInst@3605390e, crux.ir.insts.JumpInst@3f594d5c)
+	Linked crux.ir.insts.CompareInst@3605390e to crux.ir.insts.JumpInst@3f594d5c
+
+!!!!MERGE INSTR CREATED!!!!: crux.ir.insts.NopInst@3019a38d
+
+THEN PAIR END: crux.ir.insts.NopInst@4de7ca97
+Called LinkInstructions(crux.ir.insts.NopInst@4de7ca97, crux.ir.insts.NopInst@3019a38d)
+	Linked crux.ir.insts.NopInst@4de7ca97 to crux.ir.insts.NopInst@3019a38d
+Called LinkInstructions(crux.ir.insts.NopInst@48f04ff1, crux.ir.insts.NopInst@3019a38d)
+	Linked crux.ir.insts.NopInst@48f04ff1 to crux.ir.insts.NopInst@3019a38d
+Returned from IfElseBranch: crux.ir.insts.NopInst@459c797e, crux.ir.insts.NopInst@3019a38d
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@459c797e, crux.ir.insts.NopInst@3019a38d
+Current stmtlist start + end: crux.ir.insts.NopInst@459c797e, crux.ir.insts.NopInst@3019a38d
+Cur Statement: crux.ast.VariableDeclaration@43d9746b
+Visited variableDeclaration
+	Local var created: $t11
+Exit variableDeclaration
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@3be16845, crux.ir.insts.NopInst@3be16845
+Called LinkInstructions(crux.ir.insts.NopInst@3019a38d, crux.ir.insts.NopInst@3be16845)
+	Linked crux.ir.insts.NopInst@3019a38d to crux.ir.insts.NopInst@3be16845
+Current stmtlist start + end: crux.ir.insts.NopInst@459c797e, crux.ir.insts.NopInst@3be16845
+Cur Statement: crux.ast.VariableDeclaration@4699b17f
+Visited variableDeclaration
+	Local var created: $t12
+Exit variableDeclaration
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@1e6d2667, crux.ir.insts.NopInst@1e6d2667
+Called LinkInstructions(crux.ir.insts.NopInst@3be16845, crux.ir.insts.NopInst@1e6d2667)
+	Linked crux.ir.insts.NopInst@3be16845 to crux.ir.insts.NopInst@1e6d2667
+Current stmtlist start + end: crux.ir.insts.NopInst@459c797e, crux.ir.insts.NopInst@1e6d2667
+Cur Statement: crux.ast.Assignment@2e7ed6af
+Visited Assignment
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@25678856
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@34e23fb6
+		LEFT PAIR: crux.ir.insts.NopInst@34e23fb6, crux.ir.insts.NopInst@34e23fb6, $t0
+	VISITING RIGHT!: crux.ast.OpExpr@434b6953
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@1b58043b
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@2640a3e
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@27de8a4b
+		LEFT PAIR: crux.ir.insts.NopInst@27de8a4b, crux.ir.insts.NopInst@27de8a4b, $t0
+	VISITING RIGHT!: crux.ast.LiteralInt@3fc77e12
+Visited LiteralInt
+New temp var: $t13
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@64e5dc0d, crux.ir.insts.CopyInst@64e5dc0d, $t13
+Right Var: $t13
+	OP: /
+Called LinkInstructions(crux.ir.insts.NopInst@27de8a4b, crux.ir.insts.CopyInst@64e5dc0d)
+	Linked crux.ir.insts.NopInst@27de8a4b to crux.ir.insts.CopyInst@64e5dc0d
+Called LinkInstructions(crux.ir.insts.CopyInst@64e5dc0d, crux.ir.insts.BinaryOperator@46721f55)
+	Linked crux.ir.insts.CopyInst@64e5dc0d to crux.ir.insts.BinaryOperator@46721f55
+OpExpr Returned: crux.ir.insts.NopInst@27de8a4b, crux.ir.insts.BinaryOperator@46721f55
+		LEFT PAIR: crux.ir.insts.NopInst@27de8a4b, crux.ir.insts.BinaryOperator@46721f55, $t14
+	VISITING RIGHT!: crux.ast.LiteralInt@152d5902
+Visited LiteralInt
+New temp var: $t15
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@111e825b, crux.ir.insts.CopyInst@111e825b, $t15
+Right Var: $t15
+	OP: *
+Called LinkInstructions(crux.ir.insts.BinaryOperator@46721f55, crux.ir.insts.CopyInst@111e825b)
+	Linked crux.ir.insts.BinaryOperator@46721f55 to crux.ir.insts.CopyInst@111e825b
+Called LinkInstructions(crux.ir.insts.CopyInst@111e825b, crux.ir.insts.BinaryOperator@5b5131c1)
+	Linked crux.ir.insts.CopyInst@111e825b to crux.ir.insts.BinaryOperator@5b5131c1
+OpExpr Returned: crux.ir.insts.NopInst@27de8a4b, crux.ir.insts.BinaryOperator@5b5131c1
+		RIGHT PAIR: crux.ir.insts.NopInst@27de8a4b, crux.ir.insts.BinaryOperator@5b5131c1, $t16
+Right Var: $t16
+	OP: -
+Called LinkInstructions(crux.ir.insts.NopInst@34e23fb6, crux.ir.insts.NopInst@27de8a4b)
+	Linked crux.ir.insts.NopInst@34e23fb6 to crux.ir.insts.NopInst@27de8a4b
+Called LinkInstructions(crux.ir.insts.BinaryOperator@5b5131c1, crux.ir.insts.BinaryOperator@d8f0549)
+	Linked crux.ir.insts.BinaryOperator@5b5131c1 to crux.ir.insts.BinaryOperator@d8f0549
+OpExpr Returned: crux.ir.insts.NopInst@34e23fb6, crux.ir.insts.BinaryOperator@d8f0549
+	RHS Returned pair: crux.ir.insts.NopInst@34e23fb6, crux.ir.insts.BinaryOperator@d8f0549
+	Created copy for assignment: crux.ir.insts.CopyInst@7215a8b3 for value: $t17
+Called LinkInstructions(crux.ir.insts.BinaryOperator@d8f0549, crux.ir.insts.CopyInst@7215a8b3)
+	Linked crux.ir.insts.BinaryOperator@d8f0549 to crux.ir.insts.CopyInst@7215a8b3
+Assignment Returned (Local Var): crux.ir.insts.NopInst@34e23fb6, crux.ir.insts.CopyInst@7215a8b3
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@34e23fb6, crux.ir.insts.CopyInst@7215a8b3
+Called LinkInstructions(crux.ir.insts.NopInst@1e6d2667, crux.ir.insts.NopInst@34e23fb6)
+	Linked crux.ir.insts.NopInst@1e6d2667 to crux.ir.insts.NopInst@34e23fb6
+Current stmtlist start + end: crux.ir.insts.NopInst@459c797e, crux.ir.insts.CopyInst@7215a8b3
+Cur Statement: crux.ast.Assignment@17fcf0f0
+Visited Assignment
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@45f104f7
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@3021e44d
+		LEFT PAIR: crux.ir.insts.NopInst@3021e44d, crux.ir.insts.NopInst@3021e44d, $t1
+	VISITING RIGHT!: crux.ast.OpExpr@6fae82ca
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@1fa594bf
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@52beed00
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@6d826896
+		LEFT PAIR: crux.ir.insts.NopInst@6d826896, crux.ir.insts.NopInst@6d826896, $t1
+	VISITING RIGHT!: crux.ast.LiteralInt@76a10f3e
+Visited LiteralInt
+New temp var: $t18
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@45127d39, crux.ir.insts.CopyInst@45127d39, $t18
+Right Var: $t18
+	OP: /
+Called LinkInstructions(crux.ir.insts.NopInst@6d826896, crux.ir.insts.CopyInst@45127d39)
+	Linked crux.ir.insts.NopInst@6d826896 to crux.ir.insts.CopyInst@45127d39
+Called LinkInstructions(crux.ir.insts.CopyInst@45127d39, crux.ir.insts.BinaryOperator@60614e76)
+	Linked crux.ir.insts.CopyInst@45127d39 to crux.ir.insts.BinaryOperator@60614e76
+OpExpr Returned: crux.ir.insts.NopInst@6d826896, crux.ir.insts.BinaryOperator@60614e76
+		LEFT PAIR: crux.ir.insts.NopInst@6d826896, crux.ir.insts.BinaryOperator@60614e76, $t19
+	VISITING RIGHT!: crux.ast.LiteralInt@1ed94c34
+Visited LiteralInt
+New temp var: $t20
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@60ff782e, crux.ir.insts.CopyInst@60ff782e, $t20
+Right Var: $t20
+	OP: *
+Called LinkInstructions(crux.ir.insts.BinaryOperator@60614e76, crux.ir.insts.CopyInst@60ff782e)
+	Linked crux.ir.insts.BinaryOperator@60614e76 to crux.ir.insts.CopyInst@60ff782e
+Called LinkInstructions(crux.ir.insts.CopyInst@60ff782e, crux.ir.insts.BinaryOperator@36d23abd)
+	Linked crux.ir.insts.CopyInst@60ff782e to crux.ir.insts.BinaryOperator@36d23abd
+OpExpr Returned: crux.ir.insts.NopInst@6d826896, crux.ir.insts.BinaryOperator@36d23abd
+		RIGHT PAIR: crux.ir.insts.NopInst@6d826896, crux.ir.insts.BinaryOperator@36d23abd, $t21
+Right Var: $t21
+	OP: -
+Called LinkInstructions(crux.ir.insts.NopInst@3021e44d, crux.ir.insts.NopInst@6d826896)
+	Linked crux.ir.insts.NopInst@3021e44d to crux.ir.insts.NopInst@6d826896
+Called LinkInstructions(crux.ir.insts.BinaryOperator@36d23abd, crux.ir.insts.BinaryOperator@5c2ac0ef)
+	Linked crux.ir.insts.BinaryOperator@36d23abd to crux.ir.insts.BinaryOperator@5c2ac0ef
+OpExpr Returned: crux.ir.insts.NopInst@3021e44d, crux.ir.insts.BinaryOperator@5c2ac0ef
+	RHS Returned pair: crux.ir.insts.NopInst@3021e44d, crux.ir.insts.BinaryOperator@5c2ac0ef
+	Created copy for assignment: crux.ir.insts.CopyInst@8c69fb2 for value: $t22
+Called LinkInstructions(crux.ir.insts.BinaryOperator@5c2ac0ef, crux.ir.insts.CopyInst@8c69fb2)
+	Linked crux.ir.insts.BinaryOperator@5c2ac0ef to crux.ir.insts.CopyInst@8c69fb2
+Assignment Returned (Local Var): crux.ir.insts.NopInst@3021e44d, crux.ir.insts.CopyInst@8c69fb2
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@3021e44d, crux.ir.insts.CopyInst@8c69fb2
+Called LinkInstructions(crux.ir.insts.CopyInst@7215a8b3, crux.ir.insts.NopInst@3021e44d)
+	Linked crux.ir.insts.CopyInst@7215a8b3 to crux.ir.insts.NopInst@3021e44d
+Current stmtlist start + end: crux.ir.insts.NopInst@459c797e, crux.ir.insts.CopyInst@8c69fb2
+Cur Statement: crux.ast.IfElseBranch@1363a88c
+Visited IfElseBranch
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@34436f8f
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@3e64ec50
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@263cf21
+		LEFT PAIR: crux.ir.insts.NopInst@263cf21, crux.ir.insts.NopInst@263cf21, $t11
+	VISITING RIGHT!: crux.ast.LiteralInt@cca3029
+Visited LiteralInt
+New temp var: $t23
+	Literal int value: 1
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@235a1928, crux.ir.insts.CopyInst@235a1928, $t23
+Right Var: $t23
+	OP: ==
+Making compareInst --> $t11, $t23
+Called LinkInstructions(crux.ir.insts.NopInst@263cf21, crux.ir.insts.CopyInst@235a1928)
+	Linked crux.ir.insts.NopInst@263cf21 to crux.ir.insts.CopyInst@235a1928
+Called LinkInstructions(crux.ir.insts.CopyInst@235a1928, crux.ir.insts.CompareInst@3ac5677f)
+	Linked crux.ir.insts.CopyInst@235a1928 to crux.ir.insts.CompareInst@3ac5677f
+OpExpr Returned: crux.ir.insts.NopInst@263cf21, crux.ir.insts.CompareInst@3ac5677f
+		LEFT PAIR: crux.ir.insts.NopInst@263cf21, crux.ir.insts.CompareInst@3ac5677f, $t24
+	VISITING RIGHT!: crux.ast.OpExpr@2643bdc1
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@7b559a58
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@8b54f43
+		LEFT PAIR: crux.ir.insts.NopInst@8b54f43, crux.ir.insts.NopInst@8b54f43, $t12
+	VISITING RIGHT!: crux.ast.LiteralInt@195a3fb5
+Visited LiteralInt
+New temp var: $t25
+	Literal int value: 0
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@224c34ea, crux.ir.insts.CopyInst@224c34ea, $t25
+Right Var: $t25
+	OP: ==
+Making compareInst --> $t12, $t25
+Called LinkInstructions(crux.ir.insts.NopInst@8b54f43, crux.ir.insts.CopyInst@224c34ea)
+	Linked crux.ir.insts.NopInst@8b54f43 to crux.ir.insts.CopyInst@224c34ea
+Called LinkInstructions(crux.ir.insts.CopyInst@224c34ea, crux.ir.insts.CompareInst@759ceda1)
+	Linked crux.ir.insts.CopyInst@224c34ea to crux.ir.insts.CompareInst@759ceda1
+OpExpr Returned: crux.ir.insts.NopInst@8b54f43, crux.ir.insts.CompareInst@759ceda1
+		RIGHT PAIR: crux.ir.insts.NopInst@8b54f43, crux.ir.insts.CompareInst@759ceda1, $t26
+Right Var: $t26
+	OP: &&
+OpExpr Returned: crux.ir.insts.NopInst@263cf21, crux.ir.insts.CompareInst@759ceda1
+	CONDPAIR: crux.ir.insts.NopInst@263cf21, crux.ir.insts.CompareInst@759ceda1, $t27
+
+!!!!JUMP INSTR CREATED!!!!: crux.ir.insts.JumpInst@57717b06
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@1f9e41ca
+Cur Statement: crux.ast.Assignment@5c36cdb7
+Visited Assignment
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@4e55d275
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@122029f2
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@7f5daa6d
+		LEFT PAIR: crux.ir.insts.NopInst@7f5daa6d, crux.ir.insts.NopInst@7f5daa6d, $t2
+	VISITING RIGHT!: crux.ast.LiteralInt@15ec9b44
+Visited LiteralInt
+New temp var: $t28
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@754a25f6, crux.ir.insts.CopyInst@754a25f6, $t28
+Right Var: $t28
+	OP: *
+Called LinkInstructions(crux.ir.insts.NopInst@7f5daa6d, crux.ir.insts.CopyInst@754a25f6)
+	Linked crux.ir.insts.NopInst@7f5daa6d to crux.ir.insts.CopyInst@754a25f6
+Called LinkInstructions(crux.ir.insts.CopyInst@754a25f6, crux.ir.insts.BinaryOperator@6636fd14)
+	Linked crux.ir.insts.CopyInst@754a25f6 to crux.ir.insts.BinaryOperator@6636fd14
+OpExpr Returned: crux.ir.insts.NopInst@7f5daa6d, crux.ir.insts.BinaryOperator@6636fd14
+		LEFT PAIR: crux.ir.insts.NopInst@7f5daa6d, crux.ir.insts.BinaryOperator@6636fd14, $t29
+	VISITING RIGHT!: crux.ast.LiteralInt@742a3d7d
+Visited LiteralInt
+New temp var: $t30
+	Literal int value: 1
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@56dbe07, crux.ir.insts.CopyInst@56dbe07, $t30
+Right Var: $t30
+	OP: +
+Called LinkInstructions(crux.ir.insts.BinaryOperator@6636fd14, crux.ir.insts.CopyInst@56dbe07)
+	Linked crux.ir.insts.BinaryOperator@6636fd14 to crux.ir.insts.CopyInst@56dbe07
+Called LinkInstructions(crux.ir.insts.CopyInst@56dbe07, crux.ir.insts.BinaryOperator@212c4ec9)
+	Linked crux.ir.insts.CopyInst@56dbe07 to crux.ir.insts.BinaryOperator@212c4ec9
+OpExpr Returned: crux.ir.insts.NopInst@7f5daa6d, crux.ir.insts.BinaryOperator@212c4ec9
+	RHS Returned pair: crux.ir.insts.NopInst@7f5daa6d, crux.ir.insts.BinaryOperator@212c4ec9
+	Created copy for assignment: crux.ir.insts.CopyInst@7023c9a5 for value: $t31
+Called LinkInstructions(crux.ir.insts.BinaryOperator@212c4ec9, crux.ir.insts.CopyInst@7023c9a5)
+	Linked crux.ir.insts.BinaryOperator@212c4ec9 to crux.ir.insts.CopyInst@7023c9a5
+Assignment Returned (Local Var): crux.ir.insts.NopInst@7f5daa6d, crux.ir.insts.CopyInst@7023c9a5
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@7f5daa6d, crux.ir.insts.CopyInst@7023c9a5
+Current stmtlist start + end: crux.ir.insts.NopInst@7f5daa6d, crux.ir.insts.CopyInst@7023c9a5
+Statement List Returned: crux.ir.insts.NopInst@7f5daa6d, crux.ir.insts.CopyInst@7023c9a5
+	THEN PAIR: crux.ir.insts.NopInst@7f5daa6d, crux.ir.insts.CopyInst@7023c9a5, null
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@55c7c309
+Cur Statement: crux.ast.IfElseBranch@3d32c230
+Visited IfElseBranch
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@7e2b8959
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@10ab19d8
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@7b9f4f4f
+		LEFT PAIR: crux.ir.insts.NopInst@7b9f4f4f, crux.ir.insts.NopInst@7b9f4f4f, $t11
+	VISITING RIGHT!: crux.ast.LiteralInt@5097314e
+Visited LiteralInt
+New temp var: $t32
+	Literal int value: 0
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@72540b44, crux.ir.insts.CopyInst@72540b44, $t32
+Right Var: $t32
+	OP: ==
+Making compareInst --> $t11, $t32
+Called LinkInstructions(crux.ir.insts.NopInst@7b9f4f4f, crux.ir.insts.CopyInst@72540b44)
+	Linked crux.ir.insts.NopInst@7b9f4f4f to crux.ir.insts.CopyInst@72540b44
+Called LinkInstructions(crux.ir.insts.CopyInst@72540b44, crux.ir.insts.CompareInst@3a79b90f)
+	Linked crux.ir.insts.CopyInst@72540b44 to crux.ir.insts.CompareInst@3a79b90f
+OpExpr Returned: crux.ir.insts.NopInst@7b9f4f4f, crux.ir.insts.CompareInst@3a79b90f
+		LEFT PAIR: crux.ir.insts.NopInst@7b9f4f4f, crux.ir.insts.CompareInst@3a79b90f, $t33
+	VISITING RIGHT!: crux.ast.OpExpr@3b9d6c38
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@52e93744
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@351876
+		LEFT PAIR: crux.ir.insts.NopInst@351876, crux.ir.insts.NopInst@351876, $t12
+	VISITING RIGHT!: crux.ast.LiteralInt@777378be
+Visited LiteralInt
+New temp var: $t34
+	Literal int value: 1
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@275f26c4, crux.ir.insts.CopyInst@275f26c4, $t34
+Right Var: $t34
+	OP: ==
+Making compareInst --> $t12, $t34
+Called LinkInstructions(crux.ir.insts.NopInst@351876, crux.ir.insts.CopyInst@275f26c4)
+	Linked crux.ir.insts.NopInst@351876 to crux.ir.insts.CopyInst@275f26c4
+Called LinkInstructions(crux.ir.insts.CopyInst@275f26c4, crux.ir.insts.CompareInst@3c17767c)
+	Linked crux.ir.insts.CopyInst@275f26c4 to crux.ir.insts.CompareInst@3c17767c
+OpExpr Returned: crux.ir.insts.NopInst@351876, crux.ir.insts.CompareInst@3c17767c
+		RIGHT PAIR: crux.ir.insts.NopInst@351876, crux.ir.insts.CompareInst@3c17767c, $t35
+Right Var: $t35
+	OP: &&
+OpExpr Returned: crux.ir.insts.NopInst@7b9f4f4f, crux.ir.insts.CompareInst@3c17767c
+	CONDPAIR: crux.ir.insts.NopInst@7b9f4f4f, crux.ir.insts.CompareInst@3c17767c, $t36
+
+!!!!JUMP INSTR CREATED!!!!: crux.ir.insts.JumpInst@14c93f20
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@7893138f
+Cur Statement: crux.ast.Assignment@26a4735f
+Visited Assignment
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@21074561
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@7cea4e5e
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@1c053527
+		LEFT PAIR: crux.ir.insts.NopInst@1c053527, crux.ir.insts.NopInst@1c053527, $t2
+	VISITING RIGHT!: crux.ast.LiteralInt@193e8373
+Visited LiteralInt
+New temp var: $t37
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@209e178, crux.ir.insts.CopyInst@209e178, $t37
+Right Var: $t37
+	OP: *
+Called LinkInstructions(crux.ir.insts.NopInst@1c053527, crux.ir.insts.CopyInst@209e178)
+	Linked crux.ir.insts.NopInst@1c053527 to crux.ir.insts.CopyInst@209e178
+Called LinkInstructions(crux.ir.insts.CopyInst@209e178, crux.ir.insts.BinaryOperator@2c3fc7d9)
+	Linked crux.ir.insts.CopyInst@209e178 to crux.ir.insts.BinaryOperator@2c3fc7d9
+OpExpr Returned: crux.ir.insts.NopInst@1c053527, crux.ir.insts.BinaryOperator@2c3fc7d9
+		LEFT PAIR: crux.ir.insts.NopInst@1c053527, crux.ir.insts.BinaryOperator@2c3fc7d9, $t38
+	VISITING RIGHT!: crux.ast.LiteralInt@19a67374
+Visited LiteralInt
+New temp var: $t39
+	Literal int value: 1
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@746e5e28, crux.ir.insts.CopyInst@746e5e28, $t39
+Right Var: $t39
+	OP: +
+Called LinkInstructions(crux.ir.insts.BinaryOperator@2c3fc7d9, crux.ir.insts.CopyInst@746e5e28)
+	Linked crux.ir.insts.BinaryOperator@2c3fc7d9 to crux.ir.insts.CopyInst@746e5e28
+Called LinkInstructions(crux.ir.insts.CopyInst@746e5e28, crux.ir.insts.BinaryOperator@392173fc)
+	Linked crux.ir.insts.CopyInst@746e5e28 to crux.ir.insts.BinaryOperator@392173fc
+OpExpr Returned: crux.ir.insts.NopInst@1c053527, crux.ir.insts.BinaryOperator@392173fc
+	RHS Returned pair: crux.ir.insts.NopInst@1c053527, crux.ir.insts.BinaryOperator@392173fc
+	Created copy for assignment: crux.ir.insts.CopyInst@6b727a0e for value: $t40
+Called LinkInstructions(crux.ir.insts.BinaryOperator@392173fc, crux.ir.insts.CopyInst@6b727a0e)
+	Linked crux.ir.insts.BinaryOperator@392173fc to crux.ir.insts.CopyInst@6b727a0e
+Assignment Returned (Local Var): crux.ir.insts.NopInst@1c053527, crux.ir.insts.CopyInst@6b727a0e
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@1c053527, crux.ir.insts.CopyInst@6b727a0e
+Current stmtlist start + end: crux.ir.insts.NopInst@1c053527, crux.ir.insts.CopyInst@6b727a0e
+Statement List Returned: crux.ir.insts.NopInst@1c053527, crux.ir.insts.CopyInst@6b727a0e
+	THEN PAIR: crux.ir.insts.NopInst@1c053527, crux.ir.insts.CopyInst@6b727a0e, null
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@41e599c7
+Cur Statement: crux.ast.Assignment@477c00cd
+Visited Assignment
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@75f0354d
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@daa83f7
+		LEFT PAIR: crux.ir.insts.NopInst@daa83f7, crux.ir.insts.NopInst@daa83f7, $t2
+	VISITING RIGHT!: crux.ast.LiteralInt@606c0824
+Visited LiteralInt
+New temp var: $t41
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@4731068c, crux.ir.insts.CopyInst@4731068c, $t41
+Right Var: $t41
+	OP: *
+Called LinkInstructions(crux.ir.insts.NopInst@daa83f7, crux.ir.insts.CopyInst@4731068c)
+	Linked crux.ir.insts.NopInst@daa83f7 to crux.ir.insts.CopyInst@4731068c
+Called LinkInstructions(crux.ir.insts.CopyInst@4731068c, crux.ir.insts.BinaryOperator@331f197a)
+	Linked crux.ir.insts.CopyInst@4731068c to crux.ir.insts.BinaryOperator@331f197a
+OpExpr Returned: crux.ir.insts.NopInst@daa83f7, crux.ir.insts.BinaryOperator@331f197a
+	RHS Returned pair: crux.ir.insts.NopInst@daa83f7, crux.ir.insts.BinaryOperator@331f197a
+	Created copy for assignment: crux.ir.insts.CopyInst@6af381d5 for value: $t42
+Called LinkInstructions(crux.ir.insts.BinaryOperator@331f197a, crux.ir.insts.CopyInst@6af381d5)
+	Linked crux.ir.insts.BinaryOperator@331f197a to crux.ir.insts.CopyInst@6af381d5
+Assignment Returned (Local Var): crux.ir.insts.NopInst@daa83f7, crux.ir.insts.CopyInst@6af381d5
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@daa83f7, crux.ir.insts.CopyInst@6af381d5
+Current stmtlist start + end: crux.ir.insts.NopInst@daa83f7, crux.ir.insts.CopyInst@6af381d5
+Statement List Returned: crux.ir.insts.NopInst@daa83f7, crux.ir.insts.CopyInst@6af381d5
+	ELSE PAIR: crux.ir.insts.NopInst@daa83f7, crux.ir.insts.CopyInst@6af381d5, null
+Called LinkInstructions(crux.ir.insts.CompareInst@3c17767c, crux.ir.insts.JumpInst@14c93f20)
+	Linked crux.ir.insts.CompareInst@3c17767c to crux.ir.insts.JumpInst@14c93f20
+
+!!!!MERGE INSTR CREATED!!!!: crux.ir.insts.NopInst@6a5e9987
+
+THEN PAIR END: crux.ir.insts.CopyInst@6b727a0e
+Called LinkInstructions(crux.ir.insts.CopyInst@6b727a0e, crux.ir.insts.NopInst@6a5e9987)
+	Linked crux.ir.insts.CopyInst@6b727a0e to crux.ir.insts.NopInst@6a5e9987
+Called LinkInstructions(crux.ir.insts.CopyInst@6af381d5, crux.ir.insts.NopInst@6a5e9987)
+	Linked crux.ir.insts.CopyInst@6af381d5 to crux.ir.insts.NopInst@6a5e9987
+Returned from IfElseBranch: crux.ir.insts.NopInst@7b9f4f4f, crux.ir.insts.NopInst@6a5e9987
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@7b9f4f4f, crux.ir.insts.NopInst@6a5e9987
+Current stmtlist start + end: crux.ir.insts.NopInst@7b9f4f4f, crux.ir.insts.NopInst@6a5e9987
+Statement List Returned: crux.ir.insts.NopInst@7b9f4f4f, crux.ir.insts.NopInst@6a5e9987
+	ELSE PAIR: crux.ir.insts.NopInst@7b9f4f4f, crux.ir.insts.NopInst@6a5e9987, null
+Called LinkInstructions(crux.ir.insts.CompareInst@759ceda1, crux.ir.insts.JumpInst@57717b06)
+	Linked crux.ir.insts.CompareInst@759ceda1 to crux.ir.insts.JumpInst@57717b06
+
+!!!!MERGE INSTR CREATED!!!!: crux.ir.insts.NopInst@2514f726
+
+THEN PAIR END: crux.ir.insts.CopyInst@7023c9a5
+Called LinkInstructions(crux.ir.insts.CopyInst@7023c9a5, crux.ir.insts.NopInst@2514f726)
+	Linked crux.ir.insts.CopyInst@7023c9a5 to crux.ir.insts.NopInst@2514f726
+Called LinkInstructions(crux.ir.insts.NopInst@6a5e9987, crux.ir.insts.NopInst@2514f726)
+	Linked crux.ir.insts.NopInst@6a5e9987 to crux.ir.insts.NopInst@2514f726
+Returned from IfElseBranch: crux.ir.insts.NopInst@263cf21, crux.ir.insts.NopInst@2514f726
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@263cf21, crux.ir.insts.NopInst@2514f726
+Called LinkInstructions(crux.ir.insts.CopyInst@8c69fb2, crux.ir.insts.NopInst@263cf21)
+	Linked crux.ir.insts.CopyInst@8c69fb2 to crux.ir.insts.NopInst@263cf21
+Current stmtlist start + end: crux.ir.insts.NopInst@459c797e, crux.ir.insts.NopInst@2514f726
+Cur Statement: crux.ast.Assignment@6e8bee37
+Visited Assignment
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@1800371a
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@60c073c
+		LEFT PAIR: crux.ir.insts.NopInst@60c073c, crux.ir.insts.NopInst@60c073c, $t0
+	VISITING RIGHT!: crux.ast.LiteralInt@4237d1c
+Visited LiteralInt
+New temp var: $t43
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@35e8d1f9, crux.ir.insts.CopyInst@35e8d1f9, $t43
+Right Var: $t43
+	OP: /
+Called LinkInstructions(crux.ir.insts.NopInst@60c073c, crux.ir.insts.CopyInst@35e8d1f9)
+	Linked crux.ir.insts.NopInst@60c073c to crux.ir.insts.CopyInst@35e8d1f9
+Called LinkInstructions(crux.ir.insts.CopyInst@35e8d1f9, crux.ir.insts.BinaryOperator@2c4988b9)
+	Linked crux.ir.insts.CopyInst@35e8d1f9 to crux.ir.insts.BinaryOperator@2c4988b9
+OpExpr Returned: crux.ir.insts.NopInst@60c073c, crux.ir.insts.BinaryOperator@2c4988b9
+	RHS Returned pair: crux.ir.insts.NopInst@60c073c, crux.ir.insts.BinaryOperator@2c4988b9
+	Created copy for assignment: crux.ir.insts.CopyInst@4a9a5feb for value: $t44
+Called LinkInstructions(crux.ir.insts.BinaryOperator@2c4988b9, crux.ir.insts.CopyInst@4a9a5feb)
+	Linked crux.ir.insts.BinaryOperator@2c4988b9 to crux.ir.insts.CopyInst@4a9a5feb
+Assignment Returned (Local Var): crux.ir.insts.NopInst@60c073c, crux.ir.insts.CopyInst@4a9a5feb
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@60c073c, crux.ir.insts.CopyInst@4a9a5feb
+Called LinkInstructions(crux.ir.insts.NopInst@2514f726, crux.ir.insts.NopInst@60c073c)
+	Linked crux.ir.insts.NopInst@2514f726 to crux.ir.insts.NopInst@60c073c
+Current stmtlist start + end: crux.ir.insts.NopInst@459c797e, crux.ir.insts.CopyInst@4a9a5feb
+Cur Statement: crux.ast.Assignment@554e1039
+Visited Assignment
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@265a7470
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@46362c42
+		LEFT PAIR: crux.ir.insts.NopInst@46362c42, crux.ir.insts.NopInst@46362c42, $t1
+	VISITING RIGHT!: crux.ast.LiteralInt@5e4b5668
+Visited LiteralInt
+New temp var: $t45
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@7b215a40, crux.ir.insts.CopyInst@7b215a40, $t45
+Right Var: $t45
+	OP: /
+Called LinkInstructions(crux.ir.insts.NopInst@46362c42, crux.ir.insts.CopyInst@7b215a40)
+	Linked crux.ir.insts.NopInst@46362c42 to crux.ir.insts.CopyInst@7b215a40
+Called LinkInstructions(crux.ir.insts.CopyInst@7b215a40, crux.ir.insts.BinaryOperator@ead58a0)
+	Linked crux.ir.insts.CopyInst@7b215a40 to crux.ir.insts.BinaryOperator@ead58a0
+OpExpr Returned: crux.ir.insts.NopInst@46362c42, crux.ir.insts.BinaryOperator@ead58a0
+	RHS Returned pair: crux.ir.insts.NopInst@46362c42, crux.ir.insts.BinaryOperator@ead58a0
+	Created copy for assignment: crux.ir.insts.CopyInst@798e310b for value: $t46
+Called LinkInstructions(crux.ir.insts.BinaryOperator@ead58a0, crux.ir.insts.CopyInst@798e310b)
+	Linked crux.ir.insts.BinaryOperator@ead58a0 to crux.ir.insts.CopyInst@798e310b
+Assignment Returned (Local Var): crux.ir.insts.NopInst@46362c42, crux.ir.insts.CopyInst@798e310b
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@46362c42, crux.ir.insts.CopyInst@798e310b
+Called LinkInstructions(crux.ir.insts.CopyInst@4a9a5feb, crux.ir.insts.NopInst@46362c42)
+	Linked crux.ir.insts.CopyInst@4a9a5feb to crux.ir.insts.NopInst@46362c42
+Current stmtlist start + end: crux.ir.insts.NopInst@459c797e, crux.ir.insts.CopyInst@798e310b
+Cur Statement: crux.ast.Assignment@7df2d044
+Visited Assignment
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@c7066e0
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@687c4796
+		LEFT PAIR: crux.ir.insts.NopInst@687c4796, crux.ir.insts.NopInst@687c4796, $t4
+	VISITING RIGHT!: crux.ast.LiteralInt@607235fb
+Visited LiteralInt
+New temp var: $t47
+	Literal int value: 1
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@b69a941, crux.ir.insts.CopyInst@b69a941, $t47
+Right Var: $t47
+	OP: +
+Called LinkInstructions(crux.ir.insts.NopInst@687c4796, crux.ir.insts.CopyInst@b69a941)
+	Linked crux.ir.insts.NopInst@687c4796 to crux.ir.insts.CopyInst@b69a941
+Called LinkInstructions(crux.ir.insts.CopyInst@b69a941, crux.ir.insts.BinaryOperator@42199aa)
+	Linked crux.ir.insts.CopyInst@b69a941 to crux.ir.insts.BinaryOperator@42199aa
+OpExpr Returned: crux.ir.insts.NopInst@687c4796, crux.ir.insts.BinaryOperator@42199aa
+	RHS Returned pair: crux.ir.insts.NopInst@687c4796, crux.ir.insts.BinaryOperator@42199aa
+	Created copy for assignment: crux.ir.insts.CopyInst@e6b3e4f for value: $t48
+Called LinkInstructions(crux.ir.insts.BinaryOperator@42199aa, crux.ir.insts.CopyInst@e6b3e4f)
+	Linked crux.ir.insts.BinaryOperator@42199aa to crux.ir.insts.CopyInst@e6b3e4f
+Assignment Returned (Local Var): crux.ir.insts.NopInst@687c4796, crux.ir.insts.CopyInst@e6b3e4f
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@687c4796, crux.ir.insts.CopyInst@e6b3e4f
+Called LinkInstructions(crux.ir.insts.CopyInst@798e310b, crux.ir.insts.NopInst@687c4796)
+	Linked crux.ir.insts.CopyInst@798e310b to crux.ir.insts.NopInst@687c4796
+Current stmtlist start + end: crux.ir.insts.NopInst@459c797e, crux.ir.insts.CopyInst@e6b3e4f
+Statement List Returned: crux.ir.insts.NopInst@459c797e, crux.ir.insts.CopyInst@e6b3e4f
+
+!!!Loop Body Pair!!!: crux.ir.insts.NopInst@459c797e, crux.ir.insts.CopyInst@e6b3e4f
+Called LinkInstructions(crux.ir.insts.CopyInst@e6b3e4f, crux.ir.insts.NopInst@459c797e)
+	Linked crux.ir.insts.CopyInst@e6b3e4f to crux.ir.insts.NopInst@459c797e
+Called LinkInstructions(crux.ir.insts.NopInst@7fc71f94, crux.ir.insts.NopInst@459c797e)
+	Linked crux.ir.insts.NopInst@7fc71f94 to crux.ir.insts.NopInst@459c797e
+Loop returned: crux.ir.insts.NopInst@7fc71f94, crux.ir.insts.NopInst@38215dda
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@7fc71f94, crux.ir.insts.NopInst@38215dda
+Called LinkInstructions(crux.ir.insts.CopyInst@18b306b1, crux.ir.insts.NopInst@7fc71f94)
+	Linked crux.ir.insts.CopyInst@18b306b1 to crux.ir.insts.NopInst@7fc71f94
+Current stmtlist start + end: crux.ir.insts.NopInst@43286033, crux.ir.insts.NopInst@38215dda
+Cur Statement: crux.ast.VariableDeclaration@3922828c
+Visited variableDeclaration
+	Local var created: $t49
+Exit variableDeclaration
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@660869ea, crux.ir.insts.NopInst@660869ea
+Called LinkInstructions(crux.ir.insts.NopInst@38215dda, crux.ir.insts.NopInst@660869ea)
+	Linked crux.ir.insts.NopInst@38215dda to crux.ir.insts.NopInst@660869ea
+Current stmtlist start + end: crux.ir.insts.NopInst@43286033, crux.ir.insts.NopInst@660869ea
+Cur Statement: crux.ast.Assignment@21f4e100
+Visited Assignment
+Visited LiteralInt
+New temp var: $t50
+	Literal int value: 0
+Exit LiteralInt
+	RHS Returned pair: crux.ir.insts.CopyInst@cef2150, crux.ir.insts.CopyInst@cef2150
+	Created copy for assignment: crux.ir.insts.CopyInst@82b88fe for value: $t50
+Called LinkInstructions(crux.ir.insts.CopyInst@cef2150, crux.ir.insts.CopyInst@82b88fe)
+	Linked crux.ir.insts.CopyInst@cef2150 to crux.ir.insts.CopyInst@82b88fe
+Assignment Returned (Local Var): crux.ir.insts.CopyInst@cef2150, crux.ir.insts.CopyInst@82b88fe
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@cef2150, crux.ir.insts.CopyInst@82b88fe
+Called LinkInstructions(crux.ir.insts.NopInst@660869ea, crux.ir.insts.CopyInst@cef2150)
+	Linked crux.ir.insts.NopInst@660869ea to crux.ir.insts.CopyInst@cef2150
+Current stmtlist start + end: crux.ir.insts.NopInst@43286033, crux.ir.insts.CopyInst@82b88fe
+Cur Statement: crux.ast.Loop@2d49f728
+Visited Loop
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@2bb3ef60
+Cur Statement: crux.ast.IfElseBranch@5ea3aee7
+Visited IfElseBranch
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@a9ba1b5
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@6809f779
+		LEFT PAIR: crux.ir.insts.NopInst@6809f779, crux.ir.insts.NopInst@6809f779, $t4
+	VISITING RIGHT!: crux.ast.LiteralInt@5c75cdf7
+Visited LiteralInt
+New temp var: $t51
+	Literal int value: 0
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@1f628408, crux.ir.insts.CopyInst@1f628408, $t51
+Right Var: $t51
+	OP: ==
+Making compareInst --> $t4, $t51
+Called LinkInstructions(crux.ir.insts.NopInst@6809f779, crux.ir.insts.CopyInst@1f628408)
+	Linked crux.ir.insts.NopInst@6809f779 to crux.ir.insts.CopyInst@1f628408
+Called LinkInstructions(crux.ir.insts.CopyInst@1f628408, crux.ir.insts.CompareInst@48a30858)
+	Linked crux.ir.insts.CopyInst@1f628408 to crux.ir.insts.CompareInst@48a30858
+OpExpr Returned: crux.ir.insts.NopInst@6809f779, crux.ir.insts.CompareInst@48a30858
+	CONDPAIR: crux.ir.insts.NopInst@6809f779, crux.ir.insts.CompareInst@48a30858, $t52
+
+!!!!JUMP INSTR CREATED!!!!: crux.ir.insts.JumpInst@6fb69c0a
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@1d5efe7e
+Cur Statement: crux.ast.Break@16976b19
+Visited Break
+
+!!!BREAK NOP NODE CREATED: crux.ir.insts.NopInst@46a6405b
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@1d2bc249, crux.ir.insts.NopInst@46a6405b
+Current stmtlist start + end: crux.ir.insts.NopInst@1d2bc249, crux.ir.insts.NopInst@46a6405b
+Statement List Returned: crux.ir.insts.NopInst@1d2bc249, crux.ir.insts.NopInst@46a6405b
+	THEN PAIR: crux.ir.insts.NopInst@1d2bc249, crux.ir.insts.NopInst@46a6405b, null
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@77ec629c
+Statement List Returned: crux.ir.insts.NopInst@77ec629c, null
+	ELSE PAIR: crux.ir.insts.NopInst@77ec629c, null, null
+Called LinkInstructions(crux.ir.insts.CompareInst@48a30858, crux.ir.insts.JumpInst@6fb69c0a)
+	Linked crux.ir.insts.CompareInst@48a30858 to crux.ir.insts.JumpInst@6fb69c0a
+
+!!!!MERGE INSTR CREATED!!!!: crux.ir.insts.NopInst@5a8e00db
+
+THEN PAIR END: crux.ir.insts.NopInst@46a6405b
+Called LinkInstructions(crux.ir.insts.NopInst@46a6405b, crux.ir.insts.NopInst@5a8e00db)
+	Linked crux.ir.insts.NopInst@46a6405b to crux.ir.insts.NopInst@5a8e00db
+Called LinkInstructions(crux.ir.insts.NopInst@77ec629c, crux.ir.insts.NopInst@5a8e00db)
+	Linked crux.ir.insts.NopInst@77ec629c to crux.ir.insts.NopInst@5a8e00db
+Returned from IfElseBranch: crux.ir.insts.NopInst@6809f779, crux.ir.insts.NopInst@5a8e00db
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@6809f779, crux.ir.insts.NopInst@5a8e00db
+Current stmtlist start + end: crux.ir.insts.NopInst@6809f779, crux.ir.insts.NopInst@5a8e00db
+Cur Statement: crux.ast.Assignment@2ede2749
+Visited Assignment
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@6da49151
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@7948e6fb
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@536ab9d1
+		LEFT PAIR: crux.ir.insts.NopInst@536ab9d1, crux.ir.insts.NopInst@536ab9d1, $t49
+	VISITING RIGHT!: crux.ast.LiteralInt@c51289a
+Visited LiteralInt
+New temp var: $t53
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@45361e58, crux.ir.insts.CopyInst@45361e58, $t53
+Right Var: $t53
+	OP: *
+Called LinkInstructions(crux.ir.insts.NopInst@536ab9d1, crux.ir.insts.CopyInst@45361e58)
+	Linked crux.ir.insts.NopInst@536ab9d1 to crux.ir.insts.CopyInst@45361e58
+Called LinkInstructions(crux.ir.insts.CopyInst@45361e58, crux.ir.insts.BinaryOperator@7b77573b)
+	Linked crux.ir.insts.CopyInst@45361e58 to crux.ir.insts.BinaryOperator@7b77573b
+OpExpr Returned: crux.ir.insts.NopInst@536ab9d1, crux.ir.insts.BinaryOperator@7b77573b
+		LEFT PAIR: crux.ir.insts.NopInst@536ab9d1, crux.ir.insts.BinaryOperator@7b77573b, $t54
+	VISITING RIGHT!: crux.ast.OpExpr@7d55cdb5
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@78c53f7d
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@df42ae3
+		LEFT PAIR: crux.ir.insts.NopInst@df42ae3, crux.ir.insts.NopInst@df42ae3, $t2
+	VISITING RIGHT!: crux.ast.OpExpr@4cfb7ae9
+Visited OpExpr
+	VISITING LEFT!: crux.ast.OpExpr@1f902ea6
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@4effc4fe
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@62705cf0
+		LEFT PAIR: crux.ir.insts.NopInst@62705cf0, crux.ir.insts.NopInst@62705cf0, $t2
+	VISITING RIGHT!: crux.ast.LiteralInt@75cb4e65
+Visited LiteralInt
+New temp var: $t55
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@6bb0ab64, crux.ir.insts.CopyInst@6bb0ab64, $t55
+Right Var: $t55
+	OP: /
+Called LinkInstructions(crux.ir.insts.NopInst@62705cf0, crux.ir.insts.CopyInst@6bb0ab64)
+	Linked crux.ir.insts.NopInst@62705cf0 to crux.ir.insts.CopyInst@6bb0ab64
+Called LinkInstructions(crux.ir.insts.CopyInst@6bb0ab64, crux.ir.insts.BinaryOperator@5bd84ad8)
+	Linked crux.ir.insts.CopyInst@6bb0ab64 to crux.ir.insts.BinaryOperator@5bd84ad8
+OpExpr Returned: crux.ir.insts.NopInst@62705cf0, crux.ir.insts.BinaryOperator@5bd84ad8
+		LEFT PAIR: crux.ir.insts.NopInst@62705cf0, crux.ir.insts.BinaryOperator@5bd84ad8, $t56
+	VISITING RIGHT!: crux.ast.LiteralInt@3baf1a8f
+Visited LiteralInt
+New temp var: $t57
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@14b8c3f9, crux.ir.insts.CopyInst@14b8c3f9, $t57
+Right Var: $t57
+	OP: *
+Called LinkInstructions(crux.ir.insts.BinaryOperator@5bd84ad8, crux.ir.insts.CopyInst@14b8c3f9)
+	Linked crux.ir.insts.BinaryOperator@5bd84ad8 to crux.ir.insts.CopyInst@14b8c3f9
+Called LinkInstructions(crux.ir.insts.CopyInst@14b8c3f9, crux.ir.insts.BinaryOperator@7abdb181)
+	Linked crux.ir.insts.CopyInst@14b8c3f9 to crux.ir.insts.BinaryOperator@7abdb181
+OpExpr Returned: crux.ir.insts.NopInst@62705cf0, crux.ir.insts.BinaryOperator@7abdb181
+		RIGHT PAIR: crux.ir.insts.NopInst@62705cf0, crux.ir.insts.BinaryOperator@7abdb181, $t58
+Right Var: $t58
+	OP: -
+Called LinkInstructions(crux.ir.insts.NopInst@df42ae3, crux.ir.insts.NopInst@62705cf0)
+	Linked crux.ir.insts.NopInst@df42ae3 to crux.ir.insts.NopInst@62705cf0
+Called LinkInstructions(crux.ir.insts.BinaryOperator@7abdb181, crux.ir.insts.BinaryOperator@632aba84)
+	Linked crux.ir.insts.BinaryOperator@7abdb181 to crux.ir.insts.BinaryOperator@632aba84
+OpExpr Returned: crux.ir.insts.NopInst@df42ae3, crux.ir.insts.BinaryOperator@632aba84
+		RIGHT PAIR: crux.ir.insts.NopInst@df42ae3, crux.ir.insts.BinaryOperator@632aba84, $t59
+Right Var: $t59
+	OP: +
+Called LinkInstructions(crux.ir.insts.BinaryOperator@7b77573b, crux.ir.insts.NopInst@df42ae3)
+	Linked crux.ir.insts.BinaryOperator@7b77573b to crux.ir.insts.NopInst@df42ae3
+Called LinkInstructions(crux.ir.insts.BinaryOperator@632aba84, crux.ir.insts.BinaryOperator@2012af0c)
+	Linked crux.ir.insts.BinaryOperator@632aba84 to crux.ir.insts.BinaryOperator@2012af0c
+OpExpr Returned: crux.ir.insts.NopInst@536ab9d1, crux.ir.insts.BinaryOperator@2012af0c
+	RHS Returned pair: crux.ir.insts.NopInst@536ab9d1, crux.ir.insts.BinaryOperator@2012af0c
+	Created copy for assignment: crux.ir.insts.CopyInst@72e707fc for value: $t60
+Called LinkInstructions(crux.ir.insts.BinaryOperator@2012af0c, crux.ir.insts.CopyInst@72e707fc)
+	Linked crux.ir.insts.BinaryOperator@2012af0c to crux.ir.insts.CopyInst@72e707fc
+Assignment Returned (Local Var): crux.ir.insts.NopInst@536ab9d1, crux.ir.insts.CopyInst@72e707fc
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@536ab9d1, crux.ir.insts.CopyInst@72e707fc
+Called LinkInstructions(crux.ir.insts.NopInst@5a8e00db, crux.ir.insts.NopInst@536ab9d1)
+	Linked crux.ir.insts.NopInst@5a8e00db to crux.ir.insts.NopInst@536ab9d1
+Current stmtlist start + end: crux.ir.insts.NopInst@6809f779, crux.ir.insts.CopyInst@72e707fc
+Cur Statement: crux.ast.Assignment@65418198
+Visited Assignment
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@5389f92e
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@6656469c
+		LEFT PAIR: crux.ir.insts.NopInst@6656469c, crux.ir.insts.NopInst@6656469c, $t2
+	VISITING RIGHT!: crux.ast.LiteralInt@2cc4754d
+Visited LiteralInt
+New temp var: $t61
+	Literal int value: 2
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@45607c0c, crux.ir.insts.CopyInst@45607c0c, $t61
+Right Var: $t61
+	OP: /
+Called LinkInstructions(crux.ir.insts.NopInst@6656469c, crux.ir.insts.CopyInst@45607c0c)
+	Linked crux.ir.insts.NopInst@6656469c to crux.ir.insts.CopyInst@45607c0c
+Called LinkInstructions(crux.ir.insts.CopyInst@45607c0c, crux.ir.insts.BinaryOperator@59bcad07)
+	Linked crux.ir.insts.CopyInst@45607c0c to crux.ir.insts.BinaryOperator@59bcad07
+OpExpr Returned: crux.ir.insts.NopInst@6656469c, crux.ir.insts.BinaryOperator@59bcad07
+	RHS Returned pair: crux.ir.insts.NopInst@6656469c, crux.ir.insts.BinaryOperator@59bcad07
+	Created copy for assignment: crux.ir.insts.CopyInst@d0a620a for value: $t62
+Called LinkInstructions(crux.ir.insts.BinaryOperator@59bcad07, crux.ir.insts.CopyInst@d0a620a)
+	Linked crux.ir.insts.BinaryOperator@59bcad07 to crux.ir.insts.CopyInst@d0a620a
+Assignment Returned (Local Var): crux.ir.insts.NopInst@6656469c, crux.ir.insts.CopyInst@d0a620a
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@6656469c, crux.ir.insts.CopyInst@d0a620a
+Called LinkInstructions(crux.ir.insts.CopyInst@72e707fc, crux.ir.insts.NopInst@6656469c)
+	Linked crux.ir.insts.CopyInst@72e707fc to crux.ir.insts.NopInst@6656469c
+Current stmtlist start + end: crux.ir.insts.NopInst@6809f779, crux.ir.insts.CopyInst@d0a620a
+Cur Statement: crux.ast.Assignment@26b00fb
+Visited Assignment
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@442d8ca6
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@7845c5b1
+		LEFT PAIR: crux.ir.insts.NopInst@7845c5b1, crux.ir.insts.NopInst@7845c5b1, $t4
+	VISITING RIGHT!: crux.ast.LiteralInt@2681f281
+Visited LiteralInt
+New temp var: $t63
+	Literal int value: 1
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@7c374272, crux.ir.insts.CopyInst@7c374272, $t63
+Right Var: $t63
+	OP: -
+Called LinkInstructions(crux.ir.insts.NopInst@7845c5b1, crux.ir.insts.CopyInst@7c374272)
+	Linked crux.ir.insts.NopInst@7845c5b1 to crux.ir.insts.CopyInst@7c374272
+Called LinkInstructions(crux.ir.insts.CopyInst@7c374272, crux.ir.insts.BinaryOperator@5457a9ee)
+	Linked crux.ir.insts.CopyInst@7c374272 to crux.ir.insts.BinaryOperator@5457a9ee
+OpExpr Returned: crux.ir.insts.NopInst@7845c5b1, crux.ir.insts.BinaryOperator@5457a9ee
+	RHS Returned pair: crux.ir.insts.NopInst@7845c5b1, crux.ir.insts.BinaryOperator@5457a9ee
+	Created copy for assignment: crux.ir.insts.CopyInst@2e99698 for value: $t64
+Called LinkInstructions(crux.ir.insts.BinaryOperator@5457a9ee, crux.ir.insts.CopyInst@2e99698)
+	Linked crux.ir.insts.BinaryOperator@5457a9ee to crux.ir.insts.CopyInst@2e99698
+Assignment Returned (Local Var): crux.ir.insts.NopInst@7845c5b1, crux.ir.insts.CopyInst@2e99698
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@7845c5b1, crux.ir.insts.CopyInst@2e99698
+Called LinkInstructions(crux.ir.insts.CopyInst@d0a620a, crux.ir.insts.NopInst@7845c5b1)
+	Linked crux.ir.insts.CopyInst@d0a620a to crux.ir.insts.NopInst@7845c5b1
+Current stmtlist start + end: crux.ir.insts.NopInst@6809f779, crux.ir.insts.CopyInst@2e99698
+Statement List Returned: crux.ir.insts.NopInst@6809f779, crux.ir.insts.CopyInst@2e99698
+
+!!!Loop Body Pair!!!: crux.ir.insts.NopInst@6809f779, crux.ir.insts.CopyInst@2e99698
+Called LinkInstructions(crux.ir.insts.CopyInst@2e99698, crux.ir.insts.NopInst@6809f779)
+	Linked crux.ir.insts.CopyInst@2e99698 to crux.ir.insts.NopInst@6809f779
+Called LinkInstructions(crux.ir.insts.NopInst@2bd579be, crux.ir.insts.NopInst@6809f779)
+	Linked crux.ir.insts.NopInst@2bd579be to crux.ir.insts.NopInst@6809f779
+Loop returned: crux.ir.insts.NopInst@2bd579be, crux.ir.insts.NopInst@1d2bc249
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@2bd579be, crux.ir.insts.NopInst@1d2bc249
+Called LinkInstructions(crux.ir.insts.CopyInst@82b88fe, crux.ir.insts.NopInst@2bd579be)
+	Linked crux.ir.insts.CopyInst@82b88fe to crux.ir.insts.NopInst@2bd579be
+Current stmtlist start + end: crux.ir.insts.NopInst@43286033, crux.ir.insts.NopInst@1d2bc249
+Cur Statement: crux.ast.Return@6db78a64
+Visited Return
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@4c646e5
+Called LinkInstructions(crux.ir.insts.NopInst@4c646e5, crux.ir.insts.ReturnInst@4ad54db3)
+	Linked crux.ir.insts.NopInst@4c646e5 to crux.ir.insts.ReturnInst@4ad54db3
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@4c646e5, crux.ir.insts.ReturnInst@4ad54db3
+Called LinkInstructions(crux.ir.insts.NopInst@1d2bc249, crux.ir.insts.NopInst@4c646e5)
+	Linked crux.ir.insts.NopInst@1d2bc249 to crux.ir.insts.NopInst@4c646e5
+Current stmtlist start + end: crux.ir.insts.NopInst@43286033, crux.ir.insts.ReturnInst@4ad54db3
+Statement List Returned: crux.ir.insts.NopInst@43286033, crux.ir.insts.ReturnInst@4ad54db3
+Exit FunctionDef
+Visited FuncDef List
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@4a4dd5de
+Cur Statement: crux.ast.VariableDeclaration@1b788259
+Visited variableDeclaration
+	Local var created: $t0
+Exit variableDeclaration
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@4de7766c, crux.ir.insts.NopInst@4de7766c
+Current stmtlist start + end: crux.ir.insts.NopInst@4de7766c, crux.ir.insts.NopInst@4de7766c
+Cur Statement: crux.ast.Assignment@69a0a92b
+Visited Assignment
+Visited LiteralInt
+New temp var: $t1
+	Literal int value: 0
+Exit LiteralInt
+	RHS Returned pair: crux.ir.insts.CopyInst@3615840c, crux.ir.insts.CopyInst@3615840c
+	Created copy for assignment: crux.ir.insts.CopyInst@638a2e85 for value: $t1
+Called LinkInstructions(crux.ir.insts.CopyInst@3615840c, crux.ir.insts.CopyInst@638a2e85)
+	Linked crux.ir.insts.CopyInst@3615840c to crux.ir.insts.CopyInst@638a2e85
+Assignment Returned (Local Var): crux.ir.insts.CopyInst@3615840c, crux.ir.insts.CopyInst@638a2e85
+STMT LIST CUR PAIR: crux.ir.insts.CopyInst@3615840c, crux.ir.insts.CopyInst@638a2e85
+Called LinkInstructions(crux.ir.insts.NopInst@4de7766c, crux.ir.insts.CopyInst@3615840c)
+	Linked crux.ir.insts.NopInst@4de7766c to crux.ir.insts.CopyInst@3615840c
+Current stmtlist start + end: crux.ir.insts.NopInst@4de7766c, crux.ir.insts.CopyInst@638a2e85
+Cur Statement: crux.ast.Loop@1528608e
+Visited Loop
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@79ad6af1
+Cur Statement: crux.ast.IfElseBranch@6382a42c
+Visited IfElseBranch
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@514e40df
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@7b46668
+		LEFT PAIR: crux.ir.insts.NopInst@7b46668, crux.ir.insts.NopInst@7b46668, $t0
+	VISITING RIGHT!: crux.ast.LiteralInt@15dc7e8d
+Visited LiteralInt
+New temp var: $t2
+	Literal int value: 40
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@63890bde, crux.ir.insts.CopyInst@63890bde, $t2
+Right Var: $t2
+	OP: >=
+Making compareInst --> $t0, $t2
+Called LinkInstructions(crux.ir.insts.NopInst@7b46668, crux.ir.insts.CopyInst@63890bde)
+	Linked crux.ir.insts.NopInst@7b46668 to crux.ir.insts.CopyInst@63890bde
+Called LinkInstructions(crux.ir.insts.CopyInst@63890bde, crux.ir.insts.CompareInst@4062f7c8)
+	Linked crux.ir.insts.CopyInst@63890bde to crux.ir.insts.CompareInst@4062f7c8
+OpExpr Returned: crux.ir.insts.NopInst@7b46668, crux.ir.insts.CompareInst@4062f7c8
+	CONDPAIR: crux.ir.insts.NopInst@7b46668, crux.ir.insts.CompareInst@4062f7c8, $t3
+
+!!!!JUMP INSTR CREATED!!!!: crux.ir.insts.JumpInst@64414e8a
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@121f7c99
+Cur Statement: crux.ast.Break@39e352ff
+Visited Break
+
+!!!BREAK NOP NODE CREATED: crux.ir.insts.NopInst@6ee83ebc
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@b308f5, crux.ir.insts.NopInst@6ee83ebc
+Current stmtlist start + end: crux.ir.insts.NopInst@b308f5, crux.ir.insts.NopInst@6ee83ebc
+Statement List Returned: crux.ir.insts.NopInst@b308f5, crux.ir.insts.NopInst@6ee83ebc
+	THEN PAIR: crux.ir.insts.NopInst@b308f5, crux.ir.insts.NopInst@6ee83ebc, null
+Visited Statement List
+Start Instr STMTLIST: crux.ir.insts.NopInst@69a157ce
+Statement List Returned: crux.ir.insts.NopInst@69a157ce, null
+	ELSE PAIR: crux.ir.insts.NopInst@69a157ce, null, null
+Called LinkInstructions(crux.ir.insts.CompareInst@4062f7c8, crux.ir.insts.JumpInst@64414e8a)
+	Linked crux.ir.insts.CompareInst@4062f7c8 to crux.ir.insts.JumpInst@64414e8a
+
+!!!!MERGE INSTR CREATED!!!!: crux.ir.insts.NopInst@4af684af
+
+THEN PAIR END: crux.ir.insts.NopInst@6ee83ebc
+Called LinkInstructions(crux.ir.insts.NopInst@6ee83ebc, crux.ir.insts.NopInst@4af684af)
+	Linked crux.ir.insts.NopInst@6ee83ebc to crux.ir.insts.NopInst@4af684af
+Called LinkInstructions(crux.ir.insts.NopInst@69a157ce, crux.ir.insts.NopInst@4af684af)
+	Linked crux.ir.insts.NopInst@69a157ce to crux.ir.insts.NopInst@4af684af
+Returned from IfElseBranch: crux.ir.insts.NopInst@7b46668, crux.ir.insts.NopInst@4af684af
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@7b46668, crux.ir.insts.NopInst@4af684af
+Current stmtlist start + end: crux.ir.insts.NopInst@7b46668, crux.ir.insts.NopInst@4af684af
+Cur Statement: crux.ast.VariableDeclaration@65444e93
+Visited variableDeclaration
+	Local var created: $t4
+Exit variableDeclaration
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@1ed42132, crux.ir.insts.NopInst@1ed42132
+Called LinkInstructions(crux.ir.insts.NopInst@4af684af, crux.ir.insts.NopInst@1ed42132)
+	Linked crux.ir.insts.NopInst@4af684af to crux.ir.insts.NopInst@1ed42132
+Current stmtlist start + end: crux.ir.insts.NopInst@7b46668, crux.ir.insts.NopInst@1ed42132
+Cur Statement: crux.ast.Assignment@60f91dbb
+Visited Assignment
+Visited Call
+Call Returned: crux.ir.insts.CallInst@270ef7e1, crux.ir.insts.CallInst@270ef7e1
+	RHS Returned pair: crux.ir.insts.CallInst@270ef7e1, crux.ir.insts.CallInst@270ef7e1
+	Created copy for assignment: crux.ir.insts.CopyInst@1a280e18 for value: $t5
+Called LinkInstructions(crux.ir.insts.CallInst@270ef7e1, crux.ir.insts.CopyInst@1a280e18)
+	Linked crux.ir.insts.CallInst@270ef7e1 to crux.ir.insts.CopyInst@1a280e18
+Assignment Returned (Local Var): crux.ir.insts.CallInst@270ef7e1, crux.ir.insts.CopyInst@1a280e18
+STMT LIST CUR PAIR: crux.ir.insts.CallInst@270ef7e1, crux.ir.insts.CopyInst@1a280e18
+Called LinkInstructions(crux.ir.insts.NopInst@1ed42132, crux.ir.insts.CallInst@270ef7e1)
+	Linked crux.ir.insts.NopInst@1ed42132 to crux.ir.insts.CallInst@270ef7e1
+Current stmtlist start + end: crux.ir.insts.NopInst@7b46668, crux.ir.insts.CopyInst@1a280e18
+Cur Statement: crux.ast.Call@25ca61de
+Visited Call
+Visited Call
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@d76b419
+Visited OpExpr
+	VISITING LEFT!: crux.ast.LiteralInt@5d17eba9
+Visited LiteralInt
+New temp var: $t6
+	Literal int value: 7
+Exit LiteralInt
+		LEFT PAIR: crux.ir.insts.CopyInst@71576dd, crux.ir.insts.CopyInst@71576dd, $t6
+	VISITING RIGHT!: crux.ast.VarAccess@71a72370
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@49498721
+		RIGHT PAIR: crux.ir.insts.NopInst@49498721, crux.ir.insts.NopInst@49498721, $t0
+Right Var: $t0
+	OP: +
+Called LinkInstructions(crux.ir.insts.CopyInst@71576dd, crux.ir.insts.NopInst@49498721)
+	Linked crux.ir.insts.CopyInst@71576dd to crux.ir.insts.NopInst@49498721
+Called LinkInstructions(crux.ir.insts.NopInst@49498721, crux.ir.insts.BinaryOperator@2be16702)
+	Linked crux.ir.insts.NopInst@49498721 to crux.ir.insts.BinaryOperator@2be16702
+OpExpr Returned: crux.ir.insts.CopyInst@71576dd, crux.ir.insts.BinaryOperator@2be16702
+Called LinkInstructions(crux.ir.insts.NopInst@d76b419, crux.ir.insts.CopyInst@71576dd)
+	Linked crux.ir.insts.NopInst@d76b419 to crux.ir.insts.CopyInst@71576dd
+Called LinkInstructions(crux.ir.insts.BinaryOperator@2be16702, crux.ir.insts.CallInst@7ee4f3d)
+	Linked crux.ir.insts.BinaryOperator@2be16702 to crux.ir.insts.CallInst@7ee4f3d
+Call Returned: crux.ir.insts.NopInst@d76b419, crux.ir.insts.CallInst@7ee4f3d
+Called LinkInstructions(crux.ir.insts.CallInst@7ee4f3d, crux.ir.insts.CallInst@4f1a5013)
+	Linked crux.ir.insts.CallInst@7ee4f3d to crux.ir.insts.CallInst@4f1a5013
+Call Returned: crux.ir.insts.NopInst@d76b419, crux.ir.insts.CallInst@4f1a5013
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@d76b419, crux.ir.insts.CallInst@4f1a5013
+Called LinkInstructions(crux.ir.insts.CopyInst@1a280e18, crux.ir.insts.NopInst@d76b419)
+	Linked crux.ir.insts.CopyInst@1a280e18 to crux.ir.insts.NopInst@d76b419
+Current stmtlist start + end: crux.ir.insts.NopInst@7b46668, crux.ir.insts.CallInst@4f1a5013
+Cur Statement: crux.ast.Assignment@4a6fa65e
+Visited Assignment
+Visited OpExpr
+	VISITING LEFT!: crux.ast.VarAccess@6a160166
+Visited VarAccess
+VarAccess Returned (Nops): crux.ir.insts.NopInst@1ff42cbe
+		LEFT PAIR: crux.ir.insts.NopInst@1ff42cbe, crux.ir.insts.NopInst@1ff42cbe, $t0
+	VISITING RIGHT!: crux.ast.LiteralInt@2f36d9b
+Visited LiteralInt
+New temp var: $t9
+	Literal int value: 1
+Exit LiteralInt
+		RIGHT PAIR: crux.ir.insts.CopyInst@359966cd, crux.ir.insts.CopyInst@359966cd, $t9
+Right Var: $t9
+	OP: +
+Called LinkInstructions(crux.ir.insts.NopInst@1ff42cbe, crux.ir.insts.CopyInst@359966cd)
+	Linked crux.ir.insts.NopInst@1ff42cbe to crux.ir.insts.CopyInst@359966cd
+Called LinkInstructions(crux.ir.insts.CopyInst@359966cd, crux.ir.insts.BinaryOperator@6fde4c29)
+	Linked crux.ir.insts.CopyInst@359966cd to crux.ir.insts.BinaryOperator@6fde4c29
+OpExpr Returned: crux.ir.insts.NopInst@1ff42cbe, crux.ir.insts.BinaryOperator@6fde4c29
+	RHS Returned pair: crux.ir.insts.NopInst@1ff42cbe, crux.ir.insts.BinaryOperator@6fde4c29
+	Created copy for assignment: crux.ir.insts.CopyInst@51710cb0 for value: $t10
+Called LinkInstructions(crux.ir.insts.BinaryOperator@6fde4c29, crux.ir.insts.CopyInst@51710cb0)
+	Linked crux.ir.insts.BinaryOperator@6fde4c29 to crux.ir.insts.CopyInst@51710cb0
+Assignment Returned (Local Var): crux.ir.insts.NopInst@1ff42cbe, crux.ir.insts.CopyInst@51710cb0
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@1ff42cbe, crux.ir.insts.CopyInst@51710cb0
+Called LinkInstructions(crux.ir.insts.CallInst@4f1a5013, crux.ir.insts.NopInst@1ff42cbe)
+	Linked crux.ir.insts.CallInst@4f1a5013 to crux.ir.insts.NopInst@1ff42cbe
+Current stmtlist start + end: crux.ir.insts.NopInst@7b46668, crux.ir.insts.CopyInst@51710cb0
+Statement List Returned: crux.ir.insts.NopInst@7b46668, crux.ir.insts.CopyInst@51710cb0
+
+!!!Loop Body Pair!!!: crux.ir.insts.NopInst@7b46668, crux.ir.insts.CopyInst@51710cb0
+Called LinkInstructions(crux.ir.insts.CopyInst@51710cb0, crux.ir.insts.NopInst@7b46668)
+	Linked crux.ir.insts.CopyInst@51710cb0 to crux.ir.insts.NopInst@7b46668
+Called LinkInstructions(crux.ir.insts.NopInst@48772cb0, crux.ir.insts.NopInst@7b46668)
+	Linked crux.ir.insts.NopInst@48772cb0 to crux.ir.insts.NopInst@7b46668
+Loop returned: crux.ir.insts.NopInst@48772cb0, crux.ir.insts.NopInst@b308f5
+STMT LIST CUR PAIR: crux.ir.insts.NopInst@48772cb0, crux.ir.insts.NopInst@b308f5
+Called LinkInstructions(crux.ir.insts.CopyInst@638a2e85, crux.ir.insts.NopInst@48772cb0)
+	Linked crux.ir.insts.CopyInst@638a2e85 to crux.ir.insts.NopInst@48772cb0
+Current stmtlist start + end: crux.ir.insts.NopInst@4de7766c, crux.ir.insts.NopInst@b308f5
+Statement List Returned: crux.ir.insts.NopInst@4de7766c, crux.ir.insts.NopInst@b308f5
+Exit FunctionDef
+Exited decl list
+]]></system-out>
+  </testcase>
 </testsuite>

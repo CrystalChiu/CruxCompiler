@@ -20,7 +20,7 @@ public final class TypeChecker {
 
 
   public TypeChecker() {
-    System.out.println("INIT");
+    //System.out.println("INIT");
     reset();
   }
 
@@ -85,7 +85,7 @@ public final class TypeChecker {
         setNodeType(node, type);
       }
 
-      System.out.println("Set Node: " + node.toString() + " to Type: " + type);
+      //System.out.println("Set Node: " + node.toString() + " to Type: " + type);
 
       return type;
     }
@@ -121,7 +121,7 @@ public final class TypeChecker {
 
     @Override
     public Void visit(Assignment assignment) {
-      System.out.println("Visited Assignment");
+      //System.out.println("Visited Assignment");
 
       Type locationType = visitAndSetType(assignment.getLocation());
       Type valueType = visitAndSetType(assignment.getValue());
@@ -132,22 +132,22 @@ public final class TypeChecker {
 
       lastStatementReturns = false;
 
-      System.out.print("Exited Assignment");
+      //System.out.print("Exited Assignment");
       return null;
     }
 
     @Override
     public Void visit(Break brk) {
-      System.out.println("Visited Break");
+      //System.out.println("Visited Break");
       hasBreak = true;
-      System.out.println("Exit Break");
+      //System.out.println("Exit Break");
 
       return null;
     }
 
     @Override
     public Void visit(Call call) {
-      System.out.println("Visited Call");
+      //System.out.println("Visited Call");
       TypeList argTypes = new TypeList();
 
       for (Node arg : call.getChildren()) {
@@ -163,20 +163,20 @@ public final class TypeChecker {
 
       lastStatementReturns = false;
 
-      System.out.println("Exit Call");
+      //System.out.println("Exit Call");
       return null;
     }
 
     @Override
     public Void visit(Continue cont) {
-      System.out.println("Visited Cont");
+      //System.out.println("Visited Cont");
 
       return null;
     }
     
     @Override
     public Void visit(DeclarationList declarationList) {
-      System.out.println("Visited DeclarationList");
+      //System.out.println("Visited DeclarationList");
 
       lastStatementReturns = false;
 
@@ -184,19 +184,19 @@ public final class TypeChecker {
         visitAndSetType(child);
       }
 
-      System.out.println("Exit DeclarationList");
+      //System.out.println("Exit DeclarationList");
       return null;
     }
 
     @Override
     public Void visit(FunctionDefinition functionDefinition) {
-      System.out.println("Visited FuncDef");
+      //System.out.println("Visited FuncDef");
 
       currentFunctionSymbol = functionDefinition.getSymbol();
 
       FuncType functionType = (FuncType)currentFunctionSymbol.getType();
       Type currentFunctionReturnType = functionType.getRet();
-      System.out.println("Func type: " + functionType);
+      //System.out.println("Func type: " + functionType);
 
       //if func is main, verify return type is void and no args.
       if ("main".equals(currentFunctionSymbol.getName())) {
@@ -211,7 +211,7 @@ public final class TypeChecker {
       //only bool and int params allowed
       for (Symbol param : functionDefinition.getParameters()) {
         Type paramType = param.getType();
-        System.out.println("paramType: " + paramType);
+        //System.out.println("paramType: " + paramType);
 
         if (!(paramType instanceof IntType) && !(paramType instanceof BoolType)) {
           setNodeType(functionDefinition, new ErrorType("Parameter must be of type int or bool."));
@@ -230,13 +230,13 @@ public final class TypeChecker {
 
       lastStatementReturns = false;
 
-      System.out.println("Exit FuncDef");
+      //System.out.println("Exit FuncDef");
       return null;
     }
 
     @Override
     public Void visit(IfElseBranch ifElseBranch) {
-      System.out.println("Visited IfElseBranch");
+      //System.out.println("Visited IfElseBranch");
 
       Type conditionType = visitAndSetType(ifElseBranch.getCondition());
       if (!(conditionType instanceof BoolType)) {
@@ -249,13 +249,13 @@ public final class TypeChecker {
         visitAndSetType(ifElseBranch.getElseBlock());
       }
 
-      System.out.println("Exit IfElseBranch");
+      //System.out.println("Exit IfElseBranch");
       return null;
     }
 
     @Override
     public Void visit(ArrayAccess access) {
-      System.out.println("Visited ArrayAccess");
+      //System.out.println("Visited ArrayAccess");
 
       Expression indexExpr = access.getIndex();
       Type indexType = visitAndSetType(indexExpr);
@@ -278,7 +278,7 @@ public final class TypeChecker {
 
     @Override
     public Void visit(LiteralBool literalBool) {
-      System.out.println("Visited LiteralBool");
+      //System.out.println("Visited LiteralBool");
 
       setNodeType(literalBool, new BoolType());
 
@@ -287,7 +287,7 @@ public final class TypeChecker {
 
     @Override
     public Void visit(LiteralInt literalInt) {
-      System.out.println("Visited LiteralInt");
+      //System.out.println("Visited LiteralInt");
       setNodeType(literalInt, new IntType());
 
       return null;
@@ -311,14 +311,14 @@ public final class TypeChecker {
       hasBreak = prevHasBreak;
       lastStatementReturns = prevLastStatementReturns;
 
-      System.out.println("Exit Loop");
+      //System.out.println("Exit Loop");
 
       return null;
     }
 
     @Override
     public Void visit(OpExpr op) {
-      System.out.println("Visited OpExpr");
+      //System.out.println("Visited OpExpr");
 
       Expression left = op.getLeft();
       Expression right = op.getRight();
@@ -333,7 +333,7 @@ public final class TypeChecker {
       }
       Type resultType;
 
-      System.out.println("CURRENT OP: " + op.getOp());
+      //System.out.println("CURRENT OP: " + op.getOp());
       switch (op.getOp()) {
         case ADD:
         case SUB:
@@ -364,7 +364,6 @@ public final class TypeChecker {
           }
           break;
         case LOGIC_NOT:
-          System.out.println("HERE IN NOT");
           if (leftType instanceof BoolType) {
             resultType = leftType;
           } else {
@@ -391,7 +390,7 @@ public final class TypeChecker {
 
     @Override
     public Void visit(Return ret) {
-      System.out.println("Visited Return");
+      //System.out.println("Visited Return");
 
       Expression returnValue = ret.getValue();
       Type returnType = visitAndSetType(returnValue);
@@ -412,15 +411,15 @@ public final class TypeChecker {
 
     @Override
     public Void visit(StatementList statementList) {
-      System.out.println("Visited StatementList");
+      //System.out.println("Visited StatementList");
 
       lastStatementReturns = false;
 
       boolean seenReturn = false;
       for (Node stmtNode : statementList.getChildren()) {
-        System.out.println("smtlist: here");
+        //System.out.println("smtlist: here");
         visitAndSetType(stmtNode);
-        System.out.println("smtlist: here2");
+        //System.out.println("smtlist: here2");
 
         if(seenReturn) {
           setNodeType(stmtNode, new ErrorType("Unreachable statement found after return."));
@@ -431,13 +430,13 @@ public final class TypeChecker {
         }
       }
 
-      System.out.println("Exit StatementList");
+      //System.out.println("Exit StatementList");
       return null;
     }
 
     @Override
     public Void visit(VariableDeclaration variableDeclaration) {
-      System.out.println("Visited VariableDeclaration");
+      //System.out.println("Visited VariableDeclaration");
 
       Symbol variableSymbol = variableDeclaration.getSymbol();
       Type variableType = variableSymbol.getType();

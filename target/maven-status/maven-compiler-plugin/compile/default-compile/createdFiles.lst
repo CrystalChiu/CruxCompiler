@@ -89,6 +89,7 @@ crux/ast/ParseTreeLower$DeclVisitor.class
 crux/pt/CruxVisitor.class
 crux/pt/CruxParser$LiteralContext.class
 crux/ast/types/FuncType.class
+crux/ir/ASTLower$1.class
 crux/ast/Statement.class
 crux/pt/CruxParser$DesignatorContext.class
 crux/ast/SymbolTable$Symbol.class

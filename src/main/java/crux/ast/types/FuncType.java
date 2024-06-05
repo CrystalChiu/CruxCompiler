@@ -36,10 +36,6 @@ public final class FuncType extends Type implements java.io.Serializable {
     }
 
     TypeList argList = (TypeList) args;
-    System.out.print("ARG LIST:");
-    System.out.println(argList.toString());
-    System.out.print("ARGS:");
-    System.out.println(this.args.toString());
 
     // check if the provided argument list is equivalent to the expected argument list
     if (!this.args.equivalent(argList)) {

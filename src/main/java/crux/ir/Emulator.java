@@ -107,35 +107,48 @@ public class Emulator {
     }
 
     public void visit(CompareInst i) {
-      Long left = (Long) localMap.get(i.getLeftOperand());
-      Long right = (Long) localMap.get(i.getRightOperand());
-      Boolean result = null;
-      switch (i.getPredicate()) {
-        case GE:
-          result = left >= right;
-          break;
-        case GT:
-          result = left > right;
-          break;
-        case LE:
-          result = left <= right;
-          break;
-        case LT:
-          result = left < right;
-          break;
-        case EQ:
-          result = left.equals(right);
-          break;
-        case NE:
-          result = !left.equals(right);
-          break;
+      //System.out.println("!!!!DEBUG!!!!");
+      //System.out.println("left operand: "  +  i.getLeftOperand());
+      //System.out.println("right operand: "  +  i.getRightOperand());
+      //System.out.println("\t" + localMap.get(i.getLeftOperand()) + ", " + localMap.get( localMap.get(i.getRightOperand())));
+
+      try {
+        Long left = (Long) localMap.get(i.getLeftOperand());
+        Long right = (Long) localMap.get(i.getRightOperand());
+        Boolean result = null;
+        switch (i.getPredicate()) {
+          case GE:
+            result = left >= right;
+            break;
+          case GT:
+            result = left > right;
+            break;
+          case LE:
+            result = left <= right;
+            break;
+          case LT:
+            result = left < right;
+            break;
+          case EQ:
+            result = left.equals(right);
+            break;
+          case NE:
+            result = !left.equals(right);
+            break;
+        }
+
+        localMap.put(i.getDst(), result);
+        debug("CompareInst: " + i.getDst() + "=" + left + i.getPredicate() + right);
+      } catch (Exception e) {
+        //System.out.println("Womp womp");
       }
-      localMap.put(i.getDst(), result);
-      debug("CompareInst: " + i.getDst() + "=" + left + i.getPredicate() + right);
+
       pc = pc.getNext(0);
     }
 
     public void visit(CopyInst i) {
+      //System.out.println("Enter CopyInst with " + i);
+
       Value srcval = i.getSrcValue();
       Object val;
       if (srcval instanceof IntegerConstant) {
@@ -146,6 +159,7 @@ public class Emulator {
         val = localMap.get(srcval);
       }
 
+      //System.out.println("CopyInst: " + i.getDstVar() + ", " + val);
       debug("CopyInst: " + i.getDstVar() + "=" + val);
       localMap.put(i.getDstVar(), val);
       pc = pc.getNext(0);
