@@ -27,6 +27,7 @@ public class Emulator {
     long offset = 0;
     for (Iterator<GlobalDecl> glob_it = p.getGlobals(); glob_it.hasNext();) {
       GlobalDecl g = glob_it.next();
+      System.out.println("\tAdded symbol: " + System.identityHashCode(g.getSymbol()));
       offsetMap.put(g.getSymbol(), offset);
       offset += ((IntegerConstant) g.getNumElement()).getValue() * 8;
     }
@@ -72,18 +73,28 @@ public class Emulator {
     }
 
     public void visit(AddressAt i) {
+      System.out.println("Entered AddressAt: " + i);
       Symbol base = i.getBase();
+
       long address = offsetMap.get(base);
+      System.out.println("address: " + offsetMap.get(base));
       Value v = i.getOffset();
+
+
       if (v != null) {
         address += 8 * ((Long) localMap.get(v));
       }
       localMap.put(i.getDst(), address);
       debug("AddressAt: " + i.getDst() + " = " + address);
+
       pc = pc.getNext(0);
+      System.out.println("Exited AddressAt: " + i);
     }
 
     public void visit(BinaryOperator i) {
+      System.out.println("Entered BinaryOperator");
+      System.out.println("\t" + localMap.get(i.getLeftOperand()) + ", " + localMap.get( localMap.get(i.getRightOperand())));
+
       Object left = localMap.get(i.getLeftOperand());
       Object right = localMap.get(i.getRightOperand());
       Object result = null;
@@ -104,50 +115,47 @@ public class Emulator {
       localMap.put(i.getDst(), result);
       debug("BinaryOperator: " + i.getDst() + "=" + left + i.getOperator() + right);
       pc = pc.getNext(0);
+
+      System.out.println("Exited BinaryOperator: " + i);
     }
 
     public void visit(CompareInst i) {
-      //System.out.println("!!!!DEBUG!!!!");
-      //System.out.println("left operand: "  +  i.getLeftOperand());
-      //System.out.println("right operand: "  +  i.getRightOperand());
-      //System.out.println("\t" + localMap.get(i.getLeftOperand()) + ", " + localMap.get( localMap.get(i.getRightOperand())));
+      System.out.println("Entered CompareInst");
+      System.out.println("\t" + localMap.get(i.getLeftOperand()) + ", " + localMap.get( localMap.get(i.getRightOperand())));
 
-      try {
-        Long left = (Long) localMap.get(i.getLeftOperand());
-        Long right = (Long) localMap.get(i.getRightOperand());
-        Boolean result = null;
-        switch (i.getPredicate()) {
-          case GE:
-            result = left >= right;
-            break;
-          case GT:
-            result = left > right;
-            break;
-          case LE:
-            result = left <= right;
-            break;
-          case LT:
-            result = left < right;
-            break;
-          case EQ:
-            result = left.equals(right);
-            break;
-          case NE:
-            result = !left.equals(right);
-            break;
-        }
-
-        localMap.put(i.getDst(), result);
-        debug("CompareInst: " + i.getDst() + "=" + left + i.getPredicate() + right);
-      } catch (Exception e) {
-        //System.out.println("Womp womp");
+      Long left = (Long) localMap.get(i.getLeftOperand());
+      Long right = (Long) localMap.get(i.getRightOperand());
+      Boolean result = null;
+      switch (i.getPredicate()) {
+        case GE:
+          result = left >= right;
+          break;
+        case GT:
+          result = left > right;
+          break;
+        case LE:
+          result = left <= right;
+          break;
+        case LT:
+          result = left < right;
+          break;
+        case EQ:
+          result = left.equals(right);
+          break;
+        case NE:
+          result = !left.equals(right);
+          break;
       }
 
+      localMap.put(i.getDst(), result);
+      debug("CompareInst: " + i.getDst() + "=" + left + i.getPredicate() + right);
+
       pc = pc.getNext(0);
+      System.out.println("Exited CompareInst: " + i);
     }
 
     public void visit(CopyInst i) {
-      //System.out.println("Enter CopyInst with " + i);
+      System.out.println("Enter CopyInst with " + i);
 
       Value srcval = i.getSrcValue();
       Object val;
@@ -163,15 +171,21 @@ public class Emulator {
       debug("CopyInst: " + i.getDstVar() + "=" + val);
       localMap.put(i.getDstVar(), val);
       pc = pc.getNext(0);
+      System.out.println("Exited CopyInst: " + i);
     }
 
     public void visit(JumpInst i) {
+      System.out.println("Enter JumpInst");
+
       Boolean pred = (Boolean) localMap.get(i.getPredicate());
       debug("Jump: " + i.getPredicate() + "=" + pred);
       pc = pred ? pc.getNext(1) : pc.getNext(0);
+
+      System.out.println("Exited JumpInst: " + i);
     }
 
     public void visit(LoadInst i) {
+      System.out.println("Enter LoadInst");
       AddressVar var = i.getSrcAddress();
       Long address = (Long) localMap.get(var);
       Long value = globalMap.get(address);
@@ -190,6 +204,8 @@ public class Emulator {
       debug("LoadInst: " + i.getDst() + "=" + val);
       localMap.put(i.getDst(), val);
       pc = pc.getNext(0);
+
+      System.out.println("Exited LoadInst: " + i);
     }
 
     public void visit(NopInst i) {
@@ -199,10 +215,15 @@ public class Emulator {
     }
 
     public void visit(StoreInst i) {
+      System.out.println("Enter StoreInst");
+      System.out.println("srcval: " + i.getSrcValue());
+      System.out.println("dst: " + i.getDestAddress());
+
       Value srcval = i.getSrcValue();
       Object val = localMap.get(srcval);
       AddressVar dst = i.getDestAddress();
       Long address = (Long) localMap.get(dst);
+
       debug("StoreInst: *" + address + "=" + val);
 
       if (val instanceof Long) {
@@ -211,9 +232,12 @@ public class Emulator {
         globalMap.put(address, ((Boolean) val) ? Long.valueOf(1) : Long.valueOf(0));
       }
       pc = pc.getNext(0);
+
+      System.out.println("Exit StoreInst with: " + i);
     }
 
     public void visit(ReturnInst i) {
+      System.out.println("Enter ReturnInst");
       Object val = i.getReturnValue() != null ? localMap.get(i.getReturnValue()) : null;
       debug("ReturnInst: " + val);
       // Remove ourselves from the stack
@@ -224,20 +248,29 @@ public class Emulator {
         if (retval != null)
           caller.localMap.put(retval, val);
       }
+
+      System.out.println("Exit ReturnInst with: " + i);
     }
 
     public void visit(CallInst i) {
+      System.out.println("Enter CallInst");
+
       List<LocalVar> params = i.getParams();
       Object[] args = new Object[params.size()];
       for (int j = 0; j < args.length; j++) {
         args[j] = localMap.get(params.get(j));
       }
 
+      System.out.println("HERE");
+
       Symbol varCallee = i.getCallee();
       String fName = varCallee.getName();
       debug("Calling " + fName + " with " + Arrays.toString(args));
 
+      System.out.println("HERE2");
+
       if (fName.equals("readInt")) {
+        System.out.println("HERE3");
         try {
           out.print("int?");
           String line = br.readLine();
@@ -246,6 +279,7 @@ public class Emulator {
           throw new Error("Error in inputting Integer.");
         }
       } else if (fName.equals("readChar")) {
+        System.out.println("HERE4");
         try {
           int val = br.read();
           if (val == -1)
@@ -259,23 +293,31 @@ public class Emulator {
       } else if (fName.equals("printInt")) {
         out.print(args[0]);
       } else if (fName.equals("printChar")) {
+        System.out.println("HERE4");
         out.print((char) ((Long) args[0]).longValue());
       } else if (fName.equals("println")) {
         out.println("");
       } else {
+        System.out.println("HERE5");
         Function f = functions.get(fName);
         CallContext callee = new CallContext(f, args, (LocalVar) i.getDst());
         stack.push(callee);
       }
       pc = pc.getNext(0);
+
+      System.out.println("Exit CallInst with: " + i);
     }
 
     public void visit(UnaryNotInst i) {
+      System.out.println("Enter UnaryNotInst");
+
       Object left = localMap.get(i.getInner());
       Object result = !((Boolean) left);
       localMap.put(i.getDst(), result);
       debug("UnaryNotInst: " + result);
       pc = pc.getNext(0);
+
+      System.out.println("Exit UnaryNotInst with: " + i);
     }
   }
 }

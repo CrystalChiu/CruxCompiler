@@ -146,6 +146,8 @@ public final class ASTLower implements NodeVisitor<InstPair> {
     //dump mCurrentFunction and localVarMap?
     mCurrentFunction = null;
     mCurrentLocalVarMap = null;
+    mCurLoopHead = null;
+    mCurLoopExit = null;
 
     System.out.println("Exit FunctionDef");
     return null;
@@ -192,12 +194,13 @@ public final class ASTLower implements NodeVisitor<InstPair> {
     if (mCurrentFunction == null) {
       //global var
       GlobalDecl globalDecl = new GlobalDecl(variableDeclaration.getSymbol(), IntegerConstant.get(mCurrentProgram, 1));
+      System.out.println("\nGLOBAL CREATED: " + System.identityHashCode(globalDecl.getSymbol()));
       System.out.println("\tGlobal var created: " + globalDecl);
       mCurrentProgram.addGlobalVar(globalDecl);
     } else {
       //local var
       LocalVar tempVar = mCurrentFunction.getTempVar(variableDeclaration.getSymbol().getType());
-      System.out.println("\tLocal var created: " + tempVar);
+      System.out.println("\nLOCAL CREATED: " + System.identityHashCode(tempVar));
       mCurrentLocalVarMap.put(variableDeclaration.getSymbol(), tempVar);
     }
 
@@ -240,13 +243,14 @@ public final class ASTLower implements NodeVisitor<InstPair> {
       //local var
       NopInst nop = new NopInst();
       System.out.println("VarAccess Returned (Nops): " + nop);
-      return new InstPair(nop, nop, mCurrentLocalVarMap.get(varSymbol)); //was causing nullptr exception
+      return new InstPair(nop, nop, mCurrentLocalVarMap.get(varSymbol));
     } else {
       //global var
       AddressVar destAddressVar = new AddressVar(varSymbol.getType());
-      AddressAt addressAt = new AddressAt(destAddressVar, varSymbol);
+      AddressAt addressAt = new AddressAt(destAddressVar, findGlobalSymbol(varSymbol));
 
       LoadInst loadInst = new LoadInst(mCurrentFunction.getTempVar(varSymbol.getType()), destAddressVar);
+      System.out.println("DESTINATION: " + loadInst.getDst());
 
       linkInstructions(addressAt, loadInst);
 
@@ -255,6 +259,26 @@ public final class ASTLower implements NodeVisitor<InstPair> {
     }
   }
 
+  /**
+   * Helper function for Assignment
+   * @param program
+   * @param symbolName
+   * @return
+   */
+  private Symbol findGlobalSymbol(Symbol symbol) {
+    String symbolName = symbol.getName();
+    Iterator<GlobalDecl> globalsIterator = mCurrentProgram.getGlobals();
+
+    while (globalsIterator.hasNext()) {
+      GlobalDecl globalDecl = globalsIterator.next();
+      Symbol currentSymbol = globalDecl.getSymbol();
+
+      if (currentSymbol.getName().equals(symbolName)) {
+        return currentSymbol;
+      }
+    }
+    return null;
+  }
   /**
    * If the location is a VarAccess to a LocalVar, copy the value to it. If the location is a
    * VarAccess to a global, store the value. If the location is ArrayAccess, store the value.
@@ -273,9 +297,11 @@ public final class ASTLower implements NodeVisitor<InstPair> {
     if (locationExpr instanceof VarAccess) {
       VarAccess varAccess = (VarAccess) locationExpr;
       Symbol varSymbol = varAccess.getSymbol();
+      System.out.println("\tCUR SYMBOL: " + varSymbol);
 
       if (mCurrentLocalVarMap.containsKey(varSymbol)) {
         //local var assignment
+        System.out.println("LOCAL var: " + System.identityHashCode(varSymbol));
         LocalVar localVar = mCurrentLocalVarMap.get(varSymbol);
         CopyInst copyInst = new CopyInst(localVar, pair.getValue());
         System.out.println("\tCreated copy for assignment: " + copyInst + " for value: " + pair.getValue());
@@ -286,8 +312,9 @@ public final class ASTLower implements NodeVisitor<InstPair> {
         return new InstPair(pair.getStart(), copyInst);
       } else {
         //global var assignment
+        System.out.println("GLOBAL var: " + System.identityHashCode(varSymbol));
         AddressVar destAddressVar = new AddressVar(varSymbol.getType());
-        AddressAt addressAt = new AddressAt(destAddressVar, varSymbol);
+        AddressAt addressAt = new AddressAt(destAddressVar, findGlobalSymbol(varSymbol));
         StoreInst storeInst = new StoreInst((LocalVar) pair.getValue(), destAddressVar);
 
         linkInstructions(addressAt, pair.getStart());
@@ -305,7 +332,8 @@ public final class ASTLower implements NodeVisitor<InstPair> {
       InstPair indexPair = indexExpr.accept(this);
 
       AddressVar destAddressVar = new AddressVar(arrSymbol.getType());
-      AddressAt addressAt = new AddressAt(destAddressVar, arrSymbol, (LocalVar) indexPair.getValue());
+      //AddressAt addressAt = new AddressAt(destAddressVar, arrSymbol, (LocalVar) indexPair.getValue());
+      AddressAt addressAt = new AddressAt(destAddressVar, findGlobalSymbol(arrSymbol), (LocalVar) indexPair.getValue());
       StoreInst storeInst = new StoreInst((LocalVar) pair.getValue(), destAddressVar);
 
       linkInstructions(indexPair.getEnd(), addressAt);
@@ -410,20 +438,22 @@ public final class ASTLower implements NodeVisitor<InstPair> {
 
     System.out.println("\tVISITING LEFT!: " + operation.getLeft());
     InstPair leftPair = operation.getLeft().accept(this);
-    System.out.println("\t\tLEFT PAIR: " + leftPair.getStart() + ", " + leftPair.getEnd() + ", " + leftPair.getValue());
-    System.out.println("\tVISITING RIGHT!: " + operation.getRight());
-    InstPair rightPair = operation.getRight().accept(this);
-    System.out.println("\t\tRIGHT PAIR: " + rightPair.getStart() + ", " + rightPair.getEnd() + ", " + rightPair.getValue());
-
+    LocalVar leftVar = (LocalVar) leftPair.getValue();
     Instruction startInst = leftPair.getStart();
-    Instruction endInstr = rightPair.getEnd();
+    System.out.println("\t\tLEFT PAIR: " + leftPair.getStart() + ", " + leftPair.getEnd() + ", " + leftPair.getValue());
+
+    System.out.println("\tVISITING RIGHT!: " + operation.getRight());
+    InstPair rightPair = null;
+    Instruction endInstr = null;
+    LocalVar rightVar = null;
+    if(operation.getRight() != null) {
+      rightPair = operation.getRight().accept(this);
+      endInstr = rightPair.getEnd();
+      rightVar = (LocalVar) rightPair.getValue();
+    }
 
     //double check this
     LocalVar resultVar = mCurrentFunction.getTempVar(new BoolType());
-
-    LocalVar leftVar = (LocalVar) leftPair.getValue();
-    LocalVar rightVar = (LocalVar) rightPair.getValue();
-    System.out.println("Right Var: " + rightPair.getValue());
 
     System.out.println("\tOP: " + operation.getOp());
     switch (operation.getOp()) {
@@ -513,7 +543,8 @@ public final class ASTLower implements NodeVisitor<InstPair> {
     //create cfg nodes
     System.out.println("\tARRAY BASE TYPE: " + elementType.getClass());
     AddressVar arrayElementAddress = new AddressVar(elementType);
-    AddressAt addressAtInst = new AddressAt(arrayElementAddress, baseSymbol, (LocalVar) indexPair.getValue());
+    //AddressAt addressAtInst = new AddressAt(arrayElementAddress, baseSymbol, (LocalVar) indexPair.getValue());
+    AddressAt addressAtInst = new AddressAt(arrayElementAddress, findGlobalSymbol(baseSymbol), (LocalVar) indexPair.getValue());
 
     LocalVar tempVar = mCurrentFunction.getTempVar(elementType);
     LoadInst loadInst = new LoadInst(tempVar, arrayElementAddress);
@@ -594,30 +625,6 @@ public final class ASTLower implements NodeVisitor<InstPair> {
   public InstPair visit(Continue cont) {
     System.out.println("Visited Continue");
     return new InstPair(mCurLoopHead, new NopInst());
-  }
-
-  /**
-   * Helper function for If Else
-   * @param block
-   * @return InstPair
-   */
-  private InstPair visitBlock(StatementList block) {
-    InstPair blockPair = new InstPair(new NopInst(), new NopInst());
-    Instruction lastInst = blockPair.getStart();
-
-    for (Node stmt : block.getChildren()) {
-      InstPair stmtPair = stmt.accept(this);
-
-      if (stmtPair == null || (stmtPair.getStart() == null && stmtPair.getEnd() == null)) {
-        continue; //skip null pairs
-      }
-
-      linkInstructions(lastInst, stmtPair.getStart());
-      lastInst = stmtPair.getEnd();
-    }
-
-    linkInstructions(lastInst, blockPair.getEnd());
-    return blockPair;
   }
 
   /**

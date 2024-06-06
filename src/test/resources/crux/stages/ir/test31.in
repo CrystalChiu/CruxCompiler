@@ -1,0 +1,12 @@
+void shadowWithParam(int a) {
+  a = 7;
+  printInt(a);
+  println();
+}
+
+void shadowWithLocal() {
+  int a;
+  a = 9;
+  printInt(a);
+  println();
+}

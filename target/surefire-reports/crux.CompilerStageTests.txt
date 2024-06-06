@@ -1,13 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: crux.CompilerStageTests
 -------------------------------------------------------------------------------
-Tests run: 50, Failures: 3, Errors: 3, Skipped: 0, Time elapsed: 1.322 s <<< FAILURE! - in crux.CompilerStageTests
-crux.CompilerStageTests.emulateIR  Time elapsed: 0.021 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "java.lang.Long.longValue()" because the return value of "java.util.HashMap.get(Object)" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:229)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Long.longValue()" because the return value of "java.util.HashMap.get(Object)" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0.015 s  <<< FAILURE!
+Tests run: 49, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 5.055 s <<< FAILURE! - in crux.CompilerStageTests
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.026 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 IR for program crux/stages/ir/test32.crx differs from expected output. ==> expected: <1
 true
@@ -21,7 +16,7 @@ true
 false> but was: <1>
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:236)
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0.012 s  <<< FAILURE!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.015 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 IR for program crux/stages/ir/test33.crx differs from expected output. ==> expected: <1
 1
@@ -35,7 +30,7 @@ false
 false> but was: <1>
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:236)
 
-crux.CompilerStageTests.emulateIR  Time elapsed: 0.045 s  <<< FAILURE!
+crux.CompilerStageTests.emulateIR  Time elapsed: 0.053 s  <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 IR for program crux/stages/ir/test38.crx differs from expected output. ==> expected: <true
 true
@@ -57,14 +52,4 @@ true
 true
 true> but was: <>
 	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:236)
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0.006 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getRight()" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:229)
-Caused by: java.lang.NullPointerException: Cannot invoke "crux.ast.Expression.accept(crux.ast.traversal.NodeVisitor)" because the return value of "crux.ast.OpExpr.getRight()" is null
-
-crux.CompilerStageTests.emulateIR  Time elapsed: 0.029 s  <<< ERROR!
-java.util.concurrent.ExecutionException: java.lang.NullPointerException: Cannot invoke "java.lang.Long.longValue()" because "args[0]" is null
-	at crux.CompilerStageTests.lambda$emulateIR$7(CompilerStageTests.java:229)
-Caused by: java.lang.NullPointerException: Cannot invoke "java.lang.Long.longValue()" because "args[0]" is null
 
