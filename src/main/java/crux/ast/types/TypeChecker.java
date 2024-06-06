@@ -91,7 +91,7 @@ public final class TypeChecker {
     }
     @Override
     public Void visit(VarAccess vaccess) {
-      System.out.print("Visited VarAccess");
+      //System.out.print("Visited VarAccess");
       Symbol symbol = vaccess.getSymbol();
       Type symbolType = symbol.getType();
 
@@ -102,8 +102,7 @@ public final class TypeChecker {
 
     @Override
     public Void visit(ArrayDeclaration arrayDeclaration) {
-      //need to verify
-      System.out.print("Visited ArrayDeclaration");
+      //System.out.print("Visited ArrayDeclaration");
 
       Symbol arraySymbol = arrayDeclaration.getSymbol();
       Type arrayType = arraySymbol.getType();
@@ -115,7 +114,7 @@ public final class TypeChecker {
 
       lastStatementReturns = false;
 
-      System.out.print("Exited ArrayDeclaration");
+      //System.out.print("Exited ArrayDeclaration");
       return null;
     }
 
