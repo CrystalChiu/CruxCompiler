@@ -1,5 +1,6 @@
 package crux.ir;
 
+import com.sun.jdi.BooleanValue;
 import crux.ast.SymbolTable.Symbol;
 import crux.ast.*;
 import crux.ast.OpExpr.Operation;
@@ -490,34 +491,41 @@ public final class ASTLower implements NodeVisitor<InstPair> {
         linkInstructions(leftPair.getEnd(), notInst);
         endInstr = notInst;
         break;
-//      case LOGIC_AND:
-//        IfElseBranch andBranch = new IfElseBranch(leftVar);
-//        linkInstructions(leftPair.getEnd(), andBranch.getCondition());
-//
-//        Instruction ifBodyStart = andBranch.getThenStart();
-//        Instruction ifBodyEnd = andBranch.getThenEnd();
-//
-//        linkInstructions(ifBodyEnd, rightPair.getStart());
-//
-//        //result is false --> short circuit
-//        UnaryNotInst falseBranch = new UnaryNotInst(resultVar, mCurrentProgram.getBoolFalse());
-//        linkInstructions(andBranch.getElseEnd(), falseBranch);
-//        endInstr = falseBranch;
-//        break;
-//      case LOGIC_OR:
-//        IfElseBranch orBranch = new IfElseBranch(leftVar);
-//        linkInstructions(leftPair.getEnd(), orBranch.getCondition());
-//
-//        Instruction ifBodyStartOr = orBranch.getThenStart();
-//        Instruction ifBodyEndOr = orBranch.getThenEnd();
-//
-//        //result is true --> short circuit
-//        UnaryNotInst trueBranch = new UnaryNotInst(resultVar, mCurrentProgram.getBoolTrue());
-//        linkInstructions(ifBodyEndOr, trueBranch);
-//        endInstr = trueBranch;
-//
-//        linkInstructions(orBranch.getElseEnd(), rightPair.getStart());
-//        break;
+      case LOGIC_AND:
+        JumpInst andJump = new JumpInst((LocalVar) leftPair.getValue());
+        linkInstructions(leftPair.getEnd(), andJump);
+
+        CopyInst andLeftCopy = new CopyInst(resultVar, BooleanConstant.get(mCurrentProgram, false));
+        CopyInst andRightCopy = new CopyInst(resultVar, rightPair.getValue());
+
+        andJump.setNext(0, andLeftCopy); //true branch
+        andJump.setNext(1, rightPair.getStart()); //false branch
+
+        NopInst andMerge = new NopInst();
+        linkInstructions(rightPair.getEnd(), andRightCopy);
+        linkInstructions(andRightCopy, andMerge);
+        linkInstructions(andLeftCopy, andMerge);
+
+        endInstr = andMerge;
+
+        break;
+      case LOGIC_OR:
+        JumpInst orJump = new JumpInst((LocalVar) leftPair.getValue());
+        linkInstructions(leftPair.getEnd(), orJump);
+
+        CopyInst orLeftCopy = new CopyInst(resultVar, BooleanConstant.get(mCurrentProgram, true));
+        CopyInst orRightCopy = new CopyInst(resultVar, rightPair.getValue());
+
+        orJump.setNext(0, rightPair.getStart()); //false branch
+        orJump.setNext(1, orLeftCopy); //true branch
+
+        NopInst orMerge = new NopInst();
+        linkInstructions(rightPair.getEnd(), orRightCopy);
+        linkInstructions(orRightCopy, orMerge);
+        linkInstructions(orLeftCopy, orMerge);
+
+        endInstr = orMerge;
+        break;
     }
 
     System.out.println("OpExpr Returned: " + startInst + ", " + endInstr);
@@ -634,11 +642,9 @@ public final class ASTLower implements NodeVisitor<InstPair> {
   public InstPair visit(IfElseBranch ifElseBranch) {
     System.out.println("Visited IfElseBranch");
 
-    //compInstr created is causing a nullptr!
     InstPair condPair = ifElseBranch.getCondition().accept(this);
     System.out.println("\tCONDPAIR: " + condPair.getStart() + ", " + condPair.getEnd() + ", " + condPair.getValue());
 
-    //below should be fine
     JumpInst jumpInst = new JumpInst((LocalVar) condPair.getValue());
     System.out.println("\n!!!!JUMP INSTR CREATED!!!!: " + jumpInst);
 

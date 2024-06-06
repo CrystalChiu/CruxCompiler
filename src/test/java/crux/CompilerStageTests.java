@@ -194,7 +194,7 @@ final class CompilerStageTests {
 
     var tests = getTests("ir");
     return tests.stream()
-            .limit(49)
+            .limit(50)
             .map(test -> dynamicTest(test.in, () -> {
       ExecutorService executor = Executors.newSingleThreadExecutor();
       Future<StringPair> future = executor.submit(new Callable<StringPair>() {
