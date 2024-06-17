@@ -68,6 +68,7 @@ crux/pt/CruxParser$Op2Context.class
 crux/ast/VarAccess.class
 crux/pt/CruxParser$ContinueStmtContext.class
 crux/ast/ParseTreeLower.class
+crux/backend/CodeGen$1.class
 crux/ast/LiteralInt.class
 crux/pt/CruxParser$AssignStmtNoSemiContext.class
 crux/ir/Function.class

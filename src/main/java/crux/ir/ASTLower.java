@@ -224,7 +224,8 @@ public final class ASTLower implements NodeVisitor<InstPair> {
       return new InstPair(nop, nop, mCurrentLocalVarMap.get(varSymbol));
     } else {
       //global var
-      AddressVar destAddressVar = new AddressVar(varSymbol.getType());
+      //AddressVar destAddressVar = new AddressVar(varSymbol.getType());
+      AddressVar destAddressVar = mCurrentFunction.getTempAddressVar(varSymbol.getType());
       AddressAt addressAt = new AddressAt(destAddressVar, findGlobalSymbol(varSymbol));
 
       LoadInst loadInst = new LoadInst(mCurrentFunction.getTempVar(varSymbol.getType()), destAddressVar);
@@ -283,7 +284,8 @@ public final class ASTLower implements NodeVisitor<InstPair> {
         return new InstPair(pair.getStart(), copyInst);
       } else {
         //global var assignment
-        AddressVar destAddressVar = new AddressVar(varSymbol.getType());
+        //AddressVar destAddressVar = new AddressVar(varSymbol.getType());
+        AddressVar destAddressVar = mCurrentFunction.getTempAddressVar(varSymbol.getType());
         AddressAt addressAt = new AddressAt(destAddressVar, findGlobalSymbol(varSymbol));
         StoreInst storeInst = new StoreInst((LocalVar) pair.getValue(), destAddressVar);
 
@@ -301,7 +303,8 @@ public final class ASTLower implements NodeVisitor<InstPair> {
 
       InstPair indexPair = indexExpr.accept(this);
 
-      AddressVar destAddressVar = new AddressVar(arrSymbol.getType());
+      //AddressVar destAddressVar = new AddressVar(arrSymbol.getType());
+      AddressVar destAddressVar = mCurrentFunction.getTempAddressVar(arrSymbol.getType());
       AddressAt addressAt = new AddressAt(destAddressVar, findGlobalSymbol(arrSymbol), (LocalVar) indexPair.getValue());
       StoreInst storeInst = new StoreInst((LocalVar) pair.getValue(), destAddressVar);
 
@@ -512,7 +515,8 @@ public final class ASTLower implements NodeVisitor<InstPair> {
     Type elementType = arrayType.getBase();
 
     //create cfg nodes
-    AddressVar arrayElementAddress = new AddressVar(elementType);
+    //AddressVar arrayElementAddress = new AddressVar(elementType);
+    AddressVar arrayElementAddress = mCurrentFunction.getTempAddressVar(elementType);
     AddressAt addressAtInst = new AddressAt(arrayElementAddress, findGlobalSymbol(baseSymbol), (LocalVar) indexPair.getValue());
 
     LocalVar tempVar = mCurrentFunction.getTempVar(elementType);

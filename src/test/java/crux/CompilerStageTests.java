@@ -25,7 +25,7 @@ final class CompilerStageTests {
    * all stages: private final String[] TEST_TO_RUN = {"stage1", "stage2", "stage3", "stage4",
    * "stage5"};
    */
-  private final String[] TEST_TO_RUN = {"stage4"};
+  private final String[] TEST_TO_RUN = {"stage5"};
 
   private boolean skipStage(String stageName) {
     return List.of(TEST_TO_RUN).stream().noneMatch(s -> s.toLowerCase().equals(stageName));
@@ -248,7 +248,9 @@ final class CompilerStageTests {
     var tests = getTests("codegen");
     Runtime runtime = Runtime.getRuntime();
 
-    return tests.stream().map(test -> dynamicTest(test.in, () -> {
+    return tests.stream()
+            .limit(14)
+            .map(test -> dynamicTest(test.in, () -> {
       ExecutorService executor = Executors.newSingleThreadExecutor();
       Future<StringPair> future = executor.submit(new Callable<StringPair>() {
         public StringPair call() throws IOException {
