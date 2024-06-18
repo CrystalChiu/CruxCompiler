@@ -8,7 +8,9 @@ import crux.ir.*;
 import crux.ir.insts.*;
 import crux.printing.IRValueFormatter;
 
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 /**
  * Convert the CFG into Assembly Instructions
@@ -16,13 +18,23 @@ import java.util.*;
 public final class CodeGen extends InstVisitor {
   private final Program p;
   private final CodePrinter out;
+  private HashMap<Instruction, String> functionLabels;
   private HashMap<Variable, Integer> varIndexMap;
   private int varIndex;
+
+  private final IRValueFormatter irFormat = new IRValueFormatter();
+  private void printInstructionInfo(Instruction i, String visitMethodName) {
+    var info = String.format("/* %s */", i.format(irFormat));
+    var info2 = String.format("/* %s */", visitMethodName);
+    out.printCode(info);
+    out.printCode(info2);
+  }
 
   public CodeGen(Program p) {
     this.p = p;
     // Do not change the file name that is outputted or it will
     // break the grader!
+    functionLabels = new HashMap<>();
     varIndexMap = new HashMap<>();
     varIndex = 0;
 
@@ -51,20 +63,17 @@ public final class CodeGen extends InstVisitor {
   }
 
   private void genCode(Function f, int count[]) {
-    //assign labels to jump targets & store in global var
     HashMap<Instruction, String> labels = f.assignLabels(count);
+    functionLabels.putAll(labels);
 
-    //declare function and label
     out.printCode(".globl " + f.getName());
     out.printLabel(f.getName() + ":");
 
-    //print prologue such that stack is 16 byte aligned
     int numSlots = f.getNumTempVars() + f.getNumTempAddressVars();
     if (numSlots % 2 != 0) {
       numSlots++;
     }
-
-    out.printCode("enter $(" + 8 + " * " + numSlots + "), $0");
+    out.printCode("enter $(" + 8 * numSlots + "), $0");
 
     List<LocalVar> args = f.getArguments();
     String[] argRegisters = {"%rdi", "%rsi", "%rdx", "%rcx", "%r8", "%r9"};
@@ -73,10 +82,8 @@ public final class CodeGen extends InstVisitor {
       varIndexMap.put(args.get(i), i + 1);
     }
 
-    //generate code for function body
     generateBody(f, labels);
 
-    //print epilogue
     out.printCode("leave");
     out.printCode("ret");
   }
@@ -96,8 +103,13 @@ public final class CodeGen extends InstVisitor {
 
     while (!toVisit.isEmpty()) {
       Instruction inst = toVisit.pop();
-      if (visited.contains(inst))
+
+      if (visited.contains(inst)) {
+        if (labels.containsKey(inst)) {
+          out.printCode("jmp " + labels.get(inst));
+        }
         continue;
+      }
       visited.add(inst);
 
       if (labels.containsKey(inst)) {
@@ -106,8 +118,15 @@ public final class CodeGen extends InstVisitor {
 
       inst.accept(this);
 
-      for (int i = inst.numNext() - 1; i >= 0; i--) {
-        toVisit.push(inst.getNext(i));
+      if (inst.numNext() == 0) {
+        // Print epilogue only once
+        out.printCode("leave");
+        out.printCode("ret");
+      } else {
+        // Push next instructions to the stack (0 first, then 1)
+        for (int i = inst.numNext() - 1; i >= 0; i--) {
+          toVisit.push(inst.getNext(i));
+        }
       }
     }
   }
@@ -136,6 +155,8 @@ public final class CodeGen extends InstVisitor {
 
   //--------------Visitor Functions--------------
   public void visit(AddressAt i) {
+    printInstructionInfo(i, "AddressAt");
+
     AddressVar destVar = i.getDst();
     Symbol baseSymbol = i.getBase();
     LocalVar offsetVar = i.getOffset();
@@ -155,25 +176,25 @@ public final class CodeGen extends InstVisitor {
   }
 
   public void visit(BinaryOperator i) {
+    printInstructionInfo(i, "BinaryOperator");
+
     LocalVar destVar = i.getDst();
     LocalVar lhsVar = i.getLeftOperand();
     LocalVar rhsVar = i.getRightOperand();
 
     String dest = "-" + (8 * getVarIndex(destVar)) + "(%rbp)";
-    //String lhs = getOperandString(lhsVar);
-    //String rhs = getOperandString(rhsVar);
-    String lhs = lhsVar.getName();
-    String rhs = rhsVar.getName();
+    String lhs = "-" + (8 * getVarIndex(lhsVar)) + "(%rbp)";
+    String rhs = "-" + (8 * getVarIndex(rhsVar)) + "(%rbp)";
 
     switch (i.getOperator()) {
       case Add:
-        out.printCode("movq " + rhs + ", %r10");
-        out.printCode("addq " + lhs + ", %r10");
+        out.printCode("movq " + lhs + ", %r10");
+        out.printCode("addq " + rhs + ", %r10");
         out.printCode("movq %r10, " + dest);
         break;
       case Sub:
-        out.printCode("movq " + rhs + ", %r10");
-        out.printCode("subq " + lhs + ", %r10");
+        out.printCode("movq " + lhs + ", %r10");
+        out.printCode("subq " + rhs + ", %r10");
         out.printCode("movq %r10, " + dest);
         break;
       case Mul:
@@ -193,10 +214,50 @@ public final class CodeGen extends InstVisitor {
   }
 
   public void visit(CompareInst i) {
+    printInstructionInfo(i, "CompareInst");
 
+    LocalVar destVar = i.getDst();
+    LocalVar lhsVar = i.getLeftOperand();
+    LocalVar rhsVar = i.getRightOperand();
+
+    String dest = "-" + (8 * getVarIndex(destVar)) + "(%rbp)";
+    String lhs = "-" + (8 * getVarIndex(lhsVar)) + "(%rbp)";
+    String rhs = "-" + (8 * getVarIndex(rhsVar)) + "(%rbp)";
+
+    out.printCode("movq $0, %rax");
+    out.printCode("movq $1, %r10");
+    out.printCode("movq " + lhs + ", %r11");
+    out.printCode("cmp " + rhs + ", %r11");
+
+    switch (i.getPredicate()) {
+      case GE:
+        out.printCode("cmovge %r10, %rax");
+        break;
+      case GT:
+        out.printCode("cmovg %r10, %rax");
+        break;
+      case LE:
+        out.printCode("cmovle %r10, %rax");
+        break;
+      case LT:
+        out.printCode("cmovl %r10, %rax");
+        break;
+      case EQ:
+        out.printCode("cmove %r10, %rax");
+        break;
+      case NE:
+        out.printCode("cmovne %r10, %rax");
+        break;
+      default:
+        throw new IllegalArgumentException("Unsupported compare predicate: " + i.getPredicate());
+    }
+
+    out.printCode("movq %rax, " + dest);
   }
 
   public void visit(CopyInst i) {
+    printInstructionInfo(i, "CopyInst");
+
     LocalVar destVar = i.getDstVar();
     Value srcValue = i.getSrcValue();
 
@@ -224,10 +285,10 @@ public final class CodeGen extends InstVisitor {
   }
 
   public void visit(JumpInst i) {
+    printInstructionInfo(i, "JumpInst");
+
     LocalVar predicate = i.getPredicate();
-    //String label =
-    String label = "";
-    out.printCode(i.getNext(0).toString());
+    String thenLabel = functionLabels.get(i.getNext(1));
 
     // Load the predicate into %r10
     int predIndex = getVarIndex(predicate);
@@ -237,10 +298,12 @@ public final class CodeGen extends InstVisitor {
     out.printCode("cmp $1, %r10");
 
     // Conditional jump to the then block label if predicate is true
-    out.printCode("je " + label);
+    out.printCode("je " + thenLabel);
   }
 
   public void visit(LoadInst i) {
+    printInstructionInfo(i, "LoadInst");
+
     LocalVar destVar = i.getDst();
     AddressVar srcAddress = i.getSrcAddress();
 
@@ -260,7 +323,8 @@ public final class CodeGen extends InstVisitor {
   }
 
   public void visit(StoreInst i) {
-    //double check srcValue and destAddr is used correctly
+    printInstructionInfo(i, "StoreInst");
+
     Value srcValue = i.getSrcValue();
     AddressVar destAddr = i.getDestAddress();
 
@@ -268,21 +332,30 @@ public final class CodeGen extends InstVisitor {
     if (srcValue instanceof LocalVar) {
       int srcIndex = getVarIndex((LocalVar) srcValue);
       src = "-" + (8 * srcIndex) + "(%rbp)";
-    } else if (srcValue.getType() instanceof IntType) {
-      src = "$" + (((IntegerConstant)srcValue).getValue());
-    } else if (srcValue.getType() instanceof BoolType) {
-      src = "$" + ((((BooleanConstant)srcValue).getValue()) ? 1 : 0);
+    } else if (srcValue instanceof IntegerConstant) {
+      src = "$" + ((IntegerConstant) srcValue).getValue();
+    } else if (srcValue instanceof BooleanConstant) {
+      src = "$" + (((BooleanConstant) srcValue).getValue() ? 1 : 0);
     } else {
       throw new IllegalArgumentException("Unsupported source value type");
     }
 
     int destIndex = getVarIndex(destAddr);
-    String dest = "-" + (8 * destIndex) + "(%rbp)";
+    String destAddress = "-" + (8 * destIndex) + "(%rbp)";
 
-    out.printCode("movq " + src + ", " + dest);
+    out.printCode("movq " + destAddress + ", %r10");
+
+    if (src.startsWith("$")) {
+      out.printCode("movq " + src + ", " + destAddress);
+    } else {
+      out.printCode("movq " + src + ", %r11");
+      out.printCode("movq %r11, 0(%r10)");
+    }
   }
 
   public void visit(ReturnInst i) {
+    printInstructionInfo(i, "ReturnInst");
+
     Value returnValue = i.getReturnValue();
 
     if (returnValue != null) {
@@ -311,6 +384,8 @@ public final class CodeGen extends InstVisitor {
   }
 
   public void visit(CallInst i) {
+    printInstructionInfo(i, "CallInst");
+
     String[] argRegisters = {"%rdi", "%rsi", "%rdx", "%rcx", "%r8", "%r9"};
     List<LocalVar> args = i.getParams();
     String calleeName = i.getCallee().getName();

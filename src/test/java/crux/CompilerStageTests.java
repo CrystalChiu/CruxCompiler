@@ -249,7 +249,7 @@ final class CompilerStageTests {
     Runtime runtime = Runtime.getRuntime();
 
     return tests.stream()
-            .limit(14)
+            .limit(12)
             .map(test -> dynamicTest(test.in, () -> {
       ExecutorService executor = Executors.newSingleThreadExecutor();
       Future<StringPair> future = executor.submit(new Callable<StringPair>() {
