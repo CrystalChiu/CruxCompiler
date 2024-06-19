@@ -127,7 +127,6 @@ public final class CodeGen extends InstVisitor {
     }
   }
 
-  //------------Local Var Helper Functions---------
   private int getVarIndex(Variable var) {
     if (!varIndexMap.containsKey(var)) {
       varIndex++;
@@ -135,20 +134,6 @@ public final class CodeGen extends InstVisitor {
     }
 
     return varIndexMap.get(var);
-  }
-
-  private void printVarToReg(String reg, Variable var) {
-    int index = getVarIndex(var);
-    out.printCode("movq -" + (8 * index) + "(%rbp), " + reg);
-  }
-
-  private void printRegToVar(Variable var, String reg) {
-    int index = getVarIndex(var);
-    out.printCode("movq " + reg + ", -" + (8 * index) + "(%rbp)");
-  }
-
-  private void printImmediateToReg(long imm, String reg) {
-    out.printCode("movq $" + imm + ", " + reg);
   }
 
   //--------------Visitor Functions--------------
@@ -288,14 +273,9 @@ public final class CodeGen extends InstVisitor {
     LocalVar predicate = i.getPredicate();
     String thenLabel = functionLabels.get(i.getNext(1));
 
-    // Load the predicate into %r10
     int predIndex = getVarIndex(predicate);
     out.printCode("movq -" + (8 * predIndex) + "(%rbp), %r10");
-
-    // Compare the predicate with 1
     out.printCode("cmp $1, %r10");
-
-    // Conditional jump to the then block label if predicate is true
     out.printCode("je " + thenLabel);
   }
 
@@ -391,14 +371,12 @@ public final class CodeGen extends InstVisitor {
     int numArgsInRegisters = Math.min(args.size(), argRegisters.length);
     int numArgsOnStack = args.size() - numArgsInRegisters;
 
-    // Move arguments to registers
     for (int j = 0; j < numArgsInRegisters; j++) {
       LocalVar arg = args.get(j);
       int varIndex = getVarIndex(arg);
       out.printCode("movq -" + (varIndex * 8) + "(%rbp), " + argRegisters[j]);
     }
 
-    // Push arguments on the stack
     for (int j = numArgsOnStack - 1; j >= 0; j--) {
       LocalVar arg = args.get(numArgsInRegisters + j);
       int varIndex = getVarIndex(arg);
@@ -409,12 +387,10 @@ public final class CodeGen extends InstVisitor {
     // Call the function
     out.printCode("call " + calleeName);
 
-    // Adjust stack pointer if necessary
     if (numArgsOnStack > 6) {
       out.printCode("addq $" + (8 * numArgsOnStack) + ", %rsp");
     }
 
-    // Store return value if there is a destination variable
     LocalVar destVar = i.getDst();
     if (destVar != null) {
       int varIndex = getVarIndex(destVar);
