@@ -63,6 +63,7 @@ public final class CodeGen extends InstVisitor {
   }
 
   private void genCode(Function f, int count[]) {
+    varIndex = 0;
     HashMap<Instruction, String> labels = f.assignLabels(count);
     functionLabels.putAll(labels);
 
@@ -390,27 +391,34 @@ public final class CodeGen extends InstVisitor {
     int numArgsInRegisters = Math.min(args.size(), argRegisters.length);
     int numArgsOnStack = args.size() - numArgsInRegisters;
 
+    // Move arguments to registers
     for (int j = 0; j < numArgsInRegisters; j++) {
       LocalVar arg = args.get(j);
-      printVarToReg(argRegisters[j], arg);
+      int varIndex = getVarIndex(arg);
+      out.printCode("movq -" + (varIndex * 8) + "(%rbp), " + argRegisters[j]);
     }
 
+    // Push arguments on the stack
     for (int j = numArgsOnStack - 1; j >= 0; j--) {
       LocalVar arg = args.get(numArgsInRegisters + j);
       int varIndex = getVarIndex(arg);
-      out.printCode("movq -" + (8 * varIndex) + "(%rbp), %r10");
+      out.printCode("movq -" + (varIndex * 8) + "(%rbp), %r10");
       out.printCode("pushq %r10");
     }
 
+    // Call the function
     out.printCode("call " + calleeName);
 
+    // Adjust stack pointer if necessary
     if (numArgsOnStack > 6) {
       out.printCode("addq $" + (8 * numArgsOnStack) + ", %rsp");
     }
 
+    // Store return value if there is a destination variable
     LocalVar destVar = i.getDst();
     if (destVar != null) {
-      printRegToVar(destVar, "%rax");
+      int varIndex = getVarIndex(destVar);
+      out.printCode("movq %rax, -" + (varIndex * 8) + "(%rbp)");
     }
   }
 
