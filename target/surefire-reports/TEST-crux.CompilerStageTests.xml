@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="crux.CompilerStageTests" time="3.672" tests="12" errors="12" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="crux.CompilerStageTests" time="16.101" tests="45" errors="45" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/usr/local/Cellar/openjdk/21.0.3/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/chiubacca/Desktop/Programs/142a/target/surefire/surefirebooter17022220331953273323.jar /Users/chiubacca/Desktop/Programs/142a/target/surefire 2024-06-18T11-34-38_424-jvmRun1 surefire298747968414375799tmp surefire_013017597379065822694tmp"/>
+    <property name="sun.java.command" value="/Users/chiubacca/Desktop/Programs/142a/target/surefire/surefirebooter1521704851143887102.jar /Users/chiubacca/Desktop/Programs/142a/target/surefire 2024-06-18T16-24-47_288-jvmRun1 surefire5989435776041216158tmp surefire_06190214375894116622tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/chiubacca/Desktop/Programs/142a/target/test-classes:/Users/chiubacca/Desktop/Programs/142a/target/classes:/Users/chiubacca/.m2/repository/org/antlr/antlr4-runtime/4.7.2/antlr4-runtime-4.7.2.jar:/Users/chiubacca/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.5.2/junit-jupiter-api-5.5.2.jar:/Users/chiubacca/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/Users/chiubacca/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/chiubacca/.m2/repository/org/junit/platform/junit-platform-commons/1.5.2/junit-platform-commons-1.5.2.jar:/Users/chiubacca/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.5.2/junit-jupiter-engine-5.5.2.jar:/Users/chiubacca/.m2/repository/org/junit/platform/junit-platform-engine/1.5.2/junit-platform-engine-1.5.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -28,7 +28,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/chiubacca/Desktop/Programs/142a/target/surefire/surefirebooter17022220331953273323.jar"/>
+    <property name="surefire.real.class.path" value="/Users/chiubacca/Desktop/Programs/142a/target/surefire/surefirebooter1521704851143887102.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.3"/>
     <property name="user.name" value="chiubacca"/>
@@ -55,13 +55,193 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.801">
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="1.503">
     <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
 	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
 Caused by: java.lang.Error: Assembling and linking failed
 ]]></error>
   </testcase>
-  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.274">
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.817">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.391">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.337">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.499">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.332">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.264">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.224">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.213">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.266">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.234">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.222">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.2">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.182">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.219">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.23">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.285">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.202">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.205">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.187">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.28">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.193">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.239">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.201">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.201">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.272">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.528">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.336">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.303">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.265">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.369">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.373">
     <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
 	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
 Caused by: java.lang.Error: Assembling and linking failed
@@ -73,69 +253,73 @@ Caused by: java.lang.Error: Assembling and linking failed
 Caused by: java.lang.Error: Assembling and linking failed
 ]]></error>
   </testcase>
-  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.236">
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.326">
     <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
 	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
 Caused by: java.lang.Error: Assembling and linking failed
 ]]></error>
   </testcase>
-  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.25">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
-	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
-Caused by: java.lang.Error: Assembling and linking failed
-]]></error>
-    <system-out><![CDATA[Visited variableDeclaration
-]]></system-out>
-  </testcase>
-  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.245">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
-	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
-Caused by: java.lang.Error: Assembling and linking failed
-]]></error>
-    <system-out><![CDATA[Visited variableDeclaration
-Visited Assignment
-Visited VarAccess
-]]></system-out>
-  </testcase>
-  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.241">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
-	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
-Caused by: java.lang.Error: Assembling and linking failed
-]]></error>
-    <system-out><![CDATA[Visited variableDeclaration
-Visited Assignment
-Visited VarAccess
-]]></system-out>
-  </testcase>
-  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.214">
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.351">
     <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
 	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
 Caused by: java.lang.Error: Assembling and linking failed
 ]]></error>
   </testcase>
-  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.259">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
-	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
-Caused by: java.lang.Error: Assembling and linking failed
-]]></error>
-    <system-out><![CDATA[Visited VarAccess
-]]></system-out>
-  </testcase>
-  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.235">
-    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
-	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
-Caused by: java.lang.Error: Assembling and linking failed
-]]></error>
-    <system-out><![CDATA[Visited Assignment
-]]></system-out>
-  </testcase>
-  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.244">
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.434">
     <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
 	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
 Caused by: java.lang.Error: Assembling and linking failed
 ]]></error>
   </testcase>
-  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.213">
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.686">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.346">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.641">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.415">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.391">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.396">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.334">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.351">
+    <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
+	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
+Caused by: java.lang.Error: Assembling and linking failed
+]]></error>
+  </testcase>
+  <testcase name="codegen" classname="crux.CompilerStageTests" time="0.343">
     <error type="java.util.concurrent.ExecutionException"><![CDATA[java.util.concurrent.ExecutionException: java.lang.Error: Assembling and linking failed
 	at crux.CompilerStageTests.lambda$codegen$9(CompilerStageTests.java:299)
 Caused by: java.lang.Error: Assembling and linking failed

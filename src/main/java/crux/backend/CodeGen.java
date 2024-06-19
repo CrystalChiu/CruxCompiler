@@ -78,14 +78,11 @@ public final class CodeGen extends InstVisitor {
     List<LocalVar> args = f.getArguments();
     String[] argRegisters = {"%rdi", "%rsi", "%rdx", "%rcx", "%r8", "%r9"};
     for (int i = 0; i < args.size() && i < argRegisters.length; i++) {
-      out.printCode("movq " + argRegisters[i] + ", -" + (8 * (i + 1)) + "(%rbp)");
-      varIndexMap.put(args.get(i), i + 1);
+      int varIndex = getVarIndex(args.get(i)); // Increment varIndex for each argument
+      out.printCode("movq " + argRegisters[i] + ", -" + (8 * varIndex) + "(%rbp)");
     }
 
     generateBody(f, labels);
-
-    out.printCode("leave");
-    out.printCode("ret");
   }
 
   /**
@@ -119,11 +116,9 @@ public final class CodeGen extends InstVisitor {
       inst.accept(this);
 
       if (inst.numNext() == 0) {
-        // Print epilogue only once
         out.printCode("leave");
         out.printCode("ret");
       } else {
-        // Push next instructions to the stack (0 first, then 1)
         for (int i = inst.numNext() - 1; i >= 0; i--) {
           toVisit.push(inst.getNext(i));
         }
@@ -134,8 +129,10 @@ public final class CodeGen extends InstVisitor {
   //------------Local Var Helper Functions---------
   private int getVarIndex(Variable var) {
     if (!varIndexMap.containsKey(var)) {
-      varIndexMap.put(var, ++varIndex);
+      varIndex++;
+      varIndexMap.put(var,varIndex);
     }
+
     return varIndexMap.get(var);
   }
 
@@ -224,8 +221,8 @@ public final class CodeGen extends InstVisitor {
     String lhs = "-" + (8 * getVarIndex(lhsVar)) + "(%rbp)";
     String rhs = "-" + (8 * getVarIndex(rhsVar)) + "(%rbp)";
 
-    out.printCode("movq $0, %rax");
-    out.printCode("movq $1, %r10");
+    out.printCode("movq $0, %rax"); //false
+    out.printCode("movq $1, %r10"); //true
     out.printCode("movq " + lhs + ", %r11");
     out.printCode("cmp " + rhs + ", %r11");
 
@@ -390,21 +387,26 @@ public final class CodeGen extends InstVisitor {
     List<LocalVar> args = i.getParams();
     String calleeName = i.getCallee().getName();
 
-    for (int j = 0; j < args.size(); j++) {
+    int numArgsInRegisters = Math.min(args.size(), argRegisters.length);
+    int numArgsOnStack = args.size() - numArgsInRegisters;
+
+    for (int j = 0; j < numArgsInRegisters; j++) {
       LocalVar arg = args.get(j);
-      if (j < argRegisters.length) {
-        //first 6 args moved to register
-        printVarToReg(argRegisters[j], arg);
-      } else {
-        //otherwise the stack
-        int offset = (j - argRegisters.length + 2) * 8; // 16(%rbp) is the first stack argument slot
-        int varIndex = getVarIndex(arg);
-        out.printCode("movq -" + (8 * varIndex) + "(%rbp), %r10");
-        out.printCode("movq %r10, -" + offset + "(%rbp)");
-      }
+      printVarToReg(argRegisters[j], arg);
+    }
+
+    for (int j = numArgsOnStack - 1; j >= 0; j--) {
+      LocalVar arg = args.get(numArgsInRegisters + j);
+      int varIndex = getVarIndex(arg);
+      out.printCode("movq -" + (8 * varIndex) + "(%rbp), %r10");
+      out.printCode("pushq %r10");
     }
 
     out.printCode("call " + calleeName);
+
+    if (numArgsOnStack > 6) {
+      out.printCode("addq $" + (8 * numArgsOnStack) + ", %rsp");
+    }
 
     LocalVar destVar = i.getDst();
     if (destVar != null) {
