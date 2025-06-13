@@ -1,0 +1,1 @@
+CRUX is a simple programming language I defined using ANTLR. This Java compiler uses the Visitor design pattern to take CRUX code and perform lexical analysis, parse, put into intermediate representation, perform optimizations, and then translate into runnable x86 machine code. Results viewable via tests.
